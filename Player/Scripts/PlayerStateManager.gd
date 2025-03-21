@@ -1,0 +1,102 @@
+extends Node
+
+#region States
+@onready var idleState = $Idle
+@onready var walkState = $Walk
+@onready var jumpState = $Jump
+@onready var fallState = $Fall
+@onready var hookState = $Hook
+@onready var jumpPeakState = $JumpPeak
+
+#endregion
+
+#region Variables
+@onready var animation_player = $"../AnimationPlayer"
+@onready var Player = $".."
+
+var currentState = null
+#endregion
+
+#region Default Methods
+
+func _ready():
+	for state in self.get_children():
+		state.StateManager = self
+		state.Player = Player
+	
+	#	INICIALIZA A STATE MACHINE
+	currentState = idleState
+	_switch_state(currentState)
+
+func _physics_process(delta):
+	if currentState != null:
+		currentState._update_state(delta)
+#endregion
+
+#region State Machine Methods
+
+func _switch_state(nextState):
+	if nextState != null and Player.canSwitchState:
+		print("Saiu de: " + currentState.name + " para: " + nextState.name)
+		currentState._exit_state()
+		currentState = nextState
+		currentState._enter_state()
+	
+func _draw():
+	currentState._draw_state()
+	
+func _switch_animation(nextAnimation):
+	if nextAnimation != null:
+		animation_player.play(nextAnimation)
+#endregion
+
+#region Custom Methods
+func _get_horizontal_movement():
+	Player.moveDirectionX = Input.get_axis("input_left", "input_right")
+
+	if Player.moveDirectionX != 0:
+		Player.velocity.x = move_toward(Player.velocity.x, Player.moveDirectionX * Player.moveSpeed, Player.acceleration)
+	else:
+		Player.velocity.x = move_toward(Player.velocity.x, Player.moveDirectionX * Player.moveSpeed, Player.deceleration)
+
+func _get_jump():
+	if Input.is_action_pressed("input_jump") and Player.currentJumps < Player.maxJumps:
+		_switch_state(jumpState)
+		Player.currentJumps += 1
+
+func _get_input_states():
+	if Input.is_action_pressed("input_left"):
+		Player.facing = -1
+	if Input.is_action_pressed("input_right"):
+		Player.facing = 1
+
+func _get_flip_h():
+	Player.sprite2d.flip_h = (Player.facing < 0)
+
+func _get_gravity(delta):
+	if not Player.is_on_floor():
+		Player.velocity.y += Player.gravity * delta
+	else:
+		Player.currentJumps = 0
+
+func _get_falling():
+	if not Player.is_on_floor():
+		_switch_state(fallState)
+
+func _get_landing():
+	if Player.is_on_floor():
+		_switch_state(fallState)
+		Player.currentJumps = 0
+
+func _get_idle():
+	if Player.moveDirectionX == 0:
+		_switch_state(idleState)
+
+func _get_walk():
+	if Player.moveDirectionX != 0:
+		_switch_state(walkState)
+
+func _get_jump_peak():
+	if Player.velocity.y >= 0:
+		_switch_state(jumpPeakState)
+#endregion

@@ -14,6 +14,10 @@ config/name="SapoGuerreiro"
 run/main_scene="res://Level.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 
+[display]
+
+window/vsync/vsync_mode=0
+
 [input]
 
 input_jump={
