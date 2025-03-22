@@ -73,20 +73,23 @@ func _get_input_states():
 func _get_flip_h():
 	Player.sprite2d.flip_h = (Player.facing < 0)
 
-func _get_gravity(delta):
+func _get_gravity(delta, gravity):
 	if not Player.is_on_floor():
-		Player.velocity.y += Player.gravity * delta
-	else:
-		Player.currentJumps = 0
+		Player.velocity.y += gravity * delta
 
 func _get_falling():
 	if not Player.is_on_floor():
+		Player.coyote_timer.start(Player.coyoteTime)
 		_switch_state(fallState)
-
+		
+func _get_maxFallVelocity():
+	if Player.velocity.y > Player.maxFallVelocity:
+		Player.velocity.y = Player.maxFallVelocity
+	
 func _get_landing():
 	if Player.is_on_floor():
-		_switch_state(idleState)
 		Player.currentJumps = 0
+		_switch_state(idleState)
 
 func _get_idle():
 	if Player.moveDirectionX == 0:

@@ -6,6 +6,8 @@ extends CharacterBody2D
 @onready var animation_player = $AnimationPlayer
 @onready var camera_2d = $Camera2D
 @onready var state_manager = $StateMachine
+@onready var coyote_timer = $Timers/CoyoteTimer
+
 #endregion
 
 #region Variables
@@ -16,9 +18,10 @@ var acceleration = 40
 var deceleration= 15
 var moveDirectionX = 0
 
-const gravity = 400
-
-var jumpVelocity = -300
+const jumpGravity = 600
+const fallGravity = 750
+const maxFallVelocity = 400
+var jumpVelocity = -500
 var maxJumps = 1
 var currentJumps = 0
 
