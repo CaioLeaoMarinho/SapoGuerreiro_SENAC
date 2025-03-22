@@ -31,16 +31,13 @@ var canSwitchState = true
 func _ready():
 	_initilialize_player_components()
 	
-func _physics_process(delta):
+func _physics_process(_delta):
 	move_and_slide()
 #endregion
 
 #region Custom Methods
 
 func _initilialize_player_components():
-	state_manager.Player = self
-	state_manager.animation_player = animation_player
-	
 	for state in state_manager.get_children():
 		state.StateManager = state_manager
 		state.Player = self

@@ -5,8 +5,8 @@ func _enter_state():
 	
 	StateManager._switch_animation("idle")
 
-func _update_state(delta : float):
-	super(delta)
+func _update_state(_delta : float):
+	super(_delta)
 	
 	StateManager._get_falling()
 	StateManager._get_jump()

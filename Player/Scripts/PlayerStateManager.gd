@@ -85,7 +85,7 @@ func _get_falling():
 
 func _get_landing():
 	if Player.is_on_floor():
-		_switch_state(fallState)
+		_switch_state(idleState)
 		Player.currentJumps = 0
 
 func _get_idle():
