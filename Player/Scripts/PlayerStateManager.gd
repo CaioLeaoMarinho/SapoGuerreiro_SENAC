@@ -79,7 +79,6 @@ func _get_gravity(delta, gravity):
 
 func _get_falling():
 	if not Player.is_on_floor():
-		Player.coyote_timer.start(Player.coyoteTime)
 		_switch_state(fallState)
 		
 func _get_maxFallVelocity():
