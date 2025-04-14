@@ -55,9 +55,9 @@ func _get_horizontal_movement():
 	Player.moveDirectionX = Input.get_axis("input_left", "input_right")
 
 	if Player.moveDirectionX != 0:
-		Player.velocity.x = move_toward(Player.velocity.x, Player.moveDirectionX * Player.moveSpeed, Player.acceleration)
+		Player.velocity.x = move_toward(Player.velocity.x, Player.moveDirectionX * Player.currentMoveSpeed, Player.acceleration)
 	else:
-		Player.velocity.x = move_toward(Player.velocity.x, Player.moveDirectionX * Player.moveSpeed, Player.deceleration)
+		Player.velocity.x = move_toward(Player.velocity.x, Player.moveDirectionX * Player.currentMoveSpeed, Player.deceleration)
 
 func _get_jump():
 	if Input.is_action_pressed("input_jump") and Player.currentJumps < Player.maxJumps:
@@ -80,10 +80,6 @@ func _get_gravity(delta, gravity):
 func _get_falling():
 	if not Player.is_on_floor():
 		_switch_state(fallState)
-		
-func _get_maxFallVelocity():
-	if Player.velocity.y > Player.maxFallVelocity:
-		Player.velocity.y = Player.maxFallVelocity
 	
 func _get_landing():
 	if Player.is_on_floor():

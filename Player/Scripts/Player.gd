@@ -11,15 +11,17 @@ extends CharacterBody2D
 #region Variables
 
 var horizontalSpeed = 250
-var moveSpeed = 500
+var maxMoveSpeed = 500
+var currentMoveSpeed = maxMoveSpeed
 var acceleration = 100
 var deceleration = 100
 var moveDirectionX = 0
 
-const jumpGravity = 500
-const fallGravity = 950
-const maxFallVelocity = 400
-var jumpVelocity = -500
+var jumpGravity = 0
+var fallGravity = 2000
+var jumpVelocity = 0
+var jumpHeight = 100
+var jumpTimeToPeak = 0.5
 var maxJumps = 1
 var currentJumps = 0
 
@@ -39,7 +41,12 @@ func _physics_process(_delta):
 #region Custom Methods
 
 func _initilialize_player_components():
+	
 	for state in state_manager.get_children():
 		state.StateManager = state_manager
 		state.Player = self
 #endregion
+
+func _calculate_jump_height(jumpHeight: float):
+	jumpGravity = 2 * jumpHeight / pow(jumpTimeToPeak, 2)
+	jumpVelocity = -sqrt(2 * jumpGravity * jumpHeight)
