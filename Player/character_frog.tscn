@@ -249,7 +249,8 @@ _data = {
 "walk": SubResource("Animation_e4u1q")
 }
 
-[node name="CharacterBody2D" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D"]
+collision_mask = 2
 script = ExtResource("1_7jske")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

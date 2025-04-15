@@ -1,7 +1,7 @@
 class_name BaseState extends Node
 
 var StateManager = null
-var Player = null
+var Entity = null
 
 func _enter_state():
 	pass

@@ -22,7 +22,7 @@ var currentState = null
 func _ready():
 	for state in self.get_children():
 		state.StateManager = self
-		state.Player = Player
+		state.Entity = Player
 	
 	#	INICIALIZA A STATE MACHINE
 	currentState = idleState
