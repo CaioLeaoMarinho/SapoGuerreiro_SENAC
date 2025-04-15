@@ -37,10 +37,10 @@ func _physics_process(delta):
 
 func _switch_state(nextState):
 	if nextState != null and Player.canSwitchState:
-		print("Saiu de: " + currentState.name + " para: " + nextState.name)
 		currentState._exit_state()
 		currentState = nextState
 		currentState._enter_state()
+		return
 	
 func _draw():
 	currentState._draw_state()
@@ -96,5 +96,8 @@ func _get_walk():
 
 func _get_jump_peak():
 	if Player.velocity.y >= 0:
+		_switch_state(jumpPeakState)
+	if not Input.is_action_pressed("input_jump"):
+		Player.velocity.y *= Player.jumpHeightMult
 		_switch_state(jumpPeakState)
 #endregion

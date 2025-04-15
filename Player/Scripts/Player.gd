@@ -18,10 +18,11 @@ var moveDirectionX = 0
 var jumpGravity = 0
 var fallGravity = 2000
 var jumpVelocity = 0
-var jumpHeight = 100
+var jumpHeight = 200
 var jumpTimeToPeak = 0.5
 var maxJumps = 1
 var currentJumps = 0
+const jumpHeightMult = 0.5
 
 var facing = 1
 
@@ -40,9 +41,4 @@ func _physics_process(_delta):
 
 func _initilialize_player_components():
 	return
-
-
-func _calculate_jump_height(jumpHeight: float):
-	jumpGravity = 2 * jumpHeight / pow(jumpTimeToPeak, 2)
-	jumpVelocity = -sqrt(2 * jumpGravity * jumpHeight)
 #endregion
