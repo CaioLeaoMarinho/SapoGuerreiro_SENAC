@@ -64,7 +64,7 @@ func _get_jump():
 		_switch_state(jumpState)
 		Player.currentJumps += 1
 
-func _get_input_states():
+func _get_input_direction():
 	if Input.is_action_pressed("input_left"):
 		Player.facing = -1
 	if Input.is_action_pressed("input_right"):
@@ -100,4 +100,9 @@ func _get_jump_peak():
 	if not Input.is_action_pressed("input_jump"):
 		Player.velocity.y *= Player.jumpHeightMult
 		_switch_state(jumpPeakState)
+		
+func _get_frog_hope():
+	if Input.is_action_pressed("input_jump") and Player.current_frog_rope:
+		if Player.can_hook:
+			_switch_state(hookState)
 #endregion

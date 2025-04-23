@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://cdg2il1ckafl8"]
+
+[ext_resource type="Texture2D" uid="uid://d1k3mcnq08l0p" path="res://Terrain/Sprites/HookAnchor.png" id="1_hxsdo"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_p4sbl"]
+radius = 165.161
+
+[node name="FrogRope" type="Sprite2D"]
+scale = Vector2(1.9375, 1.9375)
+texture = ExtResource("1_hxsdo")
+
+[node name="Area2D" type="Area2D" parent="." groups=["frog_rope"]]
+collision_layer = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_p4sbl")
+debug_color = Color(1, 1, 0.580392, 0.156863)
+
+[node name="PositionLeft" type="Marker2D" parent="."]
+position = Vector2(-115.613, 66.0645)
+
+[node name="PositionRight" type="Marker2D" parent="."]
+position = Vector2(115.613, 66.0645)

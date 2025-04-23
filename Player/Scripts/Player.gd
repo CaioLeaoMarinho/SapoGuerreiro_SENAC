@@ -1,11 +1,12 @@
 extends CharacterBody2D
 
-#region Referencias
+#region References
 @onready var sprite2d = $Sprite2D
 @onready var collision2d = $CollisionShape2D
 @onready var animation_player = $AnimationPlayer
 @onready var camera_2d = $Camera2D
 @onready var state_manager = $StateMachine
+@onready var frog_rope_detector = $FrogRopeDetector
 #endregion
 
 #region Variables
@@ -27,6 +28,9 @@ const jumpHeightMult = 0.5
 var facing = 1
 
 var canSwitchState = true
+
+var can_hook = true
+var current_frog_rope: Node = null
 #endregion
 
 #region Default Methods
@@ -35,10 +39,28 @@ func _ready():
 	
 func _physics_process(_delta):
 	move_and_slide()
+	
+	update_closest_frog_rope()
 #endregion
 
 #region Custom Methods
 
 func _initilialize_player_components():
 	return
+	
+func update_closest_frog_rope(max_distance := 1000.0):
+	var closest_rope = null
+	var closest_distance = max_distance
+
+	var overlapping_areas = frog_rope_detector.get_overlapping_areas()
+
+	for frog_rope in get_tree().get_nodes_in_group("frog_rope"):
+		if frog_rope in overlapping_areas:
+			var distance = global_position.distance_to(frog_rope.global_position)
+			if distance < closest_distance:
+				closest_distance = distance
+				closest_rope = frog_rope
+
+	current_frog_rope = closest_rope
+
 #endregion

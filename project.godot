@@ -16,7 +16,6 @@ config/features=PackedStringArray("4.2", "Forward Plus")
 
 [display]
 
-window/size/mode=3
 window/vsync/vsync_mode=2
 
 [input]
@@ -47,6 +46,8 @@ input_right={
 2d_physics/layer_1="Players"
 2d_physics/layer_2="World"
 2d_physics/layer_3="Enemies"
+2d_physics/layer_4="Collectables"
+2d_physics/layer_5="Frog Rope"
 
 [rendering]
 
