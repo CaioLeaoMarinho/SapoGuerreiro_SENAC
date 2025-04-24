@@ -1,9 +1,9 @@
 [gd_scene load_steps=7 format=3 uid="uid://dwwdcmgimhtqa"]
 
-[ext_resource type="Texture2D" uid="uid://cmuog6tia2g3p" path="res://Terrain/Sprites/Terrain (16x16).png" id="1_k4j02"]
+[ext_resource type="Texture2D" uid="uid://cmuog6tia2g3p" path="res://Assets/Terrain/Sprites/Terrain (16x16).png" id="1_k4j02"]
 [ext_resource type="PackedScene" uid="uid://cr7x3kf1nqqjl" path="res://Player/character_frog.tscn" id="2_svilh"]
 [ext_resource type="PackedScene" uid="uid://ddphek4m1vwbw" path="res://Enemies/Larva/[enemy]_larva.tscn" id="3_pduaj"]
-[ext_resource type="PackedScene" uid="uid://cdg2il1ckafl8" path="res://Terrain/HookAnchor.tscn" id="4_dvvpf"]
+[ext_resource type="PackedScene" uid="uid://cdg2il1ckafl8" path="res://Assets/RopeAnchor/HookAnchor.tscn" id="4_dvvpf"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uf8pr"]
 texture = ExtResource("1_k4j02")
@@ -469,11 +469,11 @@ layer_0/tile_data = PackedInt32Array(524288, 393216, 0, 524289, 458752, 0, 52429
 [node name="[enemy] Larva" parent="." instance=ExtResource("3_pduaj")]
 position = Vector2(2089, 475)
 
-[node name="FrogRope" parent="." instance=ExtResource("4_dvvpf")]
-position = Vector2(3456, 256)
-
 [node name="FrogRope2" parent="." instance=ExtResource("4_dvvpf")]
-position = Vector2(2568, 256)
+position = Vector2(2720, 120)
+
+[node name="FrogRope3" parent="." instance=ExtResource("4_dvvpf")]
+position = Vector2(3368, 120)
 
 [node name="Player" parent="." instance=ExtResource("2_svilh")]
 position = Vector2(3072, 512)

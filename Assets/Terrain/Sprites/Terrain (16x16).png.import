@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d1k3mcnq08l0p"
-path="res://.godot/imported/HookAnchor.png-7f25b1aa90ecf4eee6435f1c7ca457c9.ctex"
+uid="uid://cmuog6tia2g3p"
+path="res://.godot/imported/Terrain (16x16).png-0dcac9847224f34e071d49c8db5dd12f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Terrain/Sprites/HookAnchor.png"
-dest_files=["res://.godot/imported/HookAnchor.png-7f25b1aa90ecf4eee6435f1c7ca457c9.ctex"]
+source_file="res://Assets/Terrain/Sprites/Terrain (16x16).png"
+dest_files=["res://.godot/imported/Terrain (16x16).png-0dcac9847224f34e071d49c8db5dd12f.ctex"]
 
 [params]
 

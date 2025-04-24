@@ -40,6 +40,9 @@ func _switch_state(nextState):
 		currentState._exit_state()
 		currentState = nextState
 		currentState._enter_state()
+		
+		print(currentState.name)
+		
 		return
 	
 func _draw():
@@ -102,7 +105,7 @@ func _get_jump_peak():
 		_switch_state(jumpPeakState)
 		
 func _get_frog_hope():
-	if Input.is_action_pressed("input_jump") and Player.current_frog_rope:
+	if Input.is_action_just_pressed("input_jump") and Player.current_frog_rope:
 		if Player.can_hook:
 			_switch_state(hookState)
 #endregion

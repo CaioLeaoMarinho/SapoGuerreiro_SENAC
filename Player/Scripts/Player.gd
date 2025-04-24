@@ -7,6 +7,7 @@ extends CharacterBody2D
 @onready var camera_2d = $Camera2D
 @onready var state_manager = $StateMachine
 @onready var frog_rope_detector = $FrogRopeDetector
+
 #endregion
 
 #region Variables
