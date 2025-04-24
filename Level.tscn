@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://dwwdcmgimhtqa"]
+[gd_scene load_steps=10 format=3 uid="uid://dwwdcmgimhtqa"]
 
 [ext_resource type="Texture2D" uid="uid://cmuog6tia2g3p" path="res://Assets/Terrain/Sprites/Terrain (16x16).png" id="1_k4j02"]
 [ext_resource type="PackedScene" uid="uid://cr7x3kf1nqqjl" path="res://Player/character_frog.tscn" id="2_svilh"]
 [ext_resource type="PackedScene" uid="uid://ddphek4m1vwbw" path="res://Enemies/Larva/[enemy]_larva.tscn" id="3_pduaj"]
+[ext_resource type="Shader" path="res://Assets/Shaders/Outline.gdshader" id="4_6x4qq"]
 [ext_resource type="PackedScene" uid="uid://cdg2il1ckafl8" path="res://Assets/RopeAnchor/HookAnchor.tscn" id="4_dvvpf"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uf8pr"]
@@ -458,6 +459,18 @@ physics_layer_0/collision_layer = 2
 physics_layer_0/collision_mask = 5
 sources/0 = SubResource("TileSetAtlasSource_uf8pr")
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_un8hj"]
+resource_local_to_scene = true
+shader = ExtResource("4_6x4qq")
+shader_parameter/outline_color = Color(1, 1, 0, 1)
+shader_parameter/enable_outline = false
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fib4n"]
+resource_local_to_scene = true
+shader = ExtResource("4_6x4qq")
+shader_parameter/outline_color = Color(1, 1, 0, 1)
+shader_parameter/enable_outline = false
+
 [node name="Node" type="Node"]
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -470,9 +483,11 @@ layer_0/tile_data = PackedInt32Array(524288, 393216, 0, 524289, 458752, 0, 52429
 position = Vector2(2089, 475)
 
 [node name="FrogRope2" parent="." instance=ExtResource("4_dvvpf")]
-position = Vector2(2720, 120)
+material = SubResource("ShaderMaterial_un8hj")
+position = Vector2(2808, 120)
 
 [node name="FrogRope3" parent="." instance=ExtResource("4_dvvpf")]
+material = SubResource("ShaderMaterial_fib4n")
 position = Vector2(3368, 120)
 
 [node name="Player" parent="." instance=ExtResource("2_svilh")]

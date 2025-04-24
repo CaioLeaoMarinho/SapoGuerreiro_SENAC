@@ -7,8 +7,13 @@ func _on_area_2d_body_entered(body):
 	if body.name == "Player":
 		player_inside = true
 
-
 func _on_area_2d_body_exited(body):
 	if body.name == "Player":
 		player_inside = false
-		can_hook = true 
+		can_hook = true
+
+func _process(delta):
+	if player_inside and can_hook:
+		get_material().set_shader_parameter("enable_outline", true)
+	else:
+		get_material().set_shader_parameter("enable_outline", false)
