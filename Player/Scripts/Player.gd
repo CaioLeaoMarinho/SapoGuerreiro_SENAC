@@ -32,6 +32,7 @@ var canSwitchState = true
 
 var can_hook = true
 var current_frog_rope: Node = null
+var last_frog_rope: Node = null
 #endregion
 
 #region Default Methods

@@ -105,7 +105,8 @@ func _get_jump_peak():
 		_switch_state(jumpPeakState)
 		
 func _get_frog_hope():
-	if Input.is_action_just_pressed("input_jump") and Player.current_frog_rope:
-		if Player.can_hook:
+	if Input.is_action_just_pressed("input_jump") and Player.can_hook:
+		if Player.current_frog_rope and Player.current_frog_rope.owner.can_hook:
+			Player.current_frog_rope.owner.can_hook = false
 			_switch_state(hookState)
 #endregion

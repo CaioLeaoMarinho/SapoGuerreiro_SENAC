@@ -1,6 +1,14 @@
 extends Sprite2D
 
-@onready var area_2d = $Area2D
-@onready var position_left = $PositionLeft
-@onready var position_right = $PositionRight
+var player_inside = false
+var can_hook = true
 
+func _on_area_2d_body_entered(body):
+	if body.name == "Player":
+		player_inside = true
+
+
+func _on_area_2d_body_exited(body):
+	if body.name == "Player":
+		player_inside = false
+		can_hook = true 
