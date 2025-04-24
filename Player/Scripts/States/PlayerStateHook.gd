@@ -45,13 +45,11 @@ func _get_start_position():
 		var dist_right = Entity.global_position.distance_to(right_marker.global_position)
 
 		if dist_left < dist_right:
-			start_pos = left_marker.global_position
 			end_pos = right_marker.global_position
 		else:
-			start_pos = right_marker.global_position
 			end_pos = left_marker.global_position
-		
-		Entity.global_position = start_pos
+			
+		start_pos = Entity.global_position
 
 func _attach_rope():
 	var direction_vector = (start_pos - origin_pos).normalized()
