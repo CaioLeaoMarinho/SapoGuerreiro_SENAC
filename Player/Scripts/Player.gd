@@ -13,12 +13,14 @@ extends CharacterBody2D
 #region Variables
 var maxMoveSpeed = 500
 var currentMoveSpeed = maxMoveSpeed
+
 var groundAcceleration = 100
 var groundDeceleration = 100
 var jumpAcceleration = 10
 var jumpDeceleration = 10
 var acceleration = 0
 var deceleration = 0
+
 var moveDirectionX = 0
 
 var jumpGravity = 0

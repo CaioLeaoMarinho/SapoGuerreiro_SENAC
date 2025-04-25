@@ -2,7 +2,6 @@ extends BaseState
 
 #region Variables
 var swing_angle = 0.0
-var swing_speed = 3.0
 var swing_angular_velocity = 0.0
 var max_swing_angle = 60 # graus
 var swing_direction = 0
@@ -13,6 +12,8 @@ var is_hooked = false
 var origin_pos: Vector2
 var start_pos: Vector2
 var end_pos: Vector2
+
+var target_swing_angle = 0.0
 #endregion
 
 #region Default Methods
@@ -54,6 +55,8 @@ func _get_markers_position():
 func _attach_rope():
 	var direction_vector = (start_pos - origin_pos).normalized()
 	
+	target_swing_angle = origin_pos.angle_to_point(end_pos)
+	
 	swing_angle = atan2(direction_vector.x, direction_vector.y)
 	swing_direction = sign(start_pos.x - origin_pos.x) * -1
 	
@@ -71,6 +74,9 @@ func _get_detach_rope():
 	if Input.is_action_just_pressed("input_jump"):
 		_detach_rope()
 
+	if abs(origin_pos.angle_to_point(Entity.global_position) - target_swing_angle) < 0.2:
+		_detach_rope()
+
 func _swing_moviment(delta):
 	# Calcula aceleração angular
 	var angular_acceleration = -(2000 / rope_length) * sin(swing_angle)
@@ -81,5 +87,6 @@ func _swing_moviment(delta):
 	
 	# Atualiza posição com base no ângulo atual
 	var offset = Vector2(sin(swing_angle), cos(swing_angle)) * rope_length
+		
 	Entity.global_position = origin_pos + offset
 #endregion
