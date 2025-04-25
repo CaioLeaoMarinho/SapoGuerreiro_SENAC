@@ -13,8 +13,12 @@ extends CharacterBody2D
 #region Variables
 var maxMoveSpeed = 500
 var currentMoveSpeed = maxMoveSpeed
-var acceleration = 100
-var deceleration = 100
+var groundAcceleration = 100
+var groundDeceleration = 100
+var jumpAcceleration = 10
+var jumpDeceleration = 10
+var acceleration = 0
+var deceleration = 0
 var moveDirectionX = 0
 
 var jumpGravity = 0
@@ -43,6 +47,8 @@ func _physics_process(_delta):
 	move_and_slide()
 	
 	update_closest_frog_rope()
+	
+	update_acceleration()
 #endregion
 
 #region Custom Methods
@@ -65,4 +71,11 @@ func update_closest_frog_rope(max_distance := 1000.0):
 
 	current_frog_rope = closest_rope
 
+func update_acceleration():
+	if is_on_floor():
+		acceleration = groundAcceleration
+		deceleration = groundDeceleration
+	else:
+		acceleration = jumpAcceleration
+		deceleration = jumpDeceleration
 #endregion

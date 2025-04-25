@@ -21,7 +21,7 @@ func _enter_state():
 	
 	origin_pos = Entity.current_frog_rope.global_position
 	
-	_get_start_position()
+	_get_markers_position()
 	
 	rope_length = origin_pos.distance_to(start_pos)
 	
@@ -36,7 +36,7 @@ func _update_state(_delta : float):
 #endregion
 
 #region Custom Methods
-func _get_start_position():
+func _get_markers_position():
 	if Entity.current_frog_rope:
 		var left_marker = Entity.current_frog_rope.owner.get_node("PositionLeft")
 		var right_marker = Entity.current_frog_rope.owner.get_node("PositionRight")

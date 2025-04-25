@@ -484,11 +484,11 @@ position = Vector2(2089, 475)
 
 [node name="FrogRope2" parent="." instance=ExtResource("4_dvvpf")]
 material = SubResource("ShaderMaterial_un8hj")
-position = Vector2(2808, 120)
+position = Vector2(2399, 239)
 
 [node name="FrogRope3" parent="." instance=ExtResource("4_dvvpf")]
 material = SubResource("ShaderMaterial_fib4n")
-position = Vector2(3368, 120)
+position = Vector2(2959, 239)
 
 [node name="Player" parent="." instance=ExtResource("2_svilh")]
 position = Vector2(3072, 512)
