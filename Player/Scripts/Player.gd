@@ -7,17 +7,16 @@ extends CharacterBody2D
 @onready var camera_2d = $Camera2D
 @onready var state_manager = $StateMachine
 @onready var frog_rope_detector = $FrogRopeDetector
-
 #endregion
 
 #region Variables
 var maxMoveSpeed = 500
 var currentMoveSpeed = maxMoveSpeed
 
-var groundAcceleration = 100
-var groundDeceleration = 100
-var jumpAcceleration = 10
-var jumpDeceleration = 10
+var instantAcceleration = 100
+var instantDeceleration = 100
+var inertiaAcceleration = 10
+var inertiaDeceleration = 10
 var acceleration = 0
 var deceleration = 0
 
@@ -39,6 +38,7 @@ var canSwitchState = true
 var can_hook = true
 var current_frog_rope: Node = null
 var last_frog_rope: Node = null
+var launched_by_rope = false
 #endregion
 
 #region Default Methods
@@ -74,10 +74,10 @@ func update_closest_frog_rope(max_distance := 1000.0):
 	current_frog_rope = closest_rope
 
 func update_acceleration():
-	if is_on_floor():
-		acceleration = groundAcceleration
-		deceleration = groundDeceleration
+	if not launched_by_rope:
+		acceleration = instantAcceleration
+		deceleration = instantDeceleration
 	else:
-		acceleration = jumpAcceleration
-		deceleration = jumpDeceleration
+		acceleration = inertiaAcceleration
+		deceleration = inertiaDeceleration
 #endregion

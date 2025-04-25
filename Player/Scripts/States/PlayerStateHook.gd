@@ -68,6 +68,8 @@ func _detach_rope():
 	var tangent = Vector2(cos(swing_angle), -sin(swing_angle))
 	Entity.velocity = tangent.normalized() * swing_angular_velocity * rope_length
 	
+	Entity.launched_by_rope = true
+	
 	StateManager._switch_state(StateManager.idleState)
 
 func _get_detach_rope():
@@ -88,5 +90,7 @@ func _swing_moviment(delta):
 	# Atualiza posição com base no ângulo atual
 	var offset = Vector2(sin(swing_angle), cos(swing_angle)) * rope_length
 		
-	Entity.global_position = origin_pos + offset
+	var target_pos = origin_pos + offset
+	
+	Entity.global_position = target_pos
 #endregion
