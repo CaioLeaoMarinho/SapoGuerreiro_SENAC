@@ -10,26 +10,30 @@ extends CharacterBody2D
 #endregion
 
 #region Variables
-var maxMoveSpeed = 500
+@export_category("Configurar movimento")
+@export var maxMoveSpeed = 500
 var currentMoveSpeed = maxMoveSpeed
 
-var instantAcceleration = 100
-var instantDeceleration = 100
-var inertiaAcceleration = 10
-var inertiaDeceleration = 10
+@export_category("Configurar Acelerações")
+@export var instantAcceleration = 100
+@export var instantDeceleration = 100
+@export var inertiaAcceleration = 10
+@export var inertiaDeceleration = 10
 var acceleration = 0
 var deceleration = 0
 
 var moveDirectionX = 0
 
 var jumpGravity = 0
-var fallGravity = 2000
+@export_category("Gravidade de queda")
+@export var fallGravity = 2000
 var jumpVelocity = 0
-var jumpHeight = 200
-var jumpTimeToPeak = 0.5
-var maxJumps = 1
+@export_category("Configurar pulo")
+@export var jumpHeight = 200
+@export var jumpTimeToPeak = 0.5
+@export var maxJumps = 1
 var currentJumps = 0
-const jumpHeightMult = 0.5
+@export var jumpHeightMult = 0.5
 
 var facing = 1
 

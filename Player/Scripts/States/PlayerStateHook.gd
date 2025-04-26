@@ -3,7 +3,8 @@ extends BaseState
 # Configurações do Swing
 var swing_angle: float = 0.0
 var target_angle: float = 0.0
-const target_speed: float = 1250.0
+@export_category("Configurar balanço")
+@export var target_speed: float = 1250.0
 var rope_length: float = 0.0
 var is_hooked: bool = false
 var swing_direction: int = 1
