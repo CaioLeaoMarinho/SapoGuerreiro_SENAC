@@ -35,10 +35,10 @@ var jumpVelocity = 0
 var currentJumps = 0
 @export var jumpHeightMult = 0.5
 @export_category("Configurar frog rope")
-@export var min_rope_distance = 100
+@export var min_rope_distance = 150
 @export var max_rope_distance = 1000
 @export var target_rope_speed: float = 1250.0
-@export var rope_buffer_time: float = 1.0
+@export var rope_buffer_time: float = 0.2
 
 var rope_buffered = false
 var rope_buffer_timer = 0.0
@@ -60,8 +60,6 @@ func _ready():
 func _physics_process(_delta):
 	move_and_slide()
 	
-	update_closest_frog_rope()
-	
 	update_acceleration()
 #endregion
 
@@ -73,20 +71,22 @@ func _initilialize_player_components():
 func update_closest_frog_rope():
 	var closest_rope = null
 	var closest_distance = max_rope_distance
-	var nearby_ropes = []
-
 	var overlapping_areas = frog_rope_detector.get_overlapping_areas()
-
+	
 	for frog_rope in get_tree().get_nodes_in_group("frog_rope"):
 		if frog_rope in overlapping_areas:
 			var distance = global_position.distance_to(frog_rope.global_position)
-			if distance <= max_rope_distance:
-				nearby_ropes.append(frog_rope)
 			
-			if distance < closest_distance and distance >= min_rope_distance:
+			# Prioriza ropes na distância válida
+			if distance <= max_rope_distance and distance >= min_rope_distance:
+				if distance < closest_distance:
+					closest_distance = distance
+					closest_rope = frog_rope
+			# Se não encontrar nenhum na distância válida, pega o mais próximo
+			elif closest_rope == null and distance < closest_distance:
 				closest_distance = distance
 				closest_rope = frog_rope
-
+	
 	current_frog_rope = closest_rope
 
 func update_acceleration():

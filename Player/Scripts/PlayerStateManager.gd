@@ -111,37 +111,33 @@ func _get_frog_hope(delta):
 	
 	# Verificamos o input do jogador
 	if Input.is_action_just_pressed("input_hook") and Player.can_hook:
+		if not Player.can_hook:
+			return
+		Player.update_closest_frog_rope()
+	
 		if Player.current_frog_rope:
 			var distance = Player.global_position.distance_to(Player.current_frog_rope.global_position)
-			
-			# Verificamos se está na distância válida
-			if distance > Player.min_rope_distance and Player.current_frog_rope.owner.can_hook:
-				# Executa o hook imediatamente
+		
+			if distance >= Player.min_rope_distance:
 				_execute_hook()
 			else:
-				# Ativa o buffer se estiver muito perto
-				_activate_buffer()
+				Player.rope_buffered = true
+				Player.rope_buffer_timer = Player.rope_buffer_time
 
 func _process_rope_buffer(delta):
 	if Player.rope_buffered:
 		Player.rope_buffer_timer -= delta
-		
-		# Verifica se o buffer expirou
 		if Player.rope_buffer_timer <= 0:
 			Player.rope_buffered = false
 		else:
-			# Tenta executar o hook enquanto o buffer estiver ativo
+			Player.update_closest_frog_rope()  # Atualiza o rope mais próximo
 			if Player.current_frog_rope:
 				var distance = Player.global_position.distance_to(Player.current_frog_rope.global_position)
-				if distance > Player.min_rope_distance and Player.current_frog_rope.owner.can_hook:
+				if distance >= Player.min_rope_distance and Player.can_hook:
 					_execute_hook()
 
 func _execute_hook():
 	Player.current_frog_rope.owner.can_hook = false
 	Player.rope_buffered = false
 	_switch_state(hookState)
-
-func _activate_buffer():
-	Player.rope_buffered = true
-	Player.rope_buffer_timer = Player.rope_buffer_time
 #endregion
