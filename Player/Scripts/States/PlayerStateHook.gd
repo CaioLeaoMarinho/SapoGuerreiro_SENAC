@@ -1,6 +1,6 @@
 extends BaseState
 
-# Configurações do Swing
+#region Variables
 var swing_angle: float = 0.0
 var target_angle: float = 0.0
 var rope_length: float = 0.0
@@ -10,11 +10,14 @@ var swing_direction: int = 1
 var origin_pos: Vector2
 var start_pos: Vector2
 var end_pos: Vector2
+#endregion
 
+#region Default State Methods
 func _enter_state():
 	super()
 	origin_pos = Entity.current_frog_rope.global_position
 	_get_markers_position()
+	StateManager._switch_animation("frogRope")
 	rope_length = origin_pos.distance_to(start_pos)
 	_attach_rope()
 
@@ -23,8 +26,11 @@ func _update_state(delta: float):
 	if is_hooked:
 		_get_detach_rope()
 		_swing_movement(delta)
+		_update_rotation()
 
-# Define os pontos de início e fim do swing
+#endregion
+
+#region Custom Methods
 func _get_markers_position():
 	if Entity.current_frog_rope:
 		var left_marker = Entity.current_frog_rope.owner.get_node("PositionLeft")
@@ -39,30 +45,29 @@ func _get_markers_position():
 		else:
 			end_pos = right_marker.global_position
 			swing_direction = -1
+
 		start_pos = Entity.global_position
 
-# Inicia o swing
 func _attach_rope():
 	is_hooked = true
 
 	swing_angle = (start_pos - origin_pos).angle()
 
 	target_angle = (end_pos - origin_pos).angle()
+	
+	Entity.facing = swing_direction
+	StateManager._get_flip_h()
 
-# Movimento suave em arco
 func _swing_movement(delta):
 	var angular_speed = Entity.target_rope_speed / rope_length
-# Movimento com velocidade angular constante
 	var angle_change = angular_speed * delta * swing_direction
 	var remaining_angle = abs(target_angle - swing_angle)
 	
-	# Evita overshooting
 	if abs(angle_change) > remaining_angle:
 		angle_change = sign(angle_change) * remaining_angle
 	
 	swing_angle += angle_change
 	
-	# Atualiza posição
 	var new_position = origin_pos + Vector2(cos(swing_angle), sin(swing_angle)) * rope_length
 	Entity.global_position = new_position
 
@@ -81,4 +86,7 @@ func _get_detach_rope():
 
 	if abs(swing_angle - target_angle) < 0.6:
 		_detach_rope()
+
+func _update_rotation():
+	Entity.look_at(Entity.current_frog_rope.global_position)
 #endregion

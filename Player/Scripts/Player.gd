@@ -37,7 +37,7 @@ var currentJumps = 0
 @export_category("Configurar frog rope")
 @export var min_rope_distance = 150
 @export var max_rope_distance = 1000
-@export var target_rope_speed: float = 1250.0
+@export var target_rope_speed: float = 500.0
 @export var rope_buffer_time: float = 0.2
 
 var rope_buffered = false
@@ -56,6 +56,7 @@ var launched_by_rope = false
 #region Default Methods
 func _ready():
 	_initilialize_player_components()
+	print(global_rotation)
 	
 func _physics_process(_delta):
 	move_and_slide()
@@ -96,4 +97,8 @@ func update_acceleration():
 	else:
 		acceleration = inertiaAcceleration
 		deceleration = inertiaDeceleration
+
+func update_rotation():
+	if state_manager.currentState != state_manager.hookState:
+		rotation = 0
 #endregion
