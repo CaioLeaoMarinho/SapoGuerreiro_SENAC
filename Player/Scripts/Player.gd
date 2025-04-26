@@ -58,16 +58,20 @@ func _physics_process(_delta):
 func _initilialize_player_components():
 	return
 	
-func update_closest_frog_rope(max_distance := 1000.0):
+func update_closest_frog_rope(min_distance := 100.0, max_distance := 1000.0):
 	var closest_rope = null
 	var closest_distance = max_distance
+	var nearby_ropes = []
 
 	var overlapping_areas = frog_rope_detector.get_overlapping_areas()
 
 	for frog_rope in get_tree().get_nodes_in_group("frog_rope"):
 		if frog_rope in overlapping_areas:
 			var distance = global_position.distance_to(frog_rope.global_position)
-			if distance < closest_distance:
+			if distance <= max_distance:
+				nearby_ropes.append(frog_rope)
+			
+			if distance < closest_distance and distance >= min_distance:
 				closest_distance = distance
 				closest_rope = frog_rope
 
