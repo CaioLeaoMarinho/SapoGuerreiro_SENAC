@@ -17,7 +17,7 @@ func _update_state(_delta : float):
 	StateManager._get_horizontal_movement()
 	StateManager._get_flip_h()
 	StateManager._get_jump_peak()
-	StateManager._get_frog_hope()
+	StateManager._get_frog_hope(_delta)
 
 func _calculate_jump_velocity(jumpHeight: float):
 	Entity.jumpGravity = 2 * Entity.jumpHeight / pow(Entity.jumpTimeToPeak, 2)

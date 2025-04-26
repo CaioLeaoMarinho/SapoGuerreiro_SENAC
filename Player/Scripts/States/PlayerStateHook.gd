@@ -3,8 +3,6 @@ extends BaseState
 # Configurações do Swing
 var swing_angle: float = 0.0
 var target_angle: float = 0.0
-@export_category("Configurar balanço")
-@export var target_speed: float = 1250.0
 var rope_length: float = 0.0
 var is_hooked: bool = false
 var swing_direction: int = 1
@@ -53,7 +51,7 @@ func _attach_rope():
 
 # Movimento suave em arco
 func _swing_movement(delta):
-	var angular_speed = target_speed / rope_length
+	var angular_speed = Entity.target_rope_speed / rope_length
 # Movimento com velocidade angular constante
 	var angle_change = angular_speed * delta * swing_direction
 	var remaining_angle = abs(target_angle - swing_angle)
@@ -73,7 +71,7 @@ func _detach_rope():
 	Entity.launched_by_rope = true
 	
 	var tangent_vector = Vector2(-sin(swing_angle), cos(swing_angle))
-	Entity.velocity = tangent_vector * target_speed * swing_direction
+	Entity.velocity = tangent_vector * Entity.target_rope_speed * swing_direction
 	
 	StateManager._switch_state(StateManager.idleState)
 

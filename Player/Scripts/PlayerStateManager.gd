@@ -63,7 +63,7 @@ func _get_horizontal_movement():
 		Player.velocity.x = move_toward(Player.velocity.x, Player.moveDirectionX * Player.currentMoveSpeed, Player.deceleration)
 
 func _get_jump():
-	if Input.is_action_pressed("input_jump") and Player.currentJumps < Player.maxJumps:
+	if Input.is_action_just_pressed("input_jump") and Player.currentJumps < Player.maxJumps:
 		_switch_state(jumpState)
 		Player.currentJumps += 1
 
@@ -105,9 +105,43 @@ func _get_jump_peak():
 		Player.velocity.y *= Player.jumpHeightMult
 		_switch_state(jumpPeakState)
 		
-func _get_frog_hope():
-	if Input.is_action_just_pressed("input_jump") and Player.can_hook:
-		if Player.current_frog_rope and Player.current_frog_rope.owner.can_hook:
-			Player.current_frog_rope.owner.can_hook = false
-			_switch_state(hookState)
+func _get_frog_hope(delta):
+	# Primeiro processamos o buffer existente
+	_process_rope_buffer(delta)
+	
+	# Verificamos o input do jogador
+	if Input.is_action_just_pressed("input_hook") and Player.can_hook:
+		if Player.current_frog_rope:
+			var distance = Player.global_position.distance_to(Player.current_frog_rope.global_position)
+			
+			# Verificamos se está na distância válida
+			if distance > Player.min_rope_distance and Player.current_frog_rope.owner.can_hook:
+				# Executa o hook imediatamente
+				_execute_hook()
+			else:
+				# Ativa o buffer se estiver muito perto
+				_activate_buffer()
+
+func _process_rope_buffer(delta):
+	if Player.rope_buffered:
+		Player.rope_buffer_timer -= delta
+		
+		# Verifica se o buffer expirou
+		if Player.rope_buffer_timer <= 0:
+			Player.rope_buffered = false
+		else:
+			# Tenta executar o hook enquanto o buffer estiver ativo
+			if Player.current_frog_rope:
+				var distance = Player.global_position.distance_to(Player.current_frog_rope.global_position)
+				if distance > Player.min_rope_distance and Player.current_frog_rope.owner.can_hook:
+					_execute_hook()
+
+func _execute_hook():
+	Player.current_frog_rope.owner.can_hook = false
+	Player.rope_buffered = false
+	_switch_state(hookState)
+
+func _activate_buffer():
+	Player.rope_buffered = true
+	Player.rope_buffer_timer = Player.rope_buffer_time
 #endregion
