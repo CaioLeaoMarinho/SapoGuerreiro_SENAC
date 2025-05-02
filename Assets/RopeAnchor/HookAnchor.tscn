@@ -1,13 +1,14 @@
 [gd_scene load_steps=6 format=3 uid="uid://cdg2il1ckafl8"]
 
-[ext_resource type="Shader" path="res://Assets/Shaders/Outline.gdshader" id="1_0ptqc"]
 [ext_resource type="Texture2D" uid="uid://d1k3mcnq08l0p" path="res://Assets/RopeAnchor/Sprites/HookAnchor.png" id="1_hxsdo"]
+[ext_resource type="Shader" path="res://Assets/Shaders/Outline.gdshader" id="1_s2f65"]
 [ext_resource type="Script" path="res://Assets/RopeAnchor/Scripts/HookAnchor.gd" id="2_ogutp"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_td7fn"]
 resource_local_to_scene = true
-shader = ExtResource("1_0ptqc")
-shader_parameter/outline_color = Color(1, 1, 0, 1)
+shader = ExtResource("1_s2f65")
+shader_parameter/line_color = Color(0, 0, 0, 1)
+shader_parameter/line_thickness = 2.0
 shader_parameter/enable_outline = false
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_p4sbl"]

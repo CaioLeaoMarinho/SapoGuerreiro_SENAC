@@ -1,0 +1,11 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://bxaj3oelptoov"]
+
+[ext_resource type="Shader" uid="uid://f1tnmtlhurj4" path="res://Assets/Shaders/Water3D.tres" id="1_y0tk3"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_y0tk3")
+shader_parameter/WaterColor = Color(0.052385, 0.242873, 0.141121, 1)
+shader_parameter/FoamColor = Color(0.743803, 0.984621, 0.689983, 1)
+shader_parameter/Alpha = 1.0
+shader_parameter/Roughness = 1.0
