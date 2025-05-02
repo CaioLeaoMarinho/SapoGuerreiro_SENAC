@@ -38,7 +38,7 @@ var currentJumps = 0
 @export var min_rope_distance = 150
 @export var max_rope_distance = 1000
 @export var target_rope_speed: float = 500.0
-@export var rope_buffer_time: float = 0.2
+@export var rope_buffer_time: float = 0.3
 
 var rope_buffered = false
 var rope_buffer_timer = 0.0
@@ -56,7 +56,6 @@ var launched_by_rope = false
 #region Default Methods
 func _ready():
 	_initilialize_player_components()
-	print(global_rotation)
 	
 func _physics_process(_delta):
 	move_and_slide()
@@ -76,12 +75,12 @@ func get_valid_frog_ropes() -> Array:
 	for frog_rope in get_tree().get_nodes_in_group("frog_rope"):
 		if frog_rope in overlapping_areas:
 			var distance = global_position.distance_to(frog_rope.global_position)
-			if distance <= max_rope_distance and distance >= min_rope_distance:
+			if distance <= max_rope_distance:
 				valid_ropes.append(frog_rope)
 	
 	return valid_ropes
 	
-func update_closest_frog_rope():
+func get_closest_frog_rope() -> Node:
 	var closest_rope = null
 	var closest_distance = max_rope_distance
 	var valid_ropes = get_valid_frog_ropes()
@@ -92,7 +91,7 @@ func update_closest_frog_rope():
 			closest_distance = distance
 			closest_rope = frog_rope
 	
-	current_frog_rope = closest_rope
+	return closest_rope
 
 func update_acceleration():
 	if not launched_by_rope:

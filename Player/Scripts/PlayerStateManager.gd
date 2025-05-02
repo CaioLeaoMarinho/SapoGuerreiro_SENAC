@@ -106,14 +106,13 @@ func _get_jump_peak():
 		_switch_state(jumpPeakState)
 		
 func _get_frog_hope(delta):
-	# Primeiro processamos o buffer existente
 	_process_rope_buffer(delta)
 	
-	# Verificamos o input do jogador
 	if Input.is_action_just_pressed("input_hook") and Player.can_hook:
 		if not Player.can_hook:
 			return
-		Player.update_closest_frog_rope()
+		
+		Player.current_frog_rope = Player.get_closest_frog_rope()
 	
 		if Player.current_frog_rope:
 			var distance = Player.global_position.distance_to(Player.current_frog_rope.global_position)
@@ -130,7 +129,8 @@ func _process_rope_buffer(delta):
 		if Player.rope_buffer_timer <= 0:
 			Player.rope_buffered = false
 		else:
-			Player.update_closest_frog_rope()  # Atualiza o rope mais próximo
+			Player.current_frog_rope = Player.get_closest_frog_rope()
+			
 			if Player.current_frog_rope:
 				var distance = Player.global_position.distance_to(Player.current_frog_rope.global_position)
 				if distance >= Player.min_rope_distance and Player.can_hook:
