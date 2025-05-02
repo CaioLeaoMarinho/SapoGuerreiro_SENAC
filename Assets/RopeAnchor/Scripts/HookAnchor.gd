@@ -24,8 +24,6 @@ func _on_area_2d_body_exited(body):
 func _process(delta):
 	if player:
 		var current_player_frog_rope = player.get_closest_frog_rope()
-		print("self: ",self)
-		print("current frog rope: ",current_player_frog_rope)
 		
 		if current_player_frog_rope and current_player_frog_rope.owner == self:
 			self.get_material().set_shader_parameter("enable_outline", true)

@@ -1,10 +1,10 @@
 [gd_scene load_steps=10 format=3 uid="uid://ddphek4m1vwbw"]
 
-[ext_resource type="Script" path="res://Enemies/Larva/Scripts/Larva.gd" id="1_igl0y"]
-[ext_resource type="Script" path="res://Enemies/Larva/Scripts/LarvaStateManager.gd" id="1_pslg7"]
+[ext_resource type="Script" uid="uid://b733vjptdrdyy" path="res://Enemies/Larva/Scripts/Larva.gd" id="1_igl0y"]
+[ext_resource type="Script" uid="uid://d2trqf1h1f23" path="res://Enemies/Larva/Scripts/LarvaStateManager.gd" id="1_pslg7"]
 [ext_resource type="Texture2D" uid="uid://c8ape6iiiksg4" path="res://Enemies/Larva/Sprites/Walk (38x24).png" id="2_t8kdf"]
-[ext_resource type="Script" path="res://Enemies/Larva/Scripts/States/LarvaWalkState.gd" id="4_ubpxc"]
-[ext_resource type="Script" path="res://Enemies/Larva/Scripts/States/LarvaFallState.gd" id="5_ia5p0"]
+[ext_resource type="Script" uid="uid://by1k08dxfkto3" path="res://Enemies/Larva/Scripts/States/LarvaWalkState.gd" id="4_ubpxc"]
+[ext_resource type="Script" uid="uid://x0j4hkn7c2en" path="res://Enemies/Larva/Scripts/States/LarvaFallState.gd" id="5_ia5p0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x51ut"]
 size = Vector2(93, 60)
@@ -90,8 +90,8 @@ tracks/2/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_v7t6s"]
 _data = {
-"RESET": SubResource("Animation_4brul"),
-"walk": SubResource("Animation_vv5wl")
+&"RESET": SubResource("Animation_4brul"),
+&"walk": SubResource("Animation_vv5wl")
 }
 
 [node name="[enemy] Larva" type="CharacterBody2D"]

@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://cdg2il1ckafl8"]
 
 [ext_resource type="Texture2D" uid="uid://d1k3mcnq08l0p" path="res://Assets/RopeAnchor/Sprites/HookAnchor.png" id="1_hxsdo"]
-[ext_resource type="Shader" path="res://Assets/Shaders/Outline.gdshader" id="1_s2f65"]
-[ext_resource type="Script" path="res://Assets/RopeAnchor/Scripts/HookAnchor.gd" id="2_ogutp"]
+[ext_resource type="Shader" uid="uid://b7l4abhefeu7" path="res://Assets/Shaders/Outline.gdshader" id="1_s2f65"]
+[ext_resource type="Script" uid="uid://cuyi8eyxqa6vp" path="res://Assets/RopeAnchor/Scripts/HookAnchor.gd" id="2_ogutp"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_td7fn"]
 resource_local_to_scene = true

@@ -61,8 +61,8 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_e2p25"]
 _data = {
-"Idle": SubResource("Animation_fs3hl"),
-"RESET": SubResource("Animation_0uluw")
+&"Idle": SubResource("Animation_fs3hl"),
+&"RESET": SubResource("Animation_0uluw")
 }
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_ylj0t"]
@@ -88,7 +88,7 @@ texture = ExtResource("1_shhio")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Camera3D/Sprite3D"]
 libraries = {
-"": SubResource("AnimationLibrary_e2p25")
+&"": SubResource("AnimationLibrary_e2p25")
 }
 autoplay = "Idle"
 

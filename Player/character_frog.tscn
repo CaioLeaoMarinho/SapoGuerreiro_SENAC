@@ -1,18 +1,18 @@
 [gd_scene load_steps=23 format=3 uid="uid://cr7x3kf1nqqjl"]
 
-[ext_resource type="Script" path="res://Player/Scripts/Player.gd" id="1_7jske"]
+[ext_resource type="Script" uid="uid://dofqmgweliysy" path="res://Player/Scripts/Player.gd" id="1_7jske"]
 [ext_resource type="Texture2D" uid="uid://cntbuwfyacdom" path="res://Player/Sprites/Fall (32x32).png" id="1_nunj2"]
 [ext_resource type="Texture2D" uid="uid://47xnl77djb86" path="res://Player/Sprites/Grappling Hook.png" id="2_tv86d"]
 [ext_resource type="Texture2D" uid="uid://b3vuwhd50icf8" path="res://Player/Sprites/Idle (32x32).png" id="4_refok"]
 [ext_resource type="Texture2D" uid="uid://dt3dqi3w4end1" path="res://Player/Sprites/Jump (32x32).png" id="5_yuwje"]
 [ext_resource type="Texture2D" uid="uid://3g86th2jlibd" path="res://Player/Sprites/Run (32x32).png" id="6_iugvr"]
-[ext_resource type="Script" path="res://Player/Scripts/PlayerStateManager.gd" id="6_mjpkv"]
-[ext_resource type="Script" path="res://Player/Scripts/States/PlayerStateIdle.gd" id="7_fvo7o"]
-[ext_resource type="Script" path="res://Player/Scripts/States/PlayerStateWalk.gd" id="8_82ym4"]
-[ext_resource type="Script" path="res://Player/Scripts/States/PlayerStateJump.gd" id="9_blrg1"]
-[ext_resource type="Script" path="res://Player/Scripts/States/PlayerStateFall.gd" id="10_j2pvl"]
-[ext_resource type="Script" path="res://Player/Scripts/States/PlayerStateHook.gd" id="11_lsk01"]
-[ext_resource type="Script" path="res://Player/Scripts/States/PlayerStateJumpPeak.gd" id="12_4pnda"]
+[ext_resource type="Script" uid="uid://beipk67epegmc" path="res://Player/Scripts/PlayerStateManager.gd" id="6_mjpkv"]
+[ext_resource type="Script" uid="uid://d1proqqfd26dp" path="res://Player/Scripts/States/PlayerStateIdle.gd" id="7_fvo7o"]
+[ext_resource type="Script" uid="uid://biev7c248h26q" path="res://Player/Scripts/States/PlayerStateWalk.gd" id="8_82ym4"]
+[ext_resource type="Script" uid="uid://yw7wbk1ablr3" path="res://Player/Scripts/States/PlayerStateJump.gd" id="9_blrg1"]
+[ext_resource type="Script" uid="uid://dtph2hui0whfv" path="res://Player/Scripts/States/PlayerStateFall.gd" id="10_j2pvl"]
+[ext_resource type="Script" uid="uid://cxky7jl26f45u" path="res://Player/Scripts/States/PlayerStateHook.gd" id="11_lsk01"]
+[ext_resource type="Script" uid="uid://cjbhe4ql8m3tj" path="res://Player/Scripts/States/PlayerStateJumpPeak.gd" id="12_4pnda"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_352do"]
 radius = 32.0
@@ -301,12 +301,12 @@ tracks/3/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_tr2kp"]
 _data = {
-"RESET": SubResource("Animation_y1g8j"),
-"fall": SubResource("Animation_v6c6k"),
-"frogRope": SubResource("Animation_ix5u2"),
-"idle": SubResource("Animation_qywpd"),
-"jump": SubResource("Animation_bvfjd"),
-"walk": SubResource("Animation_e4u1q")
+&"RESET": SubResource("Animation_y1g8j"),
+&"fall": SubResource("Animation_v6c6k"),
+&"frogRope": SubResource("Animation_ix5u2"),
+&"idle": SubResource("Animation_qywpd"),
+&"jump": SubResource("Animation_bvfjd"),
+&"walk": SubResource("Animation_e4u1q")
 }
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wxnq7"]
@@ -331,7 +331,7 @@ shape = SubResource("CapsuleShape2D_352do")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_tr2kp")
+&"": SubResource("AnimationLibrary_tr2kp")
 }
 
 [node name="Camera2D" type="Camera2D" parent="."]

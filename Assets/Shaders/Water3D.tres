@@ -118,8 +118,8 @@ uniform sampler2D tex_frg_3;
 uniform sampler2D tex_frg_7;
 uniform vec4 FoamColor : source_color;
 uniform sampler2D depth_tex_frg_14 : hint_depth_texture;
-uniform float Alpha = 1;
-uniform float Roughness = 1;
+uniform float Alpha = 1.0;
+uniform float Roughness = 1.0;
 
 
 
