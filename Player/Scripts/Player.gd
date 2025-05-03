@@ -11,7 +11,7 @@ extends CharacterBody2D
 
 #region Variables
 @export_category("Configurar movimento")
-@export var maxMoveSpeed = 500
+@export var maxMoveSpeed = 700
 var currentMoveSpeed = maxMoveSpeed
 
 @export_category("Configurar Acelerações")
@@ -37,7 +37,7 @@ var currentJumps = 0
 @export_category("Configurar frog rope")
 @export var min_rope_distance = 150
 @export var max_rope_distance = 1000
-@export var target_rope_speed: float = 500.0
+@export var target_rope_speed: float = 1000.0
 @export var rope_buffer_time: float = 0.3
 
 var rope_buffered = false
