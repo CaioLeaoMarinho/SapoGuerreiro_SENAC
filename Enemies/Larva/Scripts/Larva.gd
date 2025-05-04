@@ -9,6 +9,8 @@ extends CharacterBody2D
 #endregion
 
 #region Variables
+var life : int = 1
+
 var currentMoveSpeed = 3000
 var moveDirectionX = -1
 
@@ -29,5 +31,8 @@ func _physics_process(_delta):
 
 func _initilialize_larva_components():
 	return
-
+	
+func take_damage(damage : int):
+	life -= damage
+	state_manager._switch_state(state_manager.hurtState)
 #endregion

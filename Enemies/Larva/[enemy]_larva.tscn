@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://ddphek4m1vwbw"]
+[gd_scene load_steps=12 format=3 uid="uid://ddphek4m1vwbw"]
 
 [ext_resource type="Script" uid="uid://b733vjptdrdyy" path="res://Enemies/Larva/Scripts/Larva.gd" id="1_igl0y"]
 [ext_resource type="Script" uid="uid://d2trqf1h1f23" path="res://Enemies/Larva/Scripts/LarvaStateManager.gd" id="1_pslg7"]
 [ext_resource type="Texture2D" uid="uid://c8ape6iiiksg4" path="res://Enemies/Larva/Sprites/Walk (38x24).png" id="2_t8kdf"]
 [ext_resource type="Script" uid="uid://by1k08dxfkto3" path="res://Enemies/Larva/Scripts/States/LarvaWalkState.gd" id="4_ubpxc"]
-[ext_resource type="Script" uid="uid://x0j4hkn7c2en" path="res://Enemies/Larva/Scripts/States/LarvaFallState.gd" id="5_ia5p0"]
+[ext_resource type="Script" uid="uid://cqlqboxmr36y0" path="res://Enemies/Larva/Scripts/States/LarvaHurtState.gd" id="5_a04bj"]
+[ext_resource type="Script" uid="uid://c51ti68vi5ybe" path="res://Enemies/Larva/Scripts/States/LarvaDieState.gd" id="6_l7j3p"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x51ut"]
 size = Vector2(93, 60)
@@ -94,7 +95,10 @@ _data = {
 &"walk": SubResource("Animation_vv5wl")
 }
 
-[node name="[enemy] Larva" type="CharacterBody2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_curdm"]
+size = Vector2(87, 42)
+
+[node name="[enemy] Larva" type="CharacterBody2D" groups=["enemy"]]
 collision_layer = 4
 collision_mask = 2
 script = ExtResource("1_igl0y")
@@ -110,12 +114,21 @@ shape = SubResource("RectangleShape2D_x51ut")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_v7t6s")
+&"": SubResource("AnimationLibrary_v7t6s")
 }
 
 [node name="WallDetector" type="RayCast2D" parent="."]
 target_position = Vector2(-55, 0)
 collision_mask = 6
+
+[node name="Hurtbox" type="Area2D" parent="." groups=["hurtbox"]]
+collision_layer = 64
+collision_mask = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
+position = Vector2(1.5, 15)
+shape = SubResource("RectangleShape2D_curdm")
+debug_color = Color(1, 0, 0.0901961, 0.0941176)
 
 [node name="StateMachine" type="Node" parent="."]
 script = ExtResource("1_pslg7")
@@ -123,5 +136,8 @@ script = ExtResource("1_pslg7")
 [node name="Walk" type="Node" parent="StateMachine"]
 script = ExtResource("4_ubpxc")
 
-[node name="Fall" type="Node" parent="StateMachine"]
-script = ExtResource("5_ia5p0")
+[node name="Hurt" type="Node" parent="StateMachine"]
+script = ExtResource("5_a04bj")
+
+[node name="Die" type="Node" parent="StateMachine"]
+script = ExtResource("6_l7j3p")

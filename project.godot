@@ -14,9 +14,12 @@ config/name="SapoGuerreiro"
 run/main_scene="res://Scenes/Level.tscn"
 config/features=PackedStringArray("4.4", "Forward Plus")
 
-[display]
+[global_group]
 
-window/vsync/vsync_mode=2
+enemy=""
+hurtbox=""
+hitbox=""
+player=""
 
 [input]
 
@@ -54,23 +57,10 @@ input_hook={
 2d_physics/layer_3="Enemies"
 2d_physics/layer_4="Collectables"
 2d_physics/layer_5="Frog Rope"
+2d_physics/layer_6="Hitbox"
+2d_physics/layer_7="Hurtbox"
 
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
 shader_compiler/shader_cache/enabled=false
-
-[shader_globals]
-
-wind_intensity={
-"type": "float",
-"value": 0.0
-}
-wind_direction={
-"type": "vec3",
-"value": Vector3(0, 0, 0)
-}
-player_position={
-"type": "vec3",
-"value": Vector3(0, 0, 0)
-}

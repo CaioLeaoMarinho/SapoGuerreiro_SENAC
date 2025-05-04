@@ -2,6 +2,8 @@ extends Node
 
 #region States
 @onready var walkState = $Walk
+@onready var dieState: Node = $Die
+@onready var hurtState: Node = $Hurt
 #endregion
 
 #region References
@@ -52,12 +54,7 @@ func _get_flip_h():
 	
 func _horizontal_movement(delta: float):
 	Larva.velocity.x = Larva.moveDirectionX * Larva.currentMoveSpeed * delta
-	
-func _get_gravity(delta, gravity):
-	if not Larva.is_on_floor():
-		Larva.velocity.y += gravity * delta
 		
-func _get_landing():
-	if Larva.is_on_floor():
-		_switch_state(walkState)
+func die():
+	_switch_state(dieState)
 #endregion

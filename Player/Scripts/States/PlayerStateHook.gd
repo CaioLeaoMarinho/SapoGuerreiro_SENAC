@@ -73,7 +73,7 @@ func _swing_movement(delta):
 
 func _detach_rope():
 	is_hooked = false
-	Entity.launched_by_rope = true
+	Entity.in_inertia = true
 	
 	var tangent_vector = Vector2(-sin(swing_angle), cos(swing_angle))
 	Entity.velocity = tangent_vector * Entity.target_rope_speed * swing_direction

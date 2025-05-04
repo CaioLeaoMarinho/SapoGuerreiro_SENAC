@@ -7,9 +7,12 @@ extends CharacterBody2D
 @onready var camera_2d = $Camera2D
 @onready var state_manager = $StateMachine
 @onready var frog_rope_detector = $FrogRopeDetector
+@onready var stomp_attack_area: Area2D = $StompAttackArea
 #endregion
 
 #region Variables
+@export_category("Configurar Player")
+@export var life : int = 2
 @export_category("Configurar movimento")
 @export var maxMoveSpeed = 500
 var currentMoveSpeed = maxMoveSpeed
@@ -50,7 +53,7 @@ var canSwitchState = true
 var can_hook = true
 var current_frog_rope: Node = null
 var last_frog_rope: Node = null
-var launched_by_rope = false
+var in_inertia = false
 #endregion
 
 #region Default Methods
@@ -59,7 +62,6 @@ func _ready():
 	
 func _physics_process(_delta):
 	move_and_slide()
-	
 	update_acceleration()
 #endregion
 
@@ -94,7 +96,7 @@ func get_closest_frog_rope() -> Node:
 	return closest_rope
 
 func update_acceleration():
-	if not launched_by_rope:
+	if not in_inertia:
 		acceleration = instantAcceleration
 		deceleration = instantDeceleration
 	else:
