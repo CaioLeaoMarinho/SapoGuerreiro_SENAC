@@ -13,6 +13,8 @@ extends CharacterBody2D
 #region Variables
 @export_category("Configurar Player")
 @export var life : int = 2
+@export var knockback_power : int = 20
+var knockback_vector := Vector2.ZERO
 @export_category("Configurar movimento")
 @export var maxMoveSpeed = 700
 var currentMoveSpeed = maxMoveSpeed

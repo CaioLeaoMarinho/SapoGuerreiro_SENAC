@@ -28,10 +28,10 @@ shape = SubResource("CircleShape2D_p4sbl")
 debug_color = Color(1, 1, 0.580392, 0.156863)
 
 [node name="PositionLeft" type="Marker2D" parent="."]
-position = Vector2(-115.613, 66.0645)
+position = Vector2(-99.0968, 66.0645)
 
 [node name="PositionRight" type="Marker2D" parent="."]
-position = Vector2(115.613, 66.0645)
+position = Vector2(99.0968, 66.0645)
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

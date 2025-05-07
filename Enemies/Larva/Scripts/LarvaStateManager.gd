@@ -57,4 +57,12 @@ func _horizontal_movement(delta: float):
 		
 func die():
 	_switch_state(dieState)
+	
+func _get_gravity(delta, gravity):
+	if not Larva.is_on_floor():
+		Larva.velocity.y += gravity * delta
+		
+func _get_landing():
+	if Larva.is_on_floor():
+		_switch_state(walkState)
 #endregion

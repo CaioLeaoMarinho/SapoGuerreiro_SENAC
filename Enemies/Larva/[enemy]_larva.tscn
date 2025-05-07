@@ -1,11 +1,23 @@
-[gd_scene load_steps=12 format=3 uid="uid://ddphek4m1vwbw"]
+[gd_scene load_steps=19 format=3 uid="uid://ddphek4m1vwbw"]
 
 [ext_resource type="Script" uid="uid://b733vjptdrdyy" path="res://Enemies/Larva/Scripts/Larva.gd" id="1_igl0y"]
 [ext_resource type="Script" uid="uid://d2trqf1h1f23" path="res://Enemies/Larva/Scripts/LarvaStateManager.gd" id="1_pslg7"]
+[ext_resource type="Shader" uid="uid://clwd0knwgq4c5" path="res://Assets/Shaders/CutSprite.gdshader" id="2_l8oq3"]
 [ext_resource type="Texture2D" uid="uid://c8ape6iiiksg4" path="res://Enemies/Larva/Sprites/Walk (38x24).png" id="2_t8kdf"]
+[ext_resource type="Texture2D" uid="uid://dco2o2qqlm6r1" path="res://Enemies/Larva/Sprites/Snail without shell.png" id="4_j4jp7"]
 [ext_resource type="Script" uid="uid://by1k08dxfkto3" path="res://Enemies/Larva/Scripts/States/LarvaWalkState.gd" id="4_ubpxc"]
 [ext_resource type="Script" uid="uid://cqlqboxmr36y0" path="res://Enemies/Larva/Scripts/States/LarvaHurtState.gd" id="5_a04bj"]
 [ext_resource type="Script" uid="uid://c51ti68vi5ybe" path="res://Enemies/Larva/Scripts/States/LarvaDieState.gd" id="6_l7j3p"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_a4ane"]
+resource_local_to_scene = true
+shader = ExtResource("2_l8oq3")
+shader_parameter/cut_progress = 0.0
+shader_parameter/cut_vertical_progress = 0.0
+shader_parameter/cut_position = 0.22
+shader_parameter/separation_force = 0.0
+shader_parameter/hit_effect = true
+shader_parameter/hit_color = Color(1, 1, 1, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x51ut"]
 size = Vector2(93, 60)
@@ -48,6 +60,120 @@ tracks/2/keys = {
 "update": 1,
 "values": [0]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(3.36842, 1.91667)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Sprite2D:material:shader_parameter/hit_effect")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Sprite2D:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 13)]
+}
+
+[sub_resource type="Animation" id="Animation_a04bj"]
+resource_name = "StompDie"
+length = 0.51
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(3.36842, 1.91667), Vector2(3, 3)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:material:shader_parameter/hit_effect")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 13), Vector2(0, 0)]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.51),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"queue_free"
+}]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Sprite2D:hframes")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Sprite2D:texture")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("4_j4jp7")]
+}
 
 [sub_resource type="Animation" id="Animation_vv5wl"]
 resource_name = "walk"
@@ -88,11 +214,85 @@ tracks/2/keys = {
 "update": 1,
 "values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D:material:shader_parameter/hit_effect")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Sprite2D:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 9.53674e-07)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Sprite2D:scale")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(3, 3)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_v7t6s"]
 _data = {
 &"RESET": SubResource("Animation_4brul"),
+&"StompDie": SubResource("Animation_a04bj"),
 &"walk": SubResource("Animation_vv5wl")
+}
+
+[sub_resource type="Animation" id="Animation_l8oq3"]
+resource_name = "Hurt"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:material:shader_parameter/hit_effect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_j4jp7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:material:shader_parameter/hit_effect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_a4ane"]
+_data = {
+&"Hurt": SubResource("Animation_l8oq3"),
+&"RESET": SubResource("Animation_j4jp7")
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_curdm"]
@@ -104,29 +304,44 @@ collision_mask = 2
 script = ExtResource("1_igl0y")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(3, 3)
+material = SubResource("ShaderMaterial_a4ane")
+position = Vector2(0, 13)
+scale = Vector2(3.36842, 1.91667)
 texture = ExtResource("2_t8kdf")
 hframes = 10
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(4.5, 6)
+position = Vector2(4, 6)
 shape = SubResource("RectangleShape2D_x51ut")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 &"": SubResource("AnimationLibrary_v7t6s")
 }
+autoplay = "walk"
+
+[node name="HurtAnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_a4ane")
+}
 
 [node name="WallDetector" type="RayCast2D" parent="."]
-target_position = Vector2(-55, 0)
+position = Vector2(0, 7)
+target_position = Vector2(-48, 0)
 collision_mask = 6
 
-[node name="Hurtbox" type="Area2D" parent="." groups=["hurtbox"]]
+[node name="FloorDetector" type="RayCast2D" parent="."]
+position = Vector2(0, 7)
+target_position = Vector2(-46, 33)
+collision_mask = 2
+
+[node name="StompHurtbox" type="Area2D" parent="." groups=["stomp_hurtbox"]]
+position = Vector2(1.5, 15)
 collision_layer = 64
 collision_mask = 32
+monitoring = false
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
-position = Vector2(1.5, 15)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StompHurtbox"]
 shape = SubResource("RectangleShape2D_curdm")
 debug_color = Color(1, 0, 0.0901961, 0.0941176)
 
