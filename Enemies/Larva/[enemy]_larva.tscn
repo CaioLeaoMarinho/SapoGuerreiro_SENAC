@@ -296,7 +296,7 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_curdm"]
-size = Vector2(87, 42)
+size = Vector2(90, 42)
 
 [node name="[enemy] Larva" type="CharacterBody2D" groups=["enemy"]]
 collision_layer = 4
@@ -311,7 +311,7 @@ texture = ExtResource("2_t8kdf")
 hframes = 10
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(4, 6)
+position = Vector2(4.5, 6)
 shape = SubResource("RectangleShape2D_x51ut")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -342,6 +342,7 @@ collision_mask = 32
 monitoring = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StompHurtbox"]
+position = Vector2(1.5, 0)
 shape = SubResource("RectangleShape2D_curdm")
 debug_color = Color(1, 0, 0.0901961, 0.0941176)
 
