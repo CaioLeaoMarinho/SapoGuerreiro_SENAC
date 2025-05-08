@@ -20,6 +20,7 @@ enemy=""
 hurtbox=""
 hitbox=""
 player=""
+stomp_hurtbox=""
 
 [input]
 

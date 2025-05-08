@@ -33,18 +33,16 @@ func _update_state(delta: float):
 #region Custom Methods
 func _get_markers_position():
 	if Entity.current_frog_rope:
-		var left_marker = Entity.current_frog_rope.owner.get_node("PositionLeft")
-		var right_marker = Entity.current_frog_rope.owner.get_node("PositionRight")
+		var hook_anchor = Entity.current_frog_rope.owner
+		var left_marker = hook_anchor.get_node("PositionLeft")
+		var right_marker = hook_anchor.get_node("PositionRight")
 
-		var dist_left = Entity.global_position.distance_to(left_marker.global_position)
-		var dist_right = Entity.global_position.distance_to(right_marker.global_position)
-
-		if dist_left > dist_right:
-			end_pos = left_marker.global_position
-			swing_direction = 1
-		else:
+		if Entity.global_position.x < hook_anchor.global_position.x:
 			end_pos = right_marker.global_position
 			swing_direction = -1
+		else:
+			end_pos = left_marker.global_position
+			swing_direction = 1
 
 		start_pos = Entity.global_position
 

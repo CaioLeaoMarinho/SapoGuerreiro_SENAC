@@ -4,15 +4,22 @@ extends CharacterBody2D
 @onready var sprite2d = $Sprite2D
 @onready var collision2d = $CollisionShape2D
 @onready var animation_player = $AnimationPlayer
+@onready var hurt_animation_player: AnimationPlayer = $HurtAnimationPlayer
 @onready var camera_2d = $Camera2D
 @onready var state_manager = $StateMachine
 @onready var frog_rope_detector = $FrogRopeDetector
 @onready var stomp_attack_area: Area2D = $StompAttackArea
+@onready var invencibility_timer: Timer = $InvencibilityTimer
 #endregion
 
 #region Variables
 @export_category("Configurar Player")
-@export var life : int = 2
+@export var life : int = 10
+var hurt_invencible : bool = false
+@export var knockback_force := 500
+@export var knockback_duration := 0.1
+var knockback_velocity := Vector2.ZERO
+var knockback_timer := 0.0
 @export_category("Configurar movimento")
 @export var maxMoveSpeed = 700
 var currentMoveSpeed = maxMoveSpeed
@@ -41,7 +48,7 @@ var currentJumps = 0
 @export var min_rope_distance = 150
 @export var max_rope_distance = 1000
 @export var target_rope_speed: float = 1000.0
-@export var rope_buffer_time: float = 0.3
+@export var rope_buffer_time: float = 0.1
 
 var rope_buffered = false
 var rope_buffer_timer = 0.0
@@ -54,6 +61,7 @@ var can_hook = true
 var current_frog_rope: Node = null
 var last_frog_rope: Node = null
 var in_inertia = false
+var agressor_pos : Vector2
 #endregion
 
 #region Default Methods
@@ -106,4 +114,16 @@ func update_acceleration():
 func update_rotation():
 	if state_manager.currentState != state_manager.hookState:
 		rotation = 0
+		
+func take_damage(damage : int, enemy_pos : Vector2):
+	if not hurt_invencible:
+		hurt_invencible = true
+		life -= damage
+		invencibility_timer.start()
+		agressor_pos = enemy_pos
+		state_manager._switch_state(state_manager.hurtState)
 #endregion
+
+func _on_invencibility_timer_timeout() -> void:
+	if hurt_invencible:
+		hurt_invencible = false

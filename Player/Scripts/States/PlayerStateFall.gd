@@ -26,7 +26,7 @@ func _exit_state():
 
 #region Custom Methods
 func _on_stomp_area(area: Area2D):
-	if area.is_in_group("hurtbox"):
+	if area.is_in_group("stomp_hurtbox"):
 		stomp_attack(area.owner)
 		
 func check_stomp_area():
@@ -34,6 +34,6 @@ func check_stomp_area():
 		_on_stomp_area(area)
 
 func stomp_attack(body):
-	body.take_damage(body.life)
+	body.take_damage(1, "stomp")
 	StateManager._switch_state(StateManager.jumpState)
 #endregion
