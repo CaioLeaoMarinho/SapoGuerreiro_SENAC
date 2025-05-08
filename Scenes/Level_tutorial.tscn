@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=4 uid="uid://dkoajbu050fer"]
+[gd_scene load_steps=10 format=4 uid="uid://bx8efc37fee0a"]
 
 [ext_resource type="PackedScene" uid="uid://caw0votrv6yn" path="res://tile_map_layer_0.tscn" id="1_b72yq"]
 [ext_resource type="PackedScene" uid="uid://cr7x3kf1nqqjl" path="res://Player/character_frog.tscn" id="2_omm2d"]
@@ -44,7 +44,7 @@ position = Vector2(272, 520)
 
 [node name="FrogRope" parent="." instance=ExtResource("3_nn78s")]
 material = SubResource("ShaderMaterial_itqdp")
-position = Vector2(4544, 120)
+position = Vector2(4544, 112)
 
 [node name="FrogRope2" parent="." instance=ExtResource("3_nn78s")]
 material = SubResource("ShaderMaterial_ry78d")
