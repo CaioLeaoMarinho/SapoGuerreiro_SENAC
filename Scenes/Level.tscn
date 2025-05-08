@@ -205,4 +205,4 @@ material = SubResource("ShaderMaterial_qc27i")
 position = Vector2(2760, 208)
 
 [node name="[enemy] Larva" parent="." instance=ExtResource("2_p2uti")]
-position = Vector2(2939, 476)
+position = Vector2(2569, 476)

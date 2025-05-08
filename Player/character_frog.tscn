@@ -1,7 +1,8 @@
-[gd_scene load_steps=24 format=3 uid="uid://cr7x3kf1nqqjl"]
+[gd_scene load_steps=32 format=3 uid="uid://cr7x3kf1nqqjl"]
 
 [ext_resource type="Script" uid="uid://dofqmgweliysy" path="res://Player/Scripts/Player.gd" id="1_7jske"]
 [ext_resource type="Texture2D" uid="uid://cntbuwfyacdom" path="res://Player/Sprites/Fall (32x32).png" id="1_nunj2"]
+[ext_resource type="Shader" uid="uid://b2nbajkg01b35" path="res://Assets/Shaders/HurtShader.gdshader" id="2_jrilk"]
 [ext_resource type="Texture2D" uid="uid://47xnl77djb86" path="res://Player/Sprites/Grappling Hook.png" id="2_tv86d"]
 [ext_resource type="Texture2D" uid="uid://b3vuwhd50icf8" path="res://Player/Sprites/Idle (32x32).png" id="4_refok"]
 [ext_resource type="Texture2D" uid="uid://dt3dqi3w4end1" path="res://Player/Sprites/Jump (32x32).png" id="5_yuwje"]
@@ -13,10 +14,54 @@
 [ext_resource type="Script" uid="uid://dtph2hui0whfv" path="res://Player/Scripts/States/PlayerStateFall.gd" id="10_j2pvl"]
 [ext_resource type="Script" uid="uid://cxky7jl26f45u" path="res://Player/Scripts/States/PlayerStateHook.gd" id="11_lsk01"]
 [ext_resource type="Script" uid="uid://cjbhe4ql8m3tj" path="res://Player/Scripts/States/PlayerStateJumpPeak.gd" id="12_4pnda"]
+[ext_resource type="Script" uid="uid://bnyiahr1mrucf" path="res://Player/Scripts/States/PlayerStateHurt.gd" id="14_ng5dx"]
+[ext_resource type="Script" uid="uid://3i8gvb4yream" path="res://Player/PlayerStateDie.gd" id="15_r3r6e"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_sdmge"]
+shader = ExtResource("2_jrilk")
+shader_parameter/hit_effect = true
+shader_parameter/hit_color = Color(1, 1, 1, 1)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_352do"]
 radius = 32.0
 height = 64.0
+
+[sub_resource type="Animation" id="Animation_djiqc"]
+resource_name = "Hurt"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:material:shader_parameter/hit_effect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_jrilk"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:material:shader_parameter/hit_effect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_k0tbs"]
+_data = {
+&"Hurt": SubResource("Animation_djiqc"),
+&"RESET": SubResource("Animation_jrilk")
+}
 
 [sub_resource type="Animation" id="Animation_y1g8j"]
 length = 0.001
@@ -312,8 +357,11 @@ _data = {
 [sub_resource type="CircleShape2D" id="CircleShape2D_wxnq7"]
 radius = 32.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_pugjy"]
+radius = 32.0
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r3r6e"]
-size = Vector2(48, 16)
+size = Vector2(64, 16)
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 collision_mask = 2
@@ -324,6 +372,7 @@ target_rope_speed = 1250.0
 rope_buffer_time = 0.2
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_sdmge")
 position = Vector2(0, -44)
 scale = Vector2(2.75, 2.75)
 texture = ExtResource("4_refok")
@@ -333,11 +382,20 @@ hframes = 11
 position = Vector2(0, -32)
 shape = SubResource("CapsuleShape2D_352do")
 
+[node name="HurtAnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_k0tbs")
+}
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 &"": SubResource("AnimationLibrary_tr2kp")
 }
 autoplay = "idle"
+
+[node name="InvencibilityTimer" type="Timer" parent="."]
+wait_time = 1.5
+one_shot = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position_smoothing_enabled = true
@@ -352,12 +410,24 @@ position = Vector2(0, -32)
 shape = SubResource("CircleShape2D_wxnq7")
 debug_color = Color(1, 1, 1, 0.42)
 
+[node name="Hurtbox" type="Area2D" parent="." groups=["hurtbox"]]
+collision_layer = 64
+collision_mask = 32
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
+position = Vector2(0, -40)
+shape = SubResource("CircleShape2D_pugjy")
+debug_color = Color(0.705882, 0.603922, 0, 0.0666667)
+
 [node name="StompAttackArea" type="Area2D" parent="." groups=["hitbox"]]
+position = Vector2(0, 16)
 collision_layer = 32
 collision_mask = 64
+monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StompAttackArea"]
-position = Vector2(0, -8)
+position = Vector2(0, -24)
 shape = SubResource("RectangleShape2D_r3r6e")
 debug_color = Color(0.996078, 0, 0.2, 0.141176)
 
@@ -381,3 +451,11 @@ script = ExtResource("10_j2pvl")
 
 [node name="Hook" type="Node" parent="StateMachine"]
 script = ExtResource("11_lsk01")
+
+[node name="Hurt" type="Node" parent="StateMachine"]
+script = ExtResource("14_ng5dx")
+
+[node name="Die" type="Node" parent="StateMachine"]
+script = ExtResource("15_r3r6e")
+
+[connection signal="timeout" from="InvencibilityTimer" to="." method="_on_invencibility_timer_timeout"]

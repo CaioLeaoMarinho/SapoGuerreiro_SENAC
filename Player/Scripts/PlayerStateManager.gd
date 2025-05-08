@@ -7,7 +7,8 @@ extends Node
 @onready var fallState = $Fall
 @onready var hookState = $Hook
 @onready var jumpPeakState = $JumpPeak
-
+@onready var hurtState: Node = $Hurt
+@onready var dieState: Node = $Die
 #endregion
 
 #region Variables
@@ -140,4 +141,7 @@ func _execute_hook():
 	Player.current_frog_rope.owner.can_hook = false
 	Player.rope_buffered = false
 	_switch_state(hookState)
+
+func die():
+	_switch_state(dieState)
 #endregion

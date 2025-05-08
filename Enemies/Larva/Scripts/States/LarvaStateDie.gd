@@ -11,4 +11,4 @@ func _enter_state():
 		die_type = "StompDie"
 	
 	if die_type != null:
-		Entity.animation_player.play(die_type)
+		StateManager._switch_animation(die_type)

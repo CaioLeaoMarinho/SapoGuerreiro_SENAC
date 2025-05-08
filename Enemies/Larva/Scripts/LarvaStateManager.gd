@@ -66,3 +66,6 @@ func _get_landing():
 	if Larva.is_on_floor():
 		_switch_state(walkState)
 #endregion
+
+func cause_damage(victim : Node2D):
+	victim.take_damage(Larva.damage, Larva.global_position)
