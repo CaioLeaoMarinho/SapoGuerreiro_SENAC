@@ -100,7 +100,7 @@ func get_closest_frog_rope() -> Node:
 		if distance < closest_distance:
 			closest_distance = distance
 			closest_rope = frog_rope
-	
+
 	return closest_rope
 
 func update_acceleration():

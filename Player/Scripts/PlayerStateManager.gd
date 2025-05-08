@@ -80,7 +80,7 @@ func _get_flip_h():
 func _get_gravity(delta, gravity):
 	if not Player.is_on_floor():
 		Player.velocity.y += gravity * delta
-
+	
 func _get_falling():
 	if not Player.is_on_floor():
 		_switch_state(fallState)

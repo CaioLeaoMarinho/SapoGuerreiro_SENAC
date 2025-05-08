@@ -7,7 +7,6 @@ func _enter_state():
 	StateManager._switch_animation("fall")
 	
 	Entity.stomp_attack_area.area_entered.connect(_on_stomp_area)
-	check_stomp_area()
 	
 func _update_state(_delta : float):
 	
@@ -28,10 +27,6 @@ func _exit_state():
 func _on_stomp_area(area: Area2D):
 	if area.is_in_group("stomp_hurtbox"):
 		stomp_attack(area.owner)
-		
-func check_stomp_area():
-	for area in Entity.stomp_attack_area.get_overlapping_areas():
-		_on_stomp_area(area)
 
 func stomp_attack(body):
 	body.take_damage(1, "stomp")
