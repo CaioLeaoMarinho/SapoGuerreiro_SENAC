@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="SapoGuerreiro"
-run/main_scene="res://Scenes/Level.tscn"
+run/main_scene="uid://bx8efc37fee0a"
 config/features=PackedStringArray("4.4", "Forward Plus")
 
 [autoload]

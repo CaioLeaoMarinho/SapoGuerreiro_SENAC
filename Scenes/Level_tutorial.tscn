@@ -57,73 +57,73 @@ tile_map_data = PackedByteArray("AAAAAAgAAAAHAAAAAAABAAgAAAAHAAAAAAACAAgAAAAHAAA
 [node name="Botão A" type="Sprite2D" parent="."]
 
 [node name="dpad_r" type="Sprite2D" parent="."]
-position = Vector2(168, 608)
+position = Vector2(168, 628)
 texture = ExtResource("3_ltxny")
 
 [node name="dpad_l" type="Sprite2D" parent="."]
-position = Vector2(32, 608)
+position = Vector2(32, 628)
 texture = ExtResource("4_38hg2")
 
 [node name="cross" type="Sprite2D" parent="."]
-position = Vector2(704, 720)
+position = Vector2(704, 708)
 texture = ExtResource("2_rt7ih")
 
 [node name="cross2" type="Sprite2D" parent="."]
-position = Vector2(1792, 712)
+position = Vector2(1792, 700)
 texture = ExtResource("2_rt7ih")
 
 [node name="aperta" type="Sprite2D" parent="."]
-position = Vector2(704, 616)
+position = Vector2(704, 604)
 scale = Vector2(0.333333, 0.355556)
 texture = ExtResource("5_e5c5n")
 
 [node name="aperta3" type="Sprite2D" parent="."]
-position = Vector2(4344, -8)
+position = Vector2(4344, -19.9998)
 scale = Vector2(0.333333, 0.355556)
 texture = ExtResource("5_e5c5n")
 
 [node name="aperta2" type="Sprite2D" parent="."]
-position = Vector2(1776, 600)
+position = Vector2(1776, 588)
 scale = Vector2(0.333333, 0.355556)
 texture = ExtResource("5_a3wmv")
 
 [node name="seta_cima" type="Sprite2D" parent="."]
-position = Vector2(888, 712)
+position = Vector2(888, 700)
 scale = Vector2(0.488889, 0.466667)
 texture = ExtResource("6_38hg2")
 
 [node name="seta_cima2" type="Sprite2D" parent="."]
-position = Vector2(1928, 704)
+position = Vector2(1928, 692)
 scale = Vector2(0.488889, 0.466667)
 texture = ExtResource("6_38hg2")
 
 [node name="seta_direita" type="Sprite2D" parent="."]
-position = Vector2(256, 728)
+position = Vector2(256, 716)
 scale = Vector2(0.488889, 0.466667)
 texture = ExtResource("7_gopmm")
 
 [node name="seta_direita2" type="Sprite2D" parent="."]
-position = Vector2(10496, 552)
+position = Vector2(10496, 540)
 scale = Vector2(0.488889, 0.466667)
 texture = ExtResource("7_gopmm")
 
 [node name="seta_esquerda" type="Sprite2D" parent="."]
-position = Vector2(-56, 736)
+position = Vector2(-56, 724)
 scale = Vector2(0.488889, 0.466667)
 texture = ExtResource("8_ceskh")
 
 [node name="dummy_pulo" type="Sprite2D" parent="."]
-position = Vector2(1920, 576)
+position = Vector2(1920, 564)
 scale = Vector2(0.355556, 0.305556)
 texture = ExtResource("7_a3wmv")
 
 [node name="dummy_pulo2" type="Sprite2D" parent="."]
-position = Vector2(888, 584)
+position = Vector2(888, 572)
 scale = Vector2(0.355556, 0.305556)
 texture = ExtResource("7_a3wmv")
 
 [node name="dummy_corrida" type="Sprite2D" parent="."]
-position = Vector2(88, 728)
+position = Vector2(88, 716)
 scale = Vector2(0.355556, 0.305556)
 texture = ExtResource("10_1kgro")
 
