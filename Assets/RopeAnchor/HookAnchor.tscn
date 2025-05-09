@@ -1,23 +1,30 @@
-[gd_scene load_steps=6 format=3 uid="uid://cdg2il1ckafl8"]
+[gd_scene load_steps=8 format=3 uid="uid://cdg2il1ckafl8"]
 
-[ext_resource type="Texture2D" uid="uid://d1k3mcnq08l0p" path="res://Assets/RopeAnchor/Sprites/HookAnchor.png" id="1_hxsdo"]
 [ext_resource type="Shader" uid="uid://b7l4abhefeu7" path="res://Assets/Shaders/HookOutline.gdshader" id="1_s2f65"]
+[ext_resource type="Texture2D" uid="uid://dkklh6tk8f8f7" path="res://Assets/RopeAnchor/Sprites/HookAnchor-export.png" id="2_dfxcm"]
 [ext_resource type="Script" uid="uid://cuyi8eyxqa6vp" path="res://Assets/RopeAnchor/Scripts/HookAnchor.gd" id="2_ogutp"]
+[ext_resource type="Texture2D" uid="uid://bnvbg64nsbaf4" path="res://addons/controller_icons/assets/ps4/cross.png" id="4_dfxcm"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_td7fn"]
 resource_local_to_scene = true
 shader = ExtResource("1_s2f65")
-shader_parameter/line_color = Color(0, 0, 0, 1)
+shader_parameter/line_color = Color(1, 1, 1, 1)
 shader_parameter/line_thickness = 2.0
 shader_parameter/enable_outline = true
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_p4sbl"]
 radius = 165.161
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dfxcm"]
+shader = ExtResource("1_s2f65")
+shader_parameter/line_color = Color(1, 1, 1, 1)
+shader_parameter/line_thickness = 4.383
+shader_parameter/enable_outline = true
+
 [node name="FrogRope" type="Sprite2D"]
 material = SubResource("ShaderMaterial_td7fn")
 scale = Vector2(1.9375, 1.9375)
-texture = ExtResource("1_hxsdo")
+texture = ExtResource("2_dfxcm")
 script = ExtResource("2_ogutp")
 
 [node name="Area2D" type="Area2D" parent="." groups=["frog_rope"]]
@@ -32,6 +39,12 @@ position = Vector2(-99.0968, 66.0645)
 
 [node name="PositionRight" type="Marker2D" parent="."]
 position = Vector2(99.0968, 66.0645)
+
+[node name="Cross" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_dfxcm")
+position = Vector2(0, -28.9032)
+scale = Vector2(0.214221, 0.214221)
+texture = ExtResource("4_dfxcm")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
