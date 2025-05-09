@@ -3,11 +3,11 @@
 [ext_resource type="Script" uid="uid://dofqmgweliysy" path="res://Player/Scripts/Player.gd" id="1_7jske"]
 [ext_resource type="Texture2D" uid="uid://cntbuwfyacdom" path="res://Player/Sprites/Fall (32x32).png" id="1_nunj2"]
 [ext_resource type="Shader" uid="uid://b2nbajkg01b35" path="res://Assets/Shaders/HurtShader.gdshader" id="2_jrilk"]
-[ext_resource type="Texture2D" uid="uid://47xnl77djb86" path="res://Player/Sprites/Grappling Hook.png" id="2_tv86d"]
-[ext_resource type="Texture2D" uid="uid://b3vuwhd50icf8" path="res://Player/Sprites/Idle (32x32).png" id="4_refok"]
-[ext_resource type="Texture2D" uid="uid://dt3dqi3w4end1" path="res://Player/Sprites/Jump (32x32).png" id="5_yuwje"]
-[ext_resource type="Texture2D" uid="uid://3g86th2jlibd" path="res://Player/Sprites/Run (32x32).png" id="6_iugvr"]
+[ext_resource type="Texture2D" uid="uid://dcasct2w04tnd" path="res://Player/Sprites/sprite_sheet.png" id="3_jrilk"]
+[ext_resource type="Texture2D" uid="uid://bhygw1nbqwcfd" path="res://Player/Sprites/Frog_Rope.png" id="4_jrilk"]
 [ext_resource type="Script" uid="uid://beipk67epegmc" path="res://Player/Scripts/PlayerStateManager.gd" id="6_mjpkv"]
+[ext_resource type="Texture2D" uid="uid://dxhv1ifgr8lcs" path="res://Player/Sprites/Frog_Idle.png" id="6_sdmge"]
+[ext_resource type="Texture2D" uid="uid://bp2341ojclaxc" path="res://Player/Sprites/Frog_Pulo_1.png" id="7_djiqc"]
 [ext_resource type="Script" uid="uid://d1proqqfd26dp" path="res://Player/Scripts/States/PlayerStateIdle.gd" id="7_fvo7o"]
 [ext_resource type="Script" uid="uid://biev7c248h26q" path="res://Player/Scripts/States/PlayerStateWalk.gd" id="8_82ym4"]
 [ext_resource type="Script" uid="uid://yw7wbk1ablr3" path="res://Player/Scripts/States/PlayerStateJump.gd" id="9_blrg1"]
@@ -23,7 +23,7 @@ shader_parameter/hit_effect = false
 shader_parameter/hit_color = Color(1, 1, 1, 1)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_352do"]
-radius = 32.0
+radius = 28.0
 height = 64.0
 
 [sub_resource type="Animation" id="Animation_y1g8j"]
@@ -131,7 +131,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("2_tv86d")]
+"values": [ExtResource("4_jrilk")]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -161,7 +161,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("4_refok")]
+"values": [ExtResource("6_sdmge")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -173,7 +173,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [11]
+"values": [1]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -182,10 +182,10 @@ tracks/2/path = NodePath("Sprite2D:frame")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.0909091, 0.181818, 0.272727, 0.363636, 0.454545, 0.545455, 0.636364, 0.727273, 0.818182, 0.909091),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+"values": [0]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -214,7 +214,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("5_yuwje")]
+"values": [ExtResource("7_djiqc")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -255,7 +255,7 @@ tracks/3/keys = {
 
 [sub_resource type="Animation" id="Animation_e4u1q"]
 resource_name = "walk"
-length = 0.916675
+length = 0.5
 loop_mode = 1
 step = 0.0833333
 tracks/0/type = "value"
@@ -268,7 +268,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("6_iugvr")]
+"values": [ExtResource("3_jrilk")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -280,7 +280,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [12]
+"values": [8]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -289,10 +289,10 @@ tracks/2/path = NodePath("Sprite2D:frame")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.0833333, 0.166667, 0.25, 0.333333, 0.416667, 0.5, 0.583333, 0.666667, 0.75, 0.833333, 0.916667),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.0833333, 0.166667, 0.25, 0.333333, 0.416667, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+"values": [0, 1, 2, 3, 4, 5, 6]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -358,10 +358,10 @@ _data = {
 radius = 32.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_djiqc"]
-size = Vector2(48, 48)
+size = Vector2(32, 52)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r3r6e"]
-size = Vector2(64, 16)
+size = Vector2(32, 8)
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 collision_mask = 2
@@ -373,13 +373,12 @@ rope_buffer_time = 0.2
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_sdmge")
-position = Vector2(0, -44)
-scale = Vector2(2.75, 2.75)
-texture = ExtResource("4_refok")
-hframes = 11
+position = Vector2(-8, -30.105)
+scale = Vector2(0.166667, 0.166667)
+texture = ExtResource("6_sdmge")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -32)
+position = Vector2(3.565, -32)
 shape = SubResource("CapsuleShape2D_352do")
 debug_color = Color(0, 0.6, 0.701961, 0.188235)
 
@@ -425,7 +424,7 @@ collision_mask = 32
 monitoring = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
-position = Vector2(0, -40)
+position = Vector2(4, -34)
 shape = SubResource("RectangleShape2D_djiqc")
 debug_color = Color(0.705882, 0.603922, 0, 0.0666667)
 
@@ -436,6 +435,7 @@ collision_mask = 64
 monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StompAttackArea"]
+position = Vector2(4, 4)
 shape = SubResource("RectangleShape2D_r3r6e")
 debug_color = Color(0.996078, 0, 0.2, 0.141176)
 

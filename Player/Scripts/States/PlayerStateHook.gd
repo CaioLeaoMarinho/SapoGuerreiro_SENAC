@@ -53,7 +53,7 @@ func _attach_rope():
 
 	target_angle = (end_pos - origin_pos).angle()
 	
-	Entity.facing = swing_direction
+	Entity.facing = swing_direction * -1
 	StateManager._get_flip_h()
 
 func _swing_movement(delta):
