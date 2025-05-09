@@ -1,9 +1,10 @@
-[gd_scene load_steps=15 format=4 uid="uid://cxqu673uxvioq"]
+[gd_scene load_steps=16 format=4 uid="uid://cxqu673uxvioq"]
 
 [ext_resource type="PackedScene" uid="uid://caw0votrv6yn" path="res://tile_map_layer_0.tscn" id="1_ptg52"]
 [ext_resource type="PackedScene" uid="uid://cdg2il1ckafl8" path="res://Assets/RopeAnchor/HookAnchor.tscn" id="2_gqbh3"]
 [ext_resource type="Shader" uid="uid://b7l4abhefeu7" path="res://Assets/Shaders/Outline.gdshader" id="3_1j35o"]
 [ext_resource type="PackedScene" uid="uid://cr7x3kf1nqqjl" path="res://Player/character_frog.tscn" id="4_4vh0e"]
+[ext_resource type="PackedScene" uid="uid://ddphek4m1vwbw" path="res://Enemies/Larva/[enemy]_larva.tscn" id="5_gqbh3"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_kdxsx"]
 resource_local_to_scene = true
@@ -122,3 +123,15 @@ position = Vector2(12224, -1840)
 
 [node name="Player" parent="." instance=ExtResource("4_4vh0e")]
 position = Vector2(168, 544)
+
+[node name="[enemy] Larva" parent="." instance=ExtResource("5_gqbh3")]
+position = Vector2(3256, 416)
+
+[node name="[enemy] Larva2" parent="." instance=ExtResource("5_gqbh3")]
+position = Vector2(3136, -152)
+
+[node name="[enemy] Larva3" parent="." instance=ExtResource("5_gqbh3")]
+position = Vector2(10160, -1568)
+
+[node name="[enemy] Larva4" parent="." instance=ExtResource("5_gqbh3")]
+position = Vector2(11312, -1568)
