@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://cdg2il1ckafl8"]
 
 [ext_resource type="Texture2D" uid="uid://d1k3mcnq08l0p" path="res://Assets/RopeAnchor/Sprites/HookAnchor.png" id="1_hxsdo"]
-[ext_resource type="Shader" uid="uid://b7l4abhefeu7" path="res://Assets/Shaders/Outline.gdshader" id="1_s2f65"]
+[ext_resource type="Shader" uid="uid://b7l4abhefeu7" path="res://Assets/Shaders/HookOutline.gdshader" id="1_s2f65"]
 [ext_resource type="Script" uid="uid://cuyi8eyxqa6vp" path="res://Assets/RopeAnchor/Scripts/HookAnchor.gd" id="2_ogutp"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_td7fn"]
@@ -9,7 +9,7 @@ resource_local_to_scene = true
 shader = ExtResource("1_s2f65")
 shader_parameter/line_color = Color(0, 0, 0, 1)
 shader_parameter/line_thickness = 2.0
-shader_parameter/enable_outline = false
+shader_parameter/enable_outline = true
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_p4sbl"]
 radius = 165.161

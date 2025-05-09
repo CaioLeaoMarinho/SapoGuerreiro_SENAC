@@ -1,28 +1,47 @@
 extends BaseState
 
+var tween : Tween = null
+
 func _enter_state():
 	super()
 	if Entity.life <= 0:
 		StateManager.die()
 	else:
 		Entity.hurt_animation_player.play("Hurt")
+		
+		if Entity.global_position.x < Entity.agressor_pos.x:
+			if Entity.victim_knockback_force.x > 0:
+				Entity.victim_knockback_force.x *= -1
+			
 		knockback()
 		
 func _update_state(delta):
 	super(delta)
 	
-	if Entity.knockback_timer > 0.0:
-		Entity.velocity = Entity.knockback_velocity
-		Entity.knockback_timer -= delta
-	else:
-		StateManager._get_gravity(delta, 750)
+	if Entity.knockback_vector != Vector2.ZERO:
+		Entity.velocity = Entity.knockback_vector
 		
-		StateManager._get_landing()
+func _exit_state():
+	super()
+	
+	if tween:
+		tween.kill()
+		tween = null
+		Entity.knockback_vector = Vector2.ZERO
 
-func knockback():
-	var knockback_direction = (Entity.global_position - Entity.agressor_pos).normalized()
-	Entity.knockback_velocity = knockback_direction * Entity.knockback_force
-
-	Entity.knockback_velocity.y = min(Entity.knockback_velocity.y, -50)
-
-	Entity.knockback_timer = Entity.knockback_duration
+func knockback(knockback_force : Vector2 = Entity.victim_knockback_force, duration : float = Entity.knockback_duration):
+	if knockback_force != Vector2.ZERO:
+		if tween:
+			tween.kill()
+			
+		Entity.in_inertia = true
+			
+		Entity.knockback_vector = knockback_force
+		
+		tween = get_tree().create_tween()
+		
+		tween.parallel().tween_property(Entity, 'knockback_vector', Vector2.ZERO, duration)
+		tween.finished.connect(_on_knockback_finished)
+		
+func _on_knockback_finished():
+	StateManager._switch_state(StateManager.idleState)

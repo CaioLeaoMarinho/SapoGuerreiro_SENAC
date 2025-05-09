@@ -15,8 +15,9 @@ extends CharacterBody2D
 #region Variables
 @export var life : int = 1
 @export var damage : int = 1
+@export var knockback_force : Vector2 = Vector2(1000, -500)
 
-var currentMoveSpeed = 3000
+@export var currentMoveSpeed = 3000
 var moveDirectionX = -1
 
 var canSwitchState = true
@@ -36,8 +37,8 @@ func _physics_process(_delta):
 func _initilialize_larva_components():
 	pass
 	
-func take_damage(damage : int, damage_type : String):
-	life -= damage
+func take_damage(agressor_damage : int, damage_type : String):
+	life -= agressor_damage
 	damage_name = damage_type
 	state_manager._switch_state(state_manager.hurtState)
 #endregion
