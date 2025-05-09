@@ -102,6 +102,11 @@ position = Vector2(256, 728)
 scale = Vector2(0.488889, 0.466667)
 texture = ExtResource("7_gopmm")
 
+[node name="seta_direita2" type="Sprite2D" parent="."]
+position = Vector2(10496, 552)
+scale = Vector2(0.488889, 0.466667)
+texture = ExtResource("7_gopmm")
+
 [node name="seta_esquerda" type="Sprite2D" parent="."]
 position = Vector2(-56, 736)
 scale = Vector2(0.488889, 0.466667)
@@ -162,6 +167,7 @@ position = Vector2(9291, 96)
 
 [node name="[enemy] Larva" parent="." instance=ExtResource("5_ry78d")]
 position = Vector2(3192, 544)
+currentMoveSpeed = 2555
 
 [node name="seta_baixo" type="Sprite2D" parent="[enemy] Larva"]
 position = Vector2(-8, -96)
