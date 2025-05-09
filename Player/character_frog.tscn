@@ -19,49 +19,12 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_sdmge"]
 shader = ExtResource("2_jrilk")
-shader_parameter/hit_effect = true
+shader_parameter/hit_effect = false
 shader_parameter/hit_color = Color(1, 1, 1, 1)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_352do"]
 radius = 32.0
 height = 64.0
-
-[sub_resource type="Animation" id="Animation_djiqc"]
-resource_name = "Hurt"
-length = 0.3
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:material:shader_parameter/hit_effect")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.3),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-
-[sub_resource type="Animation" id="Animation_jrilk"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:material:shader_parameter/hit_effect")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_k0tbs"]
-_data = {
-&"Hurt": SubResource("Animation_djiqc"),
-&"RESET": SubResource("Animation_jrilk")
-}
 
 [sub_resource type="Animation" id="Animation_y1g8j"]
 length = 0.001
@@ -354,11 +317,48 @@ _data = {
 &"walk": SubResource("Animation_e4u1q")
 }
 
+[sub_resource type="Animation" id="Animation_jrilk"]
+resource_name = "Hurt"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:material:shader_parameter/hit_effect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_sdmge"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:material:shader_parameter/hit_effect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_sdmge"]
+_data = {
+&"Hurt": SubResource("Animation_jrilk"),
+&"RESET": SubResource("Animation_sdmge")
+}
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_wxnq7"]
 radius = 32.0
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_pugjy"]
-radius = 32.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_djiqc"]
+size = Vector2(48, 48)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r3r6e"]
 size = Vector2(64, 16)
@@ -381,11 +381,7 @@ hframes = 11
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -32)
 shape = SubResource("CapsuleShape2D_352do")
-
-[node name="HurtAnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_k0tbs")
-}
+debug_color = Color(0, 0.6, 0.701961, 0.188235)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -393,8 +389,21 @@ libraries = {
 }
 autoplay = "idle"
 
+[node name="HurtAnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_sdmge")
+}
+
 [node name="InvencibilityTimer" type="Timer" parent="."]
 wait_time = 1.5
+one_shot = true
+
+[node name="JumpBufferTimer" type="Timer" parent="."]
+wait_time = 0.15
+one_shot = true
+
+[node name="CoyoteJumpTimer" type="Timer" parent="."]
+wait_time = 0.1
 one_shot = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -409,7 +418,7 @@ collision_mask = 16
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FrogRopeDetector"]
 position = Vector2(0, -32)
 shape = SubResource("CircleShape2D_wxnq7")
-debug_color = Color(1, 1, 1, 0.42)
+debug_color = Color(1, 1, 1, 0.12549)
 
 [node name="Hurtbox" type="Area2D" parent="." groups=["hurtbox"]]
 collision_layer = 64
@@ -418,17 +427,16 @@ monitoring = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
 position = Vector2(0, -40)
-shape = SubResource("CircleShape2D_pugjy")
+shape = SubResource("RectangleShape2D_djiqc")
 debug_color = Color(0.705882, 0.603922, 0, 0.0666667)
 
 [node name="StompAttackArea" type="Area2D" parent="." groups=["hitbox"]]
-position = Vector2(0, 16)
+position = Vector2(0, -8)
 collision_layer = 32
 collision_mask = 64
 monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StompAttackArea"]
-position = Vector2(0, -24)
 shape = SubResource("RectangleShape2D_r3r6e")
 debug_color = Color(0.996078, 0, 0.2, 0.141176)
 

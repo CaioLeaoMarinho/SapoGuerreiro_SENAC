@@ -16,7 +16,7 @@ shader_parameter/cut_progress = 0.0
 shader_parameter/cut_vertical_progress = 0.0
 shader_parameter/cut_position = 0.22
 shader_parameter/separation_force = 0.0
-shader_parameter/hit_effect = true
+shader_parameter/hit_effect = false
 shader_parameter/hit_color = Color(1, 1, 1, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x51ut"]
@@ -286,7 +286,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [true]
+"values": [false]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_a4ane"]
@@ -360,10 +360,6 @@ position = Vector2(3, 7.5)
 shape = SubResource("RectangleShape2D_l8oq3")
 debug_color = Color(0.815686, 0, 0.0823529, 0.196078)
 
-[node name="InvencibilityTimer" type="Timer" parent="."]
-wait_time = 0.1
-one_shot = true
-
 [node name="StateMachine" type="Node" parent="."]
 script = ExtResource("1_pslg7")
 
@@ -375,5 +371,3 @@ script = ExtResource("5_a04bj")
 
 [node name="Die" type="Node" parent="StateMachine"]
 script = ExtResource("6_l7j3p")
-
-[connection signal="timeout" from="InvencibilityTimer" to="." method="_on_invencibility_timer_timeout"]
