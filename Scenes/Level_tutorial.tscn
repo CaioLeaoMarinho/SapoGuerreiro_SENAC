@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://caw0votrv6yn" path="res://tile_map_layer_0.tscn" id="1_b72yq"]
 [ext_resource type="PackedScene" uid="uid://cr7x3kf1nqqjl" path="res://Player/character_frog.tscn" id="2_omm2d"]
 [ext_resource type="PackedScene" uid="uid://cdg2il1ckafl8" path="res://Assets/RopeAnchor/HookAnchor.tscn" id="3_nn78s"]
-[ext_resource type="Shader" uid="uid://b7l4abhefeu7" path="res://Assets/Shaders/Outline.gdshader" id="4_ry78d"]
+[ext_resource type="Shader" uid="uid://b7l4abhefeu7" path="res://Assets/Shaders/HookOutline.gdshader" id="4_ry78d"]
 [ext_resource type="PackedScene" uid="uid://ddphek4m1vwbw" path="res://Enemies/Larva/[enemy]_larva.tscn" id="5_ry78d"]
 [ext_resource type="PackedScene" uid="uid://cki0la0m0gkhi" path="res://Assets/Terrain/Spikes/spikes.tscn" id="6_2akco"]
 [ext_resource type="PackedScene" uid="uid://crhlsk021oi35" path="res://Scenes/levelSwitch/switch_frogTemple.tscn" id="6_itqdp"]
