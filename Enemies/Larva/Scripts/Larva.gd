@@ -17,7 +17,7 @@ extends CharacterBody2D
 @export var damage : int = 1
 @export var knockback_force : Vector2 = Vector2(1000, -500)
 
-@export var currentMoveSpeed = 3000
+@export var currentMoveSpeed = 5000
 var moveDirectionX = -1
 
 var canSwitchState = true
