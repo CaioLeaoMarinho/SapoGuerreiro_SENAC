@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://cki0la0m0gkhi"]
+
+[ext_resource type="Texture2D" uid="uid://d1mtronpsqavt" path="res://Assets/Terrain/Spikes/Sprites/Spike.png" id="1_xbbav"]
+[ext_resource type="Script" uid="uid://dkmjpyq0gfwir" path="res://Assets/Terrain/Spikes/Scripts/Spikes.gd" id="2_3omxc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_demv7"]
+
+[node name="Spike" type="Sprite2D"]
+texture_repeat = 2
+scale = Vector2(1, 1.14286)
+texture = ExtResource("1_xbbav")
+region_enabled = true
+region_rect = Rect2(0, 8.5, 8, 7.946)
+script = ExtResource("2_3omxc")
+
+[node name="Hitbox" type="Area2D" parent="."]
+collision_layer = 32
+collision_mask = 64
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+shape = SubResource("RectangleShape2D_demv7")

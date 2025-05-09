@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=4 uid="uid://dwwdcmgimhtqa"]
+[gd_scene load_steps=11 format=4 uid="uid://dwwdcmgimhtqa"]
 
 [ext_resource type="Texture2D" uid="uid://cmuog6tia2g3p" path="res://Assets/Terrain/Sprites/Terrain (16x16).png" id="1_pr4em"]
 [ext_resource type="PackedScene" uid="uid://ddphek4m1vwbw" path="res://Enemies/Larva/[enemy]_larva.tscn" id="2_p2uti"]
 [ext_resource type="PackedScene" uid="uid://cdg2il1ckafl8" path="res://Assets/RopeAnchor/HookAnchor.tscn" id="3_vaigp"]
 [ext_resource type="Shader" uid="uid://b7l4abhefeu7" path="res://Assets/Shaders/Outline.gdshader" id="4_3k5li"]
 [ext_resource type="PackedScene" uid="uid://cr7x3kf1nqqjl" path="res://Player/character_frog.tscn" id="5_ysawb"]
+[ext_resource type="PackedScene" uid="uid://cki0la0m0gkhi" path="res://Assets/Terrain/Spikes/spikes.tscn" id="6_tj5wv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uf8pr"]
 texture = ExtResource("1_pr4em")
@@ -206,3 +207,8 @@ position = Vector2(2760, 208)
 
 [node name="[enemy] Larva" parent="." instance=ExtResource("2_p2uti")]
 position = Vector2(2569, 476)
+
+[node name="Spike" parent="." instance=ExtResource("6_tj5wv")]
+position = Vector2(2112, 500)
+scale = Vector2(2.535, 2.897)
+region_rect = Rect2(0, 8.5, 200, 7.946)

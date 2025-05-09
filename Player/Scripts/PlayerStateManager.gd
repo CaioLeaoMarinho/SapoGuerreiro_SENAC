@@ -79,6 +79,7 @@ func _get_jump():
 				Player.coyote_jump_timer.stop()
 				Player.currentJumps += 1
 				_switch_state(jumpState)
+
 func _get_input_direction():
 	if Input.is_action_pressed("input_left"):
 		Player.facing = -1
@@ -91,12 +92,12 @@ func _get_flip_h():
 func _get_gravity(delta, gravity):
 	if not Player.is_on_floor():
 		Player.velocity.y += gravity * delta
-	
+
 func _get_falling():
 	if not Player.is_on_floor():
 		Player.coyote_jump_timer.start()
 		_switch_state(fallState)
-	
+
 func _get_landing():
 	if Player.is_on_floor():
 		Player.in_inertia = false
@@ -117,7 +118,7 @@ func _get_jump_peak():
 	if not Input.is_action_pressed("input_jump"):
 		Player.velocity.y *= Player.jumpHeightMult
 		_switch_state(jumpPeakState)
-		
+
 func _get_frog_hope(delta):
 	_process_rope_buffer(delta)
 	
