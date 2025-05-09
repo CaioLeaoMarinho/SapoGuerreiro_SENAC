@@ -64,8 +64,9 @@ func _get_horizontal_movement():
 		Player.velocity.x = move_toward(Player.velocity.x, Player.moveDirectionX * Player.currentMoveSpeed, Player.deceleration)
 
 func _get_jump():
-	if Input.is_action_just_pressed("input_jump") and Player.currentJumps < Player.maxJumps:
+	if (Input.is_action_just_pressed("input_jump") or Player.jump_buffer_timer.time_left > 0) and Player.currentJumps < Player.maxJumps:
 		_switch_state(jumpState)
+		Player.jump_buffer_timer.stop()
 		Player.currentJumps += 1
 
 func _get_input_direction():
@@ -144,4 +145,8 @@ func _execute_hook():
 
 func die():
 	_switch_state(dieState)
+
+func _get_jump_buffer():
+	if Input.is_action_just_pressed("input_jump"):
+		Player.jump_buffer_timer.start()
 #endregion

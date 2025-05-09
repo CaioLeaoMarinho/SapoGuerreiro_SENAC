@@ -18,6 +18,8 @@ func _update_state(_delta : float):
 	StateManager._get_landing()
 	StateManager._get_flip_h()
 	StateManager._get_frog_hope(_delta)
+	StateManager._get_jump()
+	StateManager._get_jump_buffer()
 
 func _exit_state():
 	Entity.stomp_attack_area.area_entered.disconnect(_on_stomp_area)

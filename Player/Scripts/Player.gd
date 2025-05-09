@@ -10,6 +10,7 @@ extends CharacterBody2D
 @onready var frog_rope_detector = $FrogRopeDetector
 @onready var stomp_attack_area: Area2D = $StompAttackArea
 @onready var invencibility_timer: Timer = $InvencibilityTimer
+@onready var jump_buffer_timer: Timer = $JumpBufferTimer
 #endregion
 
 #region Variables
