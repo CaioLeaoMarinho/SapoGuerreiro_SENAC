@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://cxqu673uxvioq"]
+[gd_scene load_steps=15 format=4 uid="uid://cxqu673uxvioq"]
 
 [ext_resource type="PackedScene" uid="uid://caw0votrv6yn" path="res://tile_map_layer_0.tscn" id="1_ptg52"]
 [ext_resource type="PackedScene" uid="uid://cdg2il1ckafl8" path="res://Assets/RopeAnchor/HookAnchor.tscn" id="2_gqbh3"]
@@ -47,6 +47,34 @@ shader_parameter/line_color = Color(0, 0, 0, 1)
 shader_parameter/line_thickness = 2.0
 shader_parameter/enable_outline = false
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0pfu6"]
+resource_local_to_scene = true
+shader = ExtResource("3_1j35o")
+shader_parameter/line_color = Color(0, 0, 0, 1)
+shader_parameter/line_thickness = 2.0
+shader_parameter/enable_outline = false
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xe1mo"]
+resource_local_to_scene = true
+shader = ExtResource("3_1j35o")
+shader_parameter/line_color = Color(0, 0, 0, 1)
+shader_parameter/line_thickness = 2.0
+shader_parameter/enable_outline = false
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_24p2i"]
+resource_local_to_scene = true
+shader = ExtResource("3_1j35o")
+shader_parameter/line_color = Color(0, 0, 0, 1)
+shader_parameter/line_thickness = 2.0
+shader_parameter/enable_outline = false
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2oq5h"]
+resource_local_to_scene = true
+shader = ExtResource("3_1j35o")
+shader_parameter/line_color = Color(0, 0, 0, 1)
+shader_parameter/line_thickness = 2.0
+shader_parameter/enable_outline = false
+
 [node name="Level_FrogTemple" type="Node2D"]
 
 [node name="TileMapLayer0" parent="." instance=ExtResource("1_ptg52")]
@@ -58,11 +86,11 @@ position = Vector2(1072, 144)
 
 [node name="FrogRope2" parent="." instance=ExtResource("2_gqbh3")]
 material = SubResource("ShaderMaterial_ptg52")
-position = Vector2(2976, -880)
+position = Vector2(3144, -872)
 
 [node name="FrogRope3" parent="." instance=ExtResource("2_gqbh3")]
 material = SubResource("ShaderMaterial_gqbh3")
-position = Vector2(3792, -872)
+position = Vector2(4032, -872)
 
 [node name="FrogRope4" parent="." instance=ExtResource("2_gqbh3")]
 material = SubResource("ShaderMaterial_1j35o")
@@ -77,19 +105,19 @@ material = SubResource("ShaderMaterial_0lg5j")
 position = Vector2(9056, -504)
 
 [node name="FrogRope7" parent="." instance=ExtResource("2_gqbh3")]
-material = SubResource("ShaderMaterial_0lg5j")
+material = SubResource("ShaderMaterial_0pfu6")
 position = Vector2(10744, -496)
 
 [node name="FrogRope8" parent="." instance=ExtResource("2_gqbh3")]
-material = SubResource("ShaderMaterial_0lg5j")
+material = SubResource("ShaderMaterial_xe1mo")
 position = Vector2(11800, -1121)
 
 [node name="FrogRope9" parent="." instance=ExtResource("2_gqbh3")]
-material = SubResource("ShaderMaterial_0lg5j")
+material = SubResource("ShaderMaterial_24p2i")
 position = Vector2(9920, -1121)
 
 [node name="FrogRope10" parent="." instance=ExtResource("2_gqbh3")]
-material = SubResource("ShaderMaterial_0lg5j")
+material = SubResource("ShaderMaterial_2oq5h")
 position = Vector2(12224, -1840)
 
 [node name="Player" parent="." instance=ExtResource("4_4vh0e")]
