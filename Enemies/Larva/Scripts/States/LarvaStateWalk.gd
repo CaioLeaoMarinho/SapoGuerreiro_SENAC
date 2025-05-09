@@ -36,4 +36,4 @@ func check_hitbox_area():
 		_on_hitbox_area(area)
 
 func cause_damage(body):
-	body.take_damage(1, Entity.global_position)
+	body.take_damage(1, Entity.knockback_force, Entity.global_position)

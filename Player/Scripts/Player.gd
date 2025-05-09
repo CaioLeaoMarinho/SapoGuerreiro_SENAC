@@ -18,10 +18,9 @@ extends CharacterBody2D
 @export_category("Configurar Player")
 @export var life : int = 10
 var hurt_invencible : bool = false
-@export var knockback_force := 500
-@export var knockback_duration := 0.1
-var knockback_velocity := Vector2.ZERO
-var knockback_timer := 0.0
+var knockback_vector := Vector2.ZERO
+@export var knockback_duration : float = 0.25
+var victim_knockback_force : Vector2 = Vector2.ZERO
 @export_category("Configurar movimento")
 @export var maxMoveSpeed = 700
 var currentMoveSpeed = maxMoveSpeed
@@ -117,12 +116,13 @@ func update_rotation():
 	if state_manager.currentState != state_manager.hookState:
 		rotation = 0
 		
-func take_damage(damage : int, enemy_pos : Vector2):
+func take_damage(damage : int, agressor_force : Vector2, agressor_position : Vector2):
 	if not hurt_invencible:
 		hurt_invencible = true
 		life -= damage
 		invencibility_timer.start()
-		agressor_pos = enemy_pos
+		victim_knockback_force = agressor_force
+		agressor_pos = agressor_position
 		state_manager._switch_state(state_manager.hurtState)
 #endregion
 
