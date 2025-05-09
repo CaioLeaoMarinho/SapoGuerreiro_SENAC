@@ -14,6 +14,15 @@ config/name="SapoGuerreiro"
 run/main_scene="res://Scenes/Level.tscn"
 config/features=PackedStringArray("4.4", "Forward Plus")
 
+[autoload]
+
+ControllerIcons="*res://addons/controller_icons/ControllerIcons.gd"
+VitoriaRegeaTransitionScreen="*res://Scenes/VitoriaRegeaTransitionScreen.tscn"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/controller_icons/plugin.cfg")
+
 [global_group]
 
 enemy=""

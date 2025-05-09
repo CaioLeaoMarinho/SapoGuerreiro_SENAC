@@ -16,7 +16,7 @@ extends CharacterBody2D
 
 #region Variables
 @export_category("Configurar Player")
-@export var life : int = 10
+@export var life : int = 2
 var hurt_invencible : bool = false
 var knockback_vector := Vector2.ZERO
 @export var knockback_duration : float = 0.25
@@ -77,7 +77,7 @@ func _physics_process(_delta):
 #region Custom Methods
 
 func _initilialize_player_components():
-	return
+	pass
 	
 func get_valid_frog_ropes() -> Array:
 	var valid_ropes = []
