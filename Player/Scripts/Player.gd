@@ -1,16 +1,17 @@
 extends CharacterBody2D
 
 #region References
-@onready var sprite2d = $Sprite2D
-@onready var collision2d = $CollisionShape2D
-@onready var animation_player = $AnimationPlayer
+@onready var sprite2d: Sprite2D = $Sprite2D
+@onready var collision2d: CollisionShape2D = $CollisionShape2D
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var hurt_animation_player: AnimationPlayer = $HurtAnimationPlayer
-@onready var camera_2d = $Camera2D
+@onready var camera_2d: Camera2D = $Camera2D
 @onready var state_manager = $StateMachine
-@onready var frog_rope_detector = $FrogRopeDetector
+@onready var frog_rope_detector: Area2D = $FrogRopeDetector
 @onready var stomp_attack_area: Area2D = $StompAttackArea
 @onready var invencibility_timer: Timer = $InvencibilityTimer
 @onready var jump_buffer_timer: Timer = $JumpBufferTimer
+@onready var coyote_jump_timer: Timer = $CoyoteJumpTimer
 #endregion
 
 #region Variables
