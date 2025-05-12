@@ -151,11 +151,11 @@ texture = ExtResource("14_1kgro")
 
 [node name="FrogRope" parent="." instance=ExtResource("3_nn78s")]
 material = SubResource("ShaderMaterial_itqdp")
-position = Vector2(4544, 112)
+position = Vector2(4608, 112)
 
 [node name="FrogRope2" parent="." instance=ExtResource("3_nn78s")]
 material = SubResource("ShaderMaterial_ry78d")
-position = Vector2(6328, 120)
+position = Vector2(6360, 120)
 
 [node name="FrogRope3" parent="." instance=ExtResource("3_nn78s")]
 material = SubResource("ShaderMaterial_t3cp8")
@@ -163,7 +163,7 @@ position = Vector2(8352, 96)
 
 [node name="FrogRope4" parent="." instance=ExtResource("3_nn78s")]
 material = SubResource("ShaderMaterial_2akco")
-position = Vector2(9291, 96)
+position = Vector2(9224, 96)
 
 [node name="[enemy] Larva" parent="." instance=ExtResource("5_ry78d")]
 position = Vector2(3192, 544)
