@@ -35,6 +35,6 @@ func _on_stomp_area(area: Area2D):
 
 func stomp_attack(body):
 	body.take_damage(1, "stomp")
-	Entity.velocity.y += -500
+	Entity.velocity.y += Entity.stomp_jump_height * -1
 	StateManager._switch_state(StateManager.jumpState)
 #endregion

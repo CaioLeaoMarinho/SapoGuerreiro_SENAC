@@ -43,6 +43,7 @@ var jumpGravity = 0
 var jumpVelocity = 0
 @export_category("Configurar pulo")
 @export var jumpHeight = 200
+@export var stomp_jump_height = 1000
 @export var jumpTimeToPeak = 0.5
 @export var maxJumps = 1
 var currentJumps = 0
