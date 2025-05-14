@@ -3,7 +3,7 @@
 [ext_resource type="Shader" uid="uid://b7l4abhefeu7" path="res://Assets/Shaders/HookOutline.gdshader" id="1_s2f65"]
 [ext_resource type="Texture2D" uid="uid://dkklh6tk8f8f7" path="res://Assets/RopeAnchor/Sprites/HookAnchor-export.png" id="2_dfxcm"]
 [ext_resource type="Script" uid="uid://cuyi8eyxqa6vp" path="res://Assets/RopeAnchor/Scripts/HookAnchor.gd" id="2_ogutp"]
-[ext_resource type="Texture2D" uid="uid://bnvbg64nsbaf4" path="res://addons/controller_icons/assets/ps4/cross.png" id="4_dfxcm"]
+[ext_resource type="Texture2D" uid="uid://tkhwdrhc3cos" path="res://Assets/GlobalScripts/UI_FrogRopeControllerIcon.tres" id="4_dfxcm"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_td7fn"]
 resource_local_to_scene = true
@@ -40,10 +40,11 @@ position = Vector2(-99.0968, 66.0645)
 [node name="PositionRight" type="Marker2D" parent="."]
 position = Vector2(99.0968, 66.0645)
 
-[node name="Cross" type="Sprite2D" parent="."]
+[node name="InputIcon" type="Sprite2D" parent="."]
+visible = false
 material = SubResource("ShaderMaterial_dfxcm")
 position = Vector2(0, -28.9032)
-scale = Vector2(0.214221, 0.214221)
+scale = Vector2(0.247742, 0.247742)
 texture = ExtResource("4_dfxcm")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
