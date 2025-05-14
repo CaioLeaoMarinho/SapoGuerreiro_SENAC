@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dcasct2w04tnd"
-path="res://.godot/imported/sprite_sheet.png-f008bdd123c4931969d4880f69e5079b.ctex"
+uid="uid://bp2341ojclaxc"
+path="res://.godot/imported/Frog_Pulo.png-e5ce0bf3579b8e91f69852c8b52a2310.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Player/Sprites/sprite_sheet.png"
-dest_files=["res://.godot/imported/sprite_sheet.png-f008bdd123c4931969d4880f69e5079b.ctex"]
+source_file="res://Player/Sprites/Frog_Pulo.png"
+dest_files=["res://.godot/imported/Frog_Pulo.png-e5ce0bf3579b8e91f69852c8b52a2310.ctex"]
 
 [params]
 
