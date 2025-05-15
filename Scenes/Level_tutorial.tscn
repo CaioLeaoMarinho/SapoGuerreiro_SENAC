@@ -1,12 +1,12 @@
-[gd_scene load_steps=25 format=4 uid="uid://bx8efc37fee0a"]
+[gd_scene load_steps=26 format=4 uid="uid://bx8efc37fee0a"]
 
 [ext_resource type="PackedScene" uid="uid://caw0votrv6yn" path="res://tile_map_layer_0.tscn" id="1_b72yq"]
 [ext_resource type="PackedScene" uid="uid://cr7x3kf1nqqjl" path="res://Player/character_frog.tscn" id="2_omm2d"]
-[ext_resource type="Texture2D" uid="uid://bqq6mlegku75x" path="res://tutorial/cross.png" id="2_rt7ih"]
-[ext_resource type="Texture2D" uid="uid://cfc8s43btd4vj" path="res://tutorial/dpad_right.png" id="3_ltxny"]
+[ext_resource type="Texture2D" uid="uid://0vl6uis5g6bi" path="res://Assets/GlobalScripts/UI_RightControllerIcon.tres" id="2_op75u"]
+[ext_resource type="Texture2D" uid="uid://clcw8rywiarj0" path="res://Assets/GlobalScripts/UI_LeftControllerIcon.tres" id="3_2nnu6"]
 [ext_resource type="PackedScene" uid="uid://cdg2il1ckafl8" path="res://Assets/RopeAnchor/HookAnchor.tscn" id="3_nn78s"]
-[ext_resource type="Texture2D" uid="uid://d0etuhitl0xm8" path="res://tutorial/dpad_left.png" id="4_38hg2"]
 [ext_resource type="Shader" uid="uid://b7l4abhefeu7" path="res://Assets/Shaders/HookOutline.gdshader" id="4_ry78d"]
+[ext_resource type="Texture2D" uid="uid://cne8pfbt3eos3" path="res://Assets/GlobalScripts/UI_JumpControllerIcon.tres" id="4_vksku"]
 [ext_resource type="Texture2D" uid="uid://48x2dyapsyc7" path="res://tutorial/Segura.png" id="5_a3wmv"]
 [ext_resource type="Texture2D" uid="uid://c0po1d8wrturv" path="res://tutorial/Aperta.png" id="5_e5c5n"]
 [ext_resource type="PackedScene" uid="uid://ddphek4m1vwbw" path="res://Enemies/Larva/[enemy]_larva.tscn" id="5_ry78d"]
@@ -19,6 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://urlvxpcputfa" path="res://tutorial/Seta esquerda.png" id="8_ceskh"]
 [ext_resource type="Texture2D" uid="uid://vp3eoj3td7lh" path="res://tutorial/Dummy corrida.png" id="10_1kgro"]
 [ext_resource type="Texture2D" uid="uid://dnhgyqywba04s" path="res://tutorial/Dummy Rope.png" id="14_1kgro"]
+[ext_resource type="Texture2D" uid="uid://tkhwdrhc3cos" path="res://Assets/GlobalScripts/UI_FrogRopeControllerIcon.tres" id="14_op75u"]
 [ext_resource type="Texture2D" uid="uid://bknbimj24usbu" path="res://tutorial/Seta baixo.png" id="17_ceskh"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_itqdp"]
@@ -58,19 +59,19 @@ tile_map_data = PackedByteArray("AAAAAAgAAAAHAAAAAAABAAgAAAAHAAAAAAACAAgAAAAHAAA
 
 [node name="dpad_r" type="Sprite2D" parent="."]
 position = Vector2(168, 628)
-texture = ExtResource("3_ltxny")
+texture = ExtResource("2_op75u")
 
 [node name="dpad_l" type="Sprite2D" parent="."]
 position = Vector2(32, 628)
-texture = ExtResource("4_38hg2")
+texture = ExtResource("3_2nnu6")
 
 [node name="cross" type="Sprite2D" parent="."]
 position = Vector2(704, 708)
-texture = ExtResource("2_rt7ih")
+texture = ExtResource("4_vksku")
 
 [node name="cross2" type="Sprite2D" parent="."]
 position = Vector2(1792, 700)
-texture = ExtResource("2_rt7ih")
+texture = ExtResource("4_vksku")
 
 [node name="aperta" type="Sprite2D" parent="."]
 position = Vector2(704, 604)
@@ -142,7 +143,7 @@ position = Vector2(96, 512)
 
 [node name="cross3" type="Sprite2D" parent="."]
 position = Vector2(4480, -8)
-texture = ExtResource("2_rt7ih")
+texture = ExtResource("14_op75u")
 
 [node name="dummy_rope" type="Sprite2D" parent="."]
 position = Vector2(4696, -16)

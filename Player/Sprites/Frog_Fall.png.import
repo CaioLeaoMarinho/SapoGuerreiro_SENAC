@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dx1fpuql4gpce"
-path="res://.godot/imported/Hit (32x32).png-c9424c99a7fa98715b760029362b8ae0.ctex"
+uid="uid://cntbuwfyacdom"
+path="res://.godot/imported/Frog_Fall.png-66a4a809b0d302a0c944ef5988cce77f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Player/Sprites/Hit (32x32).png"
-dest_files=["res://.godot/imported/Hit (32x32).png-c9424c99a7fa98715b760029362b8ae0.ctex"]
+source_file="res://Player/Sprites/Frog_Fall.png"
+dest_files=["res://.godot/imported/Frog_Fall.png-66a4a809b0d302a0c944ef5988cce77f.ctex"]
 
 [params]
 

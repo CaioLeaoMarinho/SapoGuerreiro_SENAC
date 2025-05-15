@@ -101,6 +101,7 @@ func _get_falling():
 func _get_landing():
 	if Player.is_on_floor():
 		Player.in_inertia = false
+		Player.launched_by_rope = false
 		Player.currentJumps = 0
 		_switch_state(idleState)
 

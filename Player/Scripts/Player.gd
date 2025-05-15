@@ -12,6 +12,8 @@ extends CharacterBody2D
 @onready var invencibility_timer: Timer = $InvencibilityTimer
 @onready var jump_buffer_timer: Timer = $JumpBufferTimer
 @onready var coyote_jump_timer: Timer = $CoyoteJumpTimer
+@onready var mouth_marker_2d: Marker2D = $Marker2D
+const tongue_rope = preload("res://Player/FrogRopeTongue.tscn")
 #endregion
 
 #region Variables
@@ -41,6 +43,7 @@ var jumpGravity = 0
 var jumpVelocity = 0
 @export_category("Configurar pulo")
 @export var jumpHeight = 200
+@export var stomp_jump_height = 1000
 @export var jumpTimeToPeak = 0.5
 @export var maxJumps = 1
 var currentJumps = 0
@@ -62,6 +65,7 @@ var can_hook = true
 var current_frog_rope: Node = null
 var last_frog_rope: Node = null
 var in_inertia = false
+var launched_by_rope = false
 var agressor_pos : Vector2
 #endregion
 
@@ -105,7 +109,7 @@ func get_closest_frog_rope() -> Node:
 	return closest_rope
 
 func update_acceleration():
-	if not in_inertia:
+	if not in_inertia and not launched_by_rope:
 		acceleration = instantAcceleration
 		deceleration = instantDeceleration
 	else:

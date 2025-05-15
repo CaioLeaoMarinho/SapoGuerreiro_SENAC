@@ -30,6 +30,7 @@ hurtbox=""
 hitbox=""
 player=""
 stomp_hurtbox=""
+tongue_rope=""
 
 [input]
 

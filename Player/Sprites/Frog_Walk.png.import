@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dt3dqi3w4end1"
-path="res://.godot/imported/Jump (32x32).png-d5a53ed04e1650b2cdd608f686710bef.ctex"
+uid="uid://dcasct2w04tnd"
+path="res://.godot/imported/Frog_Walk.png-c27274d07f74072dbe9b10d716c461d5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Player/Sprites/Jump (32x32).png"
-dest_files=["res://.godot/imported/Jump (32x32).png-d5a53ed04e1650b2cdd608f686710bef.ctex"]
+source_file="res://Player/Sprites/Frog_Walk.png"
+dest_files=["res://.godot/imported/Frog_Walk.png-c27274d07f74072dbe9b10d716c461d5.ctex"]
 
 [params]
 

@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://e4dt1stbfbkl"]
+
+[ext_resource type="Script" uid="uid://dprs3px5tko81" path="res://Player/frog_rope_tongue.gd" id="1_vtjfs"]
+[ext_resource type="Texture2D" uid="uid://3leyt41uvfw4" path="res://Player/Sprites/frogtongue.png" id="2_wy1tp"]
+
+[node name="FrogRopeTongue" type="Node2D" groups=["tongue_rope"]]
+script = ExtResource("1_vtjfs")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+show_behind_parent = true
+z_index = -1
+scale = Vector2(0.0111111, 0.0111111)
+texture = ExtResource("2_wy1tp")

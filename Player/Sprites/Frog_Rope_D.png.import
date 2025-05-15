@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cntbuwfyacdom"
-path="res://.godot/imported/Fall (32x32).png-b28728027a8303d3ddbe1db63f1f3b2b.ctex"
+uid="uid://bhygw1nbqwcfd"
+path="res://.godot/imported/Frog_Rope_D.png-d0628cebd5c4a69a4d4f788c1247a406.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Player/Sprites/Fall (32x32).png"
-dest_files=["res://.godot/imported/Fall (32x32).png-b28728027a8303d3ddbe1db63f1f3b2b.ctex"]
+source_file="res://Player/Sprites/Frog_Rope_D.png"
+dest_files=["res://.godot/imported/Frog_Rope_D.png-d0628cebd5c4a69a4d4f788c1247a406.ctex"]
 
 [params]
 

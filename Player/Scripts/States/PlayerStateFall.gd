@@ -4,7 +4,10 @@ extends BaseState
 func _enter_state():
 	super()
 	
-	StateManager._switch_animation("fall")
+	if not Entity.launched_by_rope:
+		StateManager._switch_animation("fall")
+	else:
+		StateManager._switch_animation("fallFrogRope")
 	
 	Entity.stomp_attack_area.area_entered.connect(_on_stomp_area)
 	
@@ -32,5 +35,6 @@ func _on_stomp_area(area: Area2D):
 
 func stomp_attack(body):
 	body.take_damage(1, "stomp")
+	Entity.velocity.y = Entity.stomp_jump_height * -1
 	StateManager._switch_state(StateManager.jumpState)
 #endregion

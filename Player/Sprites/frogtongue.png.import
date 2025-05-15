@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bhygw1nbqwcfd"
-path="res://.godot/imported/Frog_Rope.png-ad724296c1b418de29f93e91bd48b0de.ctex"
+uid="uid://3leyt41uvfw4"
+path="res://.godot/imported/frogtongue.png-6afc8ae9bee7967c7e8da19c713eb901.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Player/Sprites/Frog_Rope.png"
-dest_files=["res://.godot/imported/Frog_Rope.png-ad724296c1b418de29f93e91bd48b0de.ctex"]
+source_file="res://Player/Sprites/frogtongue.png"
+dest_files=["res://.godot/imported/frogtongue.png-6afc8ae9bee7967c7e8da19c713eb901.ctex"]
 
 [params]
 
