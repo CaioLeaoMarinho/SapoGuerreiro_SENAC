@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cdg2il1ckafl8"]
+[gd_scene load_steps=11 format=3 uid="uid://cdg2il1ckafl8"]
 
 [ext_resource type="Shader" uid="uid://b7l4abhefeu7" path="res://Assets/Shaders/HookOutline.gdshader" id="1_s2f65"]
 [ext_resource type="Texture2D" uid="uid://dkklh6tk8f8f7" path="res://Assets/RopeAnchor/Sprites/HookAnchor-export.png" id="2_dfxcm"]
@@ -11,6 +11,42 @@ shader = ExtResource("1_s2f65")
 shader_parameter/line_color = Color(1, 1, 1, 1)
 shader_parameter/line_thickness = 2.0
 shader_parameter/enable_outline = true
+
+[sub_resource type="Animation" id="Animation_dfxcm"]
+resource_name = "hooked"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.233333, 0.366667),
+"transitions": PackedFloat32Array(2.82843, 0.277392, 3.605, 0.31864),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -6.295), Vector2(0, 6), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_px2fd"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fgirl"]
+_data = {
+&"RESET": SubResource("Animation_px2fd"),
+&"hooked": SubResource("Animation_dfxcm")
+}
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_p4sbl"]
 radius = 165.161
@@ -26,6 +62,11 @@ material = SubResource("ShaderMaterial_td7fn")
 scale = Vector2(1.9375, 1.9375)
 texture = ExtResource("2_dfxcm")
 script = ExtResource("2_ogutp")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_fgirl")
+}
 
 [node name="Area2D" type="Area2D" parent="." groups=["frog_rope"]]
 collision_layer = 16
