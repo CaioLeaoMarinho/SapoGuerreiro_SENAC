@@ -203,7 +203,7 @@ position = Vector2(3328, 208)
 
 [node name="FrogRope2" parent="." instance=ExtResource("3_vaigp")]
 material = SubResource("ShaderMaterial_qc27i")
-position = Vector2(2760, 208)
+position = Vector2(3906, 210)
 
 [node name="[enemy] Larva" parent="." instance=ExtResource("2_p2uti")]
 position = Vector2(2569, 476)

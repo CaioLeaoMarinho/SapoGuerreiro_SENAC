@@ -5,7 +5,7 @@ func _enter_state():
 	
 	_calculate_jump_velocity(Entity.jumpHeight)
 	
-	Entity.velocity.y += Entity.jumpVelocity
+	Entity.velocity.y = Entity.jumpVelocity
 	
 	StateManager._switch_animation("jump")
 
