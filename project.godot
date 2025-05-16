@@ -17,7 +17,7 @@ config/features=PackedStringArray("4.4", "Forward Plus")
 [autoload]
 
 ControllerIcons="*res://addons/controller_icons/ControllerIcons.gd"
-VitoriaRegeaTransitionScreen="*res://Assets/GlobalScripts/VitoriaRegeaTransitionScreen.tscn"
+VitoriaRegeaTransitionScreen="*res://Assets/Shaders/VitoriaRegeaTransitionScreen.tscn"
 
 [editor_plugins]
 
@@ -31,6 +31,10 @@ hitbox=""
 player=""
 stomp_hurtbox=""
 tongue_rope=""
+
+[gui]
+
+theme/custom_font="uid://d08spjjqdn5hq"
 
 [input]
 

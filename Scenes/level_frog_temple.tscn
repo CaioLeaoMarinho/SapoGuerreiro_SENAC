@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://cr7x3kf1nqqjl" path="res://Player/character_frog.tscn" id="4_4vh0e"]
 [ext_resource type="PackedScene" uid="uid://ddphek4m1vwbw" path="res://Enemies/Larva/[enemy]_larva.tscn" id="5_gqbh3"]
 [ext_resource type="Shader" uid="uid://c4hdxw54n35xd" path="res://Assets/Shaders/lagoonWater.gdshader" id="7_kdxsx"]
-[ext_resource type="Texture2D" uid="uid://bh6m5k56qbwp3" path="res://Assets/GlobalScripts/white.png" id="8_0lg5j"]
+[ext_resource type="Texture2D" uid="uid://bh6m5k56qbwp3" path="res://Assets/GlobalSprites/white.png" id="8_0lg5j"]
 [ext_resource type="Texture2D" uid="uid://b8jotitmal816" path="res://Assets/Terrain/Sprites/Background/DefaultType/background_color.png" id="9_xe1mo"]
 [ext_resource type="Shader" uid="uid://bjb35jc5mloxj" path="res://Assets/Shaders/backgroundWater.gdshader" id="10_xe1mo"]
 [ext_resource type="Texture2D" uid="uid://b248ugqeanyy0" path="res://Assets/Terrain/Sprites/Background/DefaultType/background_trees.png" id="11_2oq5h"]
