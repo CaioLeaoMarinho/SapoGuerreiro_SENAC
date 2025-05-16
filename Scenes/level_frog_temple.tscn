@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=4 uid="uid://cxqu673uxvioq"]
+[gd_scene load_steps=30 format=4 uid="uid://cxqu673uxvioq"]
 
 [ext_resource type="PackedScene" uid="uid://caw0votrv6yn" path="res://tile_map_layer_0.tscn" id="1_ptg52"]
 [ext_resource type="PackedScene" uid="uid://cdg2il1ckafl8" path="res://Assets/RopeAnchor/HookAnchor.tscn" id="2_gqbh3"]
@@ -8,6 +8,11 @@
 [ext_resource type="PackedScene" uid="uid://ddphek4m1vwbw" path="res://Enemies/Larva/[enemy]_larva.tscn" id="5_gqbh3"]
 [ext_resource type="Shader" uid="uid://c4hdxw54n35xd" path="res://Assets/Shaders/lagoonWater.gdshader" id="7_kdxsx"]
 [ext_resource type="Texture2D" uid="uid://bh6m5k56qbwp3" path="res://Assets/GlobalScripts/white.png" id="8_0lg5j"]
+[ext_resource type="Texture2D" uid="uid://b8jotitmal816" path="res://Assets/Terrain/Sprites/Background/DefaultType/background_color.png" id="9_xe1mo"]
+[ext_resource type="Shader" uid="uid://bjb35jc5mloxj" path="res://Assets/Shaders/backgroundWater.gdshader" id="10_xe1mo"]
+[ext_resource type="Texture2D" uid="uid://b248ugqeanyy0" path="res://Assets/Terrain/Sprites/Background/DefaultType/background_trees.png" id="11_2oq5h"]
+[ext_resource type="Texture2D" uid="uid://d0olrrsyeo2gh" path="res://Assets/Terrain/Sprites/Background/DefaultType/background_trees_reflexion.png" id="11_24p2i"]
+[ext_resource type="PackedScene" uid="uid://5w1qxak8p0km" path="res://Scenes/levelSwitch/death_zone.tscn" id="12_24p2i"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_kdxsx"]
 resource_local_to_scene = true
@@ -87,11 +92,28 @@ seamless = true
 noise = SubResource("FastNoiseLite_0pfu6")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_yncpb"]
+resource_local_to_scene = true
 shader = ExtResource("7_kdxsx")
-shader_parameter/water_color = Color(0, 0.313726, 0.121569, 1)
-shader_parameter/reflexion_opactiy = 0.4
-shader_parameter/wave_speed = 0.11
+shader_parameter/water_color = Color(0, 0.145098, 0.121569, 1)
+shader_parameter/water_fade = 0.079
+shader_parameter/reflection_amount = 0.0
+shader_parameter/reflection_opacity = 0.7
+shader_parameter/wave_speed = 0.183
+shader_parameter/stretch_intensity = 1.015
 shader_parameter/wave_noise = SubResource("NoiseTexture2D_xe1mo")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_2oq5h"]
+frequency = 0.03
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_yncpb"]
+seamless = true
+noise = SubResource("FastNoiseLite_2oq5h")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_477cn"]
+shader = ExtResource("10_xe1mo")
+shader_parameter/wave_speed = Vector2(0.03, -0.03)
+shader_parameter/distorcion = 0.025
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_yncpb")
 
 [node name="Level_FrogTemple" type="Node2D"]
 
@@ -200,3 +222,65 @@ material = SubResource("ShaderMaterial_yncpb")
 position = Vector2(2021, 888)
 scale = Vector2(2.91979, 0.293981)
 texture = ExtResource("8_0lg5j")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -100
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="BGTreesReflexion3" type="Sprite2D" parent="CanvasLayer/Control"]
+z_index = 1
+position = Vector2(528, 387.855)
+scale = Vector2(0.758333, 0.704794)
+texture = ExtResource("11_24p2i")
+
+[node name="BGTreesReflexion2" type="Sprite2D" parent="CanvasLayer/Control"]
+z_index = 1
+position = Vector2(98.225, 539.655)
+rotation = -0.267035
+scale = Vector2(0.758333, 0.704794)
+texture = ExtResource("11_24p2i")
+
+[node name="BGTreesReflexion4" type="Sprite2D" parent="CanvasLayer/Control"]
+z_index = 1
+position = Vector2(98.225, 539.655)
+rotation = 0.0890118
+scale = Vector2(0.758333, 0.704794)
+texture = ExtResource("11_24p2i")
+
+[node name="BGTreesReflexion1" type="Sprite2D" parent="CanvasLayer/Control"]
+z_index = 1
+position = Vector2(680, 510.115)
+scale = Vector2(0.758333, 0.704794)
+texture = ExtResource("11_24p2i")
+flip_h = true
+
+[node name="BGColor" type="Sprite2D" parent="CanvasLayer/Control"]
+position = Vector2(675.505, 243.73)
+scale = Vector2(0.70625, 0.703704)
+texture = ExtResource("9_xe1mo")
+
+[node name="BGWater" type="Sprite2D" parent="CanvasLayer/Control"]
+z_index = 2
+material = SubResource("ShaderMaterial_477cn")
+position = Vector2(712, 476)
+scale = Vector2(0.704794, 0.348148)
+texture = ExtResource("8_0lg5j")
+
+[node name="BGTrees" type="Sprite2D" parent="CanvasLayer/Control"]
+z_index = 3
+position = Vector2(673.8, 152.325)
+scale = Vector2(0.704794, 0.757191)
+texture = ExtResource("11_2oq5h")
+
+[node name="deathZone" parent="." instance=ExtResource("12_24p2i")]
+position = Vector2(15568, -1044)
+scale = Vector2(102.64, 1)
