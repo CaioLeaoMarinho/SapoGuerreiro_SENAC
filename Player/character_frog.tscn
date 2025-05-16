@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://cr7x3kf1nqqjl"]
+[gd_scene load_steps=37 format=3 uid="uid://cr7x3kf1nqqjl"]
 
 [ext_resource type="Script" uid="uid://dofqmgweliysy" path="res://Player/Scripts/Player.gd" id="1_7jske"]
 [ext_resource type="Texture2D" uid="uid://cntbuwfyacdom" path="res://Player/Sprites/Frog_Fall.png" id="1_nunj2"]
@@ -14,10 +14,11 @@
 [ext_resource type="Script" uid="uid://yw7wbk1ablr3" path="res://Player/Scripts/States/PlayerStateJump.gd" id="9_blrg1"]
 [ext_resource type="Texture2D" uid="uid://ehvbqbystc5j" path="res://Player/Sprites/Frog_Rope_E.png" id="9_djiqc"]
 [ext_resource type="Script" uid="uid://dtph2hui0whfv" path="res://Player/Scripts/States/PlayerStateFall.gd" id="10_j2pvl"]
+[ext_resource type="Script" uid="uid://dovbeeehwxljf" path="res://Player/player_camera.gd" id="10_k0tbs"]
 [ext_resource type="Script" uid="uid://cxky7jl26f45u" path="res://Player/Scripts/States/PlayerStateHook.gd" id="11_lsk01"]
 [ext_resource type="Script" uid="uid://cjbhe4ql8m3tj" path="res://Player/Scripts/States/PlayerStateJumpPeak.gd" id="12_4pnda"]
 [ext_resource type="Script" uid="uid://bnyiahr1mrucf" path="res://Player/Scripts/States/PlayerStateHurt.gd" id="14_ng5dx"]
-[ext_resource type="Script" uid="uid://3i8gvb4yream" path="res://Player/PlayerStateDie.gd" id="15_r3r6e"]
+[ext_resource type="Script" uid="uid://3i8gvb4yream" path="res://Player/Scripts/States/PlayerStateDie.gd" id="15_r3r6e"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_sdmge"]
 shader = ExtResource("2_jrilk")
@@ -712,6 +713,7 @@ size = Vector2(32, 52)
 size = Vector2(32, 8)
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
+z_index = 1
 collision_mask = 2
 platform_floor_layers = 4294967042
 platform_wall_layers = 2
@@ -759,6 +761,7 @@ one_shot = true
 position = Vector2(0, -88)
 position_smoothing_enabled = true
 position_smoothing_speed = 3.0
+script = ExtResource("10_k0tbs")
 
 [node name="FrogRopeDetector" type="Area2D" parent="."]
 collision_layer = 0

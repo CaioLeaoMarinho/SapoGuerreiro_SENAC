@@ -1,12 +1,13 @@
 shader_type canvas_item;
 
 uniform vec4 water_color : source_color;
+uniform float reflexion_opactiy : hint_range(0.0, 1.0) = 0.7;
 uniform float wave_speed : hint_range(0.0, 1.0) = 0.02;
 uniform sampler2D screen_texture : hint_screen_texture;
 uniform sampler2D wave_noise : repeat_enable;
 
 void fragment() {
-	vec2 water_wave = (texture(wave_noise, UV + TIME * wave_speed).rg - 0.5) * 0.02;
+	vec2 water_wave = (texture(wave_noise, UV + TIME * wave_speed).rg - -0.75) * 0.01;
 	vec2 uv = vec2(SCREEN_UV.x, SCREEN_UV.y - UV.y) + water_wave;
 	
 	vec4 color = texture(screen_texture, uv);
@@ -16,6 +17,6 @@ void fragment() {
 	avg_color = pow(avg_color, 1.4);
 	mix_value += avg_color;
 	
-	mix_value = clamp(mix_value, 0.0, 0.7);
+	mix_value = clamp(mix_value, 0.0, reflexion_opactiy);
 	COLOR = mix(water_color, color, mix_value);
 }

@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://cr7x3kf1nqqjl" path="res://Player/character_frog.tscn" id="4_4vh0e"]
 [ext_resource type="PackedScene" uid="uid://ddphek4m1vwbw" path="res://Enemies/Larva/[enemy]_larva.tscn" id="5_gqbh3"]
 [ext_resource type="Shader" uid="uid://c4hdxw54n35xd" path="res://Assets/Shaders/lagoonWater.gdshader" id="7_kdxsx"]
-[ext_resource type="Texture2D" uid="uid://bh6m5k56qbwp3" path="res://Scenes/white.png" id="8_0lg5j"]
+[ext_resource type="Texture2D" uid="uid://bh6m5k56qbwp3" path="res://Assets/GlobalScripts/white.png" id="8_0lg5j"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_kdxsx"]
 resource_local_to_scene = true
@@ -89,6 +89,7 @@ noise = SubResource("FastNoiseLite_0pfu6")
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_yncpb"]
 shader = ExtResource("7_kdxsx")
 shader_parameter/water_color = Color(0, 0.313726, 0.121569, 1)
+shader_parameter/reflexion_opactiy = 0.4
 shader_parameter/wave_speed = 0.11
 shader_parameter/wave_noise = SubResource("NoiseTexture2D_xe1mo")
 
@@ -193,10 +194,8 @@ position = Vector2(11312, -1568)
 [node name="Player" parent="." instance=ExtResource("4_4vh0e")]
 position = Vector2(168, 576)
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-follow_viewport_enabled = true
-
 [node name="Water" type="Sprite2D" parent="."]
+z_index = 10
 material = SubResource("ShaderMaterial_yncpb")
 position = Vector2(2021, 888)
 scale = Vector2(2.91979, 0.293981)
