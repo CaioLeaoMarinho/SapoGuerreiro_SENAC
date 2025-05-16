@@ -32,6 +32,9 @@ func _ready():
 func _physics_process(delta):
 	if currentState != null:
 		currentState._update_state(delta)
+		
+	if Input.is_action_just_pressed("ui_cancel"):
+		get_tree().quit()
 #endregion
 
 #region State Machine Methods
@@ -153,6 +156,7 @@ func _process_rope_buffer(delta):
 
 func _execute_hook():
 	Player.current_frog_rope.owner.can_hook = false
+	Player.current_frog_rope.owner.animation_player.play("hooked")
 	Player.rope_buffered = false
 	_switch_state(hookState)
 

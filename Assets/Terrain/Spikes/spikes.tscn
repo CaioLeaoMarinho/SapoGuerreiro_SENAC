@@ -6,6 +6,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_demv7"]
 
 [node name="Spike" type="Sprite2D"]
+z_index = 5
 texture_repeat = 2
 scale = Vector2(1, 1.14286)
 texture = ExtResource("1_xbbav")

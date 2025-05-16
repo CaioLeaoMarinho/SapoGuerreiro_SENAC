@@ -8,6 +8,7 @@ func _enter_state():
 		StateManager.die()
 	else:
 		Entity.hurt_animation_player.play("Hurt")
+		Entity.camera_2d.camera_shake()
 		
 		if Entity.global_position.x < Entity.agressor_pos.x:
 			if Entity.victim_knockback_force.x > 0:

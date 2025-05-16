@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bqq6mlegku75x"
-path="res://.godot/imported/cross.png-a684644214cefb4ab23ced2e71700a0a.ctex"
+uid="uid://d0olrrsyeo2gh"
+path="res://.godot/imported/background_trees_reflexion.png-2cee6e1b0351d00bdc1dd075ec67d270.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://tutorial/cross.png"
-dest_files=["res://.godot/imported/cross.png-a684644214cefb4ab23ced2e71700a0a.ctex"]
+source_file="res://Assets/Terrain/Sprites/Background/DefaultType/background_trees_reflexion.png"
+dest_files=["res://.godot/imported/background_trees_reflexion.png-2cee6e1b0351d00bdc1dd075ec67d270.ctex"]
 
 [params]
 

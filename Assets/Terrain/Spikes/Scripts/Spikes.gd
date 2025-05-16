@@ -9,4 +9,4 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	for area in hitbox.get_overlapping_areas():
 		if area.owner.is_in_group("player"):
-			area.owner.take_damage(1, knockback_force, global_position)
+			area.owner.take_damage(area.owner.life, knockback_force, global_position)

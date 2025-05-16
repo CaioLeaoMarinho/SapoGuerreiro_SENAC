@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d0etuhitl0xm8"
-path="res://.godot/imported/dpad_left.png-3134c560f84cc53f40349924fad45258.ctex"
+uid="uid://b8jotitmal816"
+path="res://.godot/imported/background_color.png-cf49b14b4347a6014e4045ea2a1f49dc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://tutorial/dpad_left.png"
-dest_files=["res://.godot/imported/dpad_left.png-3134c560f84cc53f40349924fad45258.ctex"]
+source_file="res://Assets/Terrain/Sprites/Background/DefaultType/background_color.png"
+dest_files=["res://.godot/imported/background_color.png-cf49b14b4347a6014e4045ea2a1f49dc.ctex"]
 
 [params]
 

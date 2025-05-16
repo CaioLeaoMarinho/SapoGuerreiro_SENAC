@@ -1,6 +1,7 @@
 extends Sprite2D
 
 @onready var input_icon: Sprite2D = $InputIcon
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 var player = null
 var can_hook = true

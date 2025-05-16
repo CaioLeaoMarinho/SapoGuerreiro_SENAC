@@ -8,7 +8,7 @@
 [ext_resource type="Shader" uid="uid://b7l4abhefeu7" path="res://Assets/Shaders/HookOutline.gdshader" id="4_ry78d"]
 [ext_resource type="Texture2D" uid="uid://cne8pfbt3eos3" path="res://Assets/GlobalScripts/UI_JumpControllerIcon.tres" id="4_vksku"]
 [ext_resource type="Texture2D" uid="uid://48x2dyapsyc7" path="res://tutorial/Segura.png" id="5_a3wmv"]
-[ext_resource type="Texture2D" uid="uid://c0po1d8wrturv" path="res://tutorial/Aperta.png" id="5_e5c5n"]
+[ext_resource type="Texture2D" uid="uid://c0po1d8wrturv" path="res://tutorial/Aperta.png" id="5_op75u"]
 [ext_resource type="PackedScene" uid="uid://ddphek4m1vwbw" path="res://Enemies/Larva/[enemy]_larva.tscn" id="5_ry78d"]
 [ext_resource type="PackedScene" uid="uid://cki0la0m0gkhi" path="res://Assets/Terrain/Spikes/spikes.tscn" id="6_2akco"]
 [ext_resource type="Texture2D" uid="uid://dbe7rch0df01x" path="res://tutorial/Seta cima.png" id="6_38hg2"]
@@ -76,12 +76,12 @@ texture = ExtResource("4_vksku")
 [node name="aperta" type="Sprite2D" parent="."]
 position = Vector2(704, 604)
 scale = Vector2(0.333333, 0.355556)
-texture = ExtResource("5_e5c5n")
+texture = ExtResource("5_op75u")
 
 [node name="aperta3" type="Sprite2D" parent="."]
 position = Vector2(4344, -19.9998)
 scale = Vector2(0.333333, 0.355556)
-texture = ExtResource("5_e5c5n")
+texture = ExtResource("5_op75u")
 
 [node name="aperta2" type="Sprite2D" parent="."]
 position = Vector2(1776, 588)

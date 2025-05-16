@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cfc8s43btd4vj"
-path="res://.godot/imported/dpad_right.png-1cccc84153c9af44e9c08fe759211bb1.ctex"
+uid="uid://nx4t75osmwxy"
+path="res://.godot/imported/FinalReflex.png-2b3b1f915027a4eb130d6675e0503da3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://tutorial/dpad_right.png"
-dest_files=["res://.godot/imported/dpad_right.png-1cccc84153c9af44e9c08fe759211bb1.ctex"]
+source_file="res://Assets/MainMenu/FinalReflex.png"
+dest_files=["res://.godot/imported/FinalReflex.png-2b3b1f915027a4eb130d6675e0503da3.ctex"]
 
 [params]
 
