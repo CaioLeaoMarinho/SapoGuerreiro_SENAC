@@ -19,6 +19,10 @@ config/features=PackedStringArray("4.4", "Forward Plus")
 ControllerIcons="*res://addons/controller_icons/ControllerIcons.gd"
 VitoriaRegeaTransitionScreen="*res://Assets/Shaders/VitoriaRegeaTransitionScreen.tscn"
 
+[display]
+
+window/size/mode=3
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/controller_icons/plugin.cfg")
