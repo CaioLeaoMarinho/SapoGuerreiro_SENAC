@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://nx4t75osmwxy"
-path="res://.godot/imported/FinalReflex.png-2b3b1f915027a4eb130d6675e0503da3.ctex"
+path="res://.godot/imported/FinalReflex.png-eb51df8f20375ff6c8050b42e1c8771d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/MainMenu/FinalReflex.png"
-dest_files=["res://.godot/imported/FinalReflex.png-2b3b1f915027a4eb130d6675e0503da3.ctex"]
+source_file="res://Scenes/MainMenu/Sprites/FinalReflex.png"
+dest_files=["res://.godot/imported/FinalReflex.png-eb51df8f20375ff6c8050b42e1c8771d.ctex"]
 
 [params]
 

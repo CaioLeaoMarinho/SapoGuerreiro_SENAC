@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://brt1oex8yp600"
-path="res://.godot/imported/Transition1Shape.png-cad1a71bada6adc4f4719cc8b023182b.ctex"
+path="res://.godot/imported/Transition1Shape.png-61eed7c6338136061c64654e1f27a78d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/MainMenu/Transition1Shape.png"
-dest_files=["res://.godot/imported/Transition1Shape.png-cad1a71bada6adc4f4719cc8b023182b.ctex"]
+source_file="res://Assets/GlobalSprites/Transition1Shape.png"
+dest_files=["res://.godot/imported/Transition1Shape.png-61eed7c6338136061c64654e1f27a78d.ctex"]
 
 [params]
 

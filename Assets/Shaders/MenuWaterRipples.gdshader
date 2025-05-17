@@ -107,8 +107,8 @@ float waterlayer(vec2 uv)
 vec3 water(vec2 uv, vec3 cdir, float iTime)
 {
     uv *= vec2(0.25);
-	
-	
+
+
 
     // Parallax height distortion with two directional waves at
     // slightly different angles.
@@ -117,7 +117,7 @@ vec3 water(vec2 uv, vec3 cdir, float iTime)
     uv += a * h;
     h = sin(0.841471 * uv.x - 0.540302 * uv.y + iTime);
     uv += a * h;
-    
+
     // Texture distortion
     float d1 = mod(uv.x + uv.y, TWOPI);
     float d2 = mod((uv.x + uv.y + 0.25) * 1.3, SIXPI);
@@ -127,7 +127,7 @@ vec3 water(vec2 uv, vec3 cdir, float iTime)
     	sin(d1) * 0.15 + sin(d2) * 0.05,
     	cos(d1) * 0.15 + cos(d2) * 0.05
     );
-    
+
     vec3 ret = mix(WATER_COL.rgb, WATER2_COL.rgb, waterlayer(uv + dist.xy));
     ret = mix(ret, FOAM_COL.rgb, waterlayer(vec2(1.0) - uv - dist.yx));
     return ret;

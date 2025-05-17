@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://cfebrpv1pav07"]
 
 [ext_resource type="Shader" uid="uid://cb4j7op560lg3" path="res://Assets/Shaders/CutoutTransitionScreen.gdshader" id="1_1wuqo"]
-[ext_resource type="Texture2D" uid="uid://brt1oex8yp600" path="res://Assets/MainMenu/Transition1Shape.png" id="2_covov"]
+[ext_resource type="Texture2D" uid="uid://brt1oex8yp600" path="res://Assets/GlobalSprites/Transition1Shape.png" id="2_covov"]
 [ext_resource type="Script" uid="uid://c31le8ou46734" path="res://Assets/GlobalScripts/transition_screen.gd" id="3_3nnpj"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_covov"]
