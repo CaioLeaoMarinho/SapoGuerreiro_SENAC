@@ -247,6 +247,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(1.04, 1)
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
@@ -285,7 +286,7 @@ texture = ExtResource("23_g50p1")
 [node name="BGWater" type="Sprite2D" parent="CanvasLayer/Control"]
 z_index = 2
 material = SubResource("ShaderMaterial_lwqm4")
-position = Vector2(712, 476)
+position = Vector2(671.154, 476)
 scale = Vector2(0.704794, 0.348148)
 texture = ExtResource("25_doat0")
 
