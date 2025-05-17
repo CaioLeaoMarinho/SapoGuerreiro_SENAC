@@ -112,7 +112,7 @@ shader_parameter/wave_noise = SubResource("NoiseTexture2D_xe1mo")
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_2oq5h"]
 frequency = 0.03
 
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_yncpb"]
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_2oq5h"]
 seamless = true
 noise = SubResource("FastNoiseLite_2oq5h")
 
@@ -120,7 +120,7 @@ noise = SubResource("FastNoiseLite_2oq5h")
 shader = ExtResource("10_xe1mo")
 shader_parameter/wave_speed = Vector2(0.03, -0.03)
 shader_parameter/distorcion = 0.025
-shader_parameter/noise_texture = SubResource("NoiseTexture2D_yncpb")
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_2oq5h")
 
 [node name="Level_FrogTemple" type="Node2D"]
 
@@ -167,7 +167,7 @@ position = Vector2(9704, -1360)
 
 [node name="FrogRope10" parent="HookAnchors" instance=ExtResource("2_gqbh3")]
 material = SubResource("ShaderMaterial_2oq5h")
-position = Vector2(10591, -2096)
+position = Vector2(10584, -2160)
 
 [node name="FrogRope11" parent="HookAnchors" instance=ExtResource("2_gqbh3")]
 material = SubResource("ShaderMaterial_licww")
@@ -196,9 +196,14 @@ scale = Vector2(2.65521, 5.15813)
 region_rect = Rect2(0.235, 8.5, 406, 7.946)
 
 [node name="Spike5" parent="Spikes" instance=ExtResource("4_1j35o")]
-position = Vector2(6656, -208)
+position = Vector2(6944, -208)
 scale = Vector2(2.65521, 5.15813)
-region_rect = Rect2(0.235, 8.5, 584.18, 7.946)
+region_rect = Rect2(0.235, 8.5, 366.9, 7.946)
+
+[node name="Spike8" parent="Spikes" instance=ExtResource("4_1j35o")]
+position = Vector2(6368, -208)
+scale = Vector2(2.65521, 5.15813)
+region_rect = Rect2(0.235, 8.5, 366.9, 7.946)
 
 [node name="Spike6" parent="Spikes" instance=ExtResource("4_1j35o")]
 position = Vector2(8872, -208)
