@@ -14,7 +14,7 @@
 [ext_resource type="Script" uid="uid://yw7wbk1ablr3" path="res://Player/Scripts/States/PlayerStateJump.gd" id="9_blrg1"]
 [ext_resource type="Texture2D" uid="uid://ehvbqbystc5j" path="res://Player/Sprites/Frog_Rope_E.png" id="9_djiqc"]
 [ext_resource type="Script" uid="uid://dtph2hui0whfv" path="res://Player/Scripts/States/PlayerStateFall.gd" id="10_j2pvl"]
-[ext_resource type="Script" uid="uid://dovbeeehwxljf" path="res://Player/player_camera.gd" id="10_k0tbs"]
+[ext_resource type="Script" uid="uid://dovbeeehwxljf" path="res://Player/Scripts/player_camera.gd" id="10_k0tbs"]
 [ext_resource type="Script" uid="uid://cxky7jl26f45u" path="res://Player/Scripts/States/PlayerStateHook.gd" id="11_lsk01"]
 [ext_resource type="Script" uid="uid://cjbhe4ql8m3tj" path="res://Player/Scripts/States/PlayerStateJumpPeak.gd" id="12_4pnda"]
 [ext_resource type="Script" uid="uid://bnyiahr1mrucf" path="res://Player/Scripts/States/PlayerStateHurt.gd" id="14_ng5dx"]
