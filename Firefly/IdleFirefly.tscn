@@ -1,0 +1,90 @@
+[gd_scene load_steps=7 format=3 uid="uid://coxqtj1dm1non"]
+
+[ext_resource type="Script" uid="uid://c5o03jxd2tfr7" path="res://Firefly/Scripts/idle_firefly.gd" id="1_6afcb"]
+[ext_resource type="Texture2D" uid="uid://byc72ypvphm1g" path="res://Firefly/Sprites/Vagalume.png" id="1_p3m4w"]
+
+[sub_resource type="Animation" id="Animation_65010"]
+resource_name = "FlyingArround"
+length = 6.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FireflySprite2D:flip_h")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5, 3, 4.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [false, true, false, true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("FireflySprite2D:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 1.5, 2, 3, 3.5, 4.5, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-26, -19), Vector2(-26, -19), Vector2(19, 13), Vector2(19, 13), Vector2(-16, 11), Vector2(-16, 11), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_fgnmm"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FireflySprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("FireflySprite2D:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kb7ib"]
+_data = {
+&"FlyingArround": SubResource("Animation_65010"),
+&"RESET": SubResource("Animation_fgnmm")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_p3m4w"]
+
+[node name="Firefly" type="Node2D" groups=["Firefly_collectable"]]
+script = ExtResource("1_6afcb")
+
+[node name="FireflySprite2D" type="Sprite2D" parent="."]
+z_index = 1
+scale = Vector2(0.0376344, 0.0376344)
+texture = ExtResource("1_p3m4w")
+flip_h = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_kb7ib")
+}
+autoplay = "FlyingArround"
+
+[node name="EntityDetector" type="Area2D" parent="."]
+collision_layer = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EntityDetector"]
+scale = Vector2(5.86884, 5.86884)
+shape = SubResource("CircleShape2D_p3m4w")

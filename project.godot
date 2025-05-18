@@ -37,6 +37,7 @@ hitbox=""
 player=""
 stomp_hurtbox=""
 tongue_rope=""
+Firefly_collectable=""
 
 [gui]
 

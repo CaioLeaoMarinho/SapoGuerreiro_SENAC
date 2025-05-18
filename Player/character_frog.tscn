@@ -106,7 +106,7 @@ tracks/5/keys = {
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("Marker2D:position")
+tracks/6/path = NodePath("MouthPos:position")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
@@ -335,7 +335,7 @@ tracks/4/keys = {
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("Marker2D:position")
+tracks/5/path = NodePath("MouthPos:position")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
@@ -411,7 +411,7 @@ tracks/4/keys = {
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("Marker2D:position")
+tracks/5/path = NodePath("MouthPos:position")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
@@ -772,6 +772,15 @@ position = Vector2(0, -32)
 shape = SubResource("CircleShape2D_wxnq7")
 debug_color = Color(1, 1, 1, 0.12549)
 
+[node name="CollectablesDetector" type="Area2D" parent="." groups=["Firefly_collectable"]]
+collision_layer = 0
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollectablesDetector"]
+position = Vector2(0, -32)
+shape = SubResource("CircleShape2D_wxnq7")
+debug_color = Color(1, 1, 1, 0.12549)
+
 [node name="Hurtbox" type="Area2D" parent="." groups=["hurtbox"]]
 collision_layer = 64
 collision_mask = 32
@@ -794,7 +803,10 @@ position = Vector2(4, 4)
 shape = SubResource("RectangleShape2D_r3r6e")
 debug_color = Color(0.996078, 0, 0.2, 0.141176)
 
-[node name="Marker2D" type="Marker2D" parent="."]
+[node name="MouthPos" type="Marker2D" parent="."]
+position = Vector2(15.93, -36.03)
+
+[node name="FireflyPos" type="Marker2D" parent="."]
 position = Vector2(15.93, -36.03)
 
 [node name="StateMachine" type="Node" parent="."]
@@ -825,3 +837,4 @@ script = ExtResource("14_ng5dx")
 script = ExtResource("15_r3r6e")
 
 [connection signal="timeout" from="InvencibilityTimer" to="." method="_on_invencibility_timer_timeout"]
+[connection signal="area_entered" from="CollectablesDetector" to="." method="_on_collectables_detector_area_entered"]

@@ -307,6 +307,7 @@ collision_mask = 2
 script = ExtResource("1_igl0y")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -2
 material = SubResource("ShaderMaterial_a4ane")
 position = Vector2(0, 13)
 scale = Vector2(3.36842, 1.91667)

@@ -1,0 +1,116 @@
+[gd_scene load_steps=6 format=3 uid="uid://fd7htyejuyyp"]
+
+[ext_resource type="Texture2D" uid="uid://byc72ypvphm1g" path="res://Firefly/Sprites/Vagalume.png" id="1_6q6td"]
+[ext_resource type="Script" uid="uid://bsyypme7qgfbp" path="res://Firefly/Scripts/exit_firefly.gd" id="1_r2hcf"]
+
+[sub_resource type="Animation" id="Animation_fgnmm"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FireflySprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("FireflySprite2D:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.0376344, 0.0376344)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("FireflySprite2D:flip_h")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_65010"]
+resource_name = "UnfollowPlayer"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FireflySprite2D:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 1.5, 2.5, 3, 4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-45, -40), Vector2(-45, -40), Vector2(157, -149), Vector2(157, -149), Vector2(-961, -1261)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("FireflySprite2D:scale")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1, 1.5, 2.5, 3, 4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0.0376344, 0.0376344), Vector2(0.0936099, 0.0936099), Vector2(0.0936099, 0.0936099), Vector2(0.239889, 0.239889), Vector2(0.239889, 0.239889), Vector2(1.67481, 1.67481)]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(4),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"queue_free"
+}]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("FireflySprite2D:flip_h")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1.5, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kb7ib"]
+_data = {
+&"RESET": SubResource("Animation_fgnmm"),
+&"UnfollowPlayer": SubResource("Animation_65010")
+}
+
+[node name="Firefly" type="Node2D"]
+script = ExtResource("1_r2hcf")
+
+[node name="FireflySprite2D" type="Sprite2D" parent="."]
+z_index = 101
+scale = Vector2(0.0376344, 0.0376344)
+texture = ExtResource("1_6q6td")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_kb7ib")
+}

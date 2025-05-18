@@ -12,8 +12,11 @@ extends CharacterBody2D
 @onready var invencibility_timer: Timer = $InvencibilityTimer
 @onready var jump_buffer_timer: Timer = $JumpBufferTimer
 @onready var coyote_jump_timer: Timer = $CoyoteJumpTimer
-@onready var mouth_marker_2d: Marker2D = $Marker2D
+@onready var mouth_marker_2d: Marker2D = $MouthPos
+@onready var firefly_pos: Marker2D = $FireflyPos
+
 const tongue_rope = preload("res://Player/FrogRopeTongue.tscn")
+const firefly = preload("res://Firefly/FollowingFirefly.tscn")
 #endregion
 
 #region Variables
@@ -67,6 +70,8 @@ var last_frog_rope: Node = null
 var in_inertia = false
 var launched_by_rope = false
 var agressor_pos : Vector2
+
+var fireflies_list : Array = []
 #endregion
 
 #region Default Methods
@@ -81,7 +86,12 @@ func _physics_process(_delta):
 #region Custom Methods
 
 func _initilialize_player_components():
-	pass
+	for i in range(life):
+		var fireflyNode = firefly.instantiate()
+		fireflyNode.global_position = firefly_pos.global_position
+		get_parent().add_child.call_deferred(fireflyNode)
+		fireflyNode.target = self
+		fireflies_list.append(fireflyNode)
 	
 func get_valid_frog_ropes() -> Array:
 	var valid_ropes = []
@@ -124,12 +134,33 @@ func take_damage(damage : int, agressor_force : Vector2, agressor_position : Vec
 	if not hurt_invencible:
 		hurt_invencible = true
 		life -= damage
+		
 		invencibility_timer.start()
 		victim_knockback_force = agressor_force
 		agressor_pos = agressor_position
+		
+		for i in range(min(damage, fireflies_list.size())):
+			var cur_firefly = fireflies_list.pop_back()
+			cur_firefly.unfollow(self)
+		
 		state_manager._switch_state(state_manager.hurtState)
+		
+func take_life(firefly_startPos : Vector2, life_increased : int):
+	life += life_increased
+
+	var fireflyNode = firefly.instantiate()
+	fireflyNode.global_position = firefly_startPos
+	get_parent().add_child(fireflyNode)
+	fireflyNode.target = self
+	fireflies_list.append(fireflyNode)
+	
 #endregion
 
 func _on_invencibility_timer_timeout() -> void:
 	if hurt_invencible:
 		hurt_invencible = false
+
+func _on_collectables_detector_area_entered(area: Area2D) -> void:
+	if area.owner.is_in_group("Firefly_collectable"):
+		take_life(area.owner.firefly_sprite_2d.global_position, area.owner.life_increase)
+		area.owner.queue_free()
