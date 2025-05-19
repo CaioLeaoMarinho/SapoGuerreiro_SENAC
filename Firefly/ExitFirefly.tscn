@@ -55,7 +55,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 1, 1.5, 2.5, 3, 4),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(0, 0), Vector2(-45, -40), Vector2(-45, -40), Vector2(157, -149), Vector2(157, -149), Vector2(-961, -1261)]
+"values": [Vector2(0, 0), Vector2(-45, -40), Vector2(-45, -40), Vector2(157, -122.37), Vector2(157, -122.37), Vector2(-961, -1261)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -64,10 +64,10 @@ tracks/1/path = NodePath("FireflySprite2D:scale")
 tracks/1/interp = 2
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 1, 1.5, 2.5, 3, 4),
+"times": PackedFloat32Array(0, 1, 1.53333, 2.5, 3, 4),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(0.0376344, 0.0376344), Vector2(0.0936099, 0.0936099), Vector2(0.0936099, 0.0936099), Vector2(0.239889, 0.239889), Vector2(0.239889, 0.239889), Vector2(1.67481, 1.67481)]
+"values": [Vector2(0.0376344, 0.0376344), Vector2(0.1, 0.1), Vector2(0.1, 0.1), Vector2(0.25, 0.25), Vector2(0.25, 0.25), Vector2(2, 2)]
 }
 tracks/2/type = "method"
 tracks/2/imported = false
@@ -114,3 +114,4 @@ texture = ExtResource("1_6q6td")
 libraries = {
 &"": SubResource("AnimationLibrary_kb7ib")
 }
+speed_scale = 1.5
