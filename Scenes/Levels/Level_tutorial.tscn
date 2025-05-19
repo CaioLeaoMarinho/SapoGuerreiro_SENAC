@@ -55,18 +55,18 @@ shader_parameter/line_color = Color(0, 0, 0, 1)
 shader_parameter/line_thickness = 2.0
 shader_parameter/enable_outline = false
 
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_rx65e"]
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_0gns8"]
 frequency = 0.03
 
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_yncpb"]
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_2oq5h"]
 seamless = true
-noise = SubResource("FastNoiseLite_rx65e")
+noise = SubResource("FastNoiseLite_0gns8")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_lwqm4"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hvhax"]
 shader = ExtResource("24_qmmmy")
 shader_parameter/wave_speed = Vector2(0.03, -0.03)
 shader_parameter/distorcion = 0.025
-shader_parameter/noise_texture = SubResource("NoiseTexture2D_yncpb")
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_2oq5h")
 
 [node name="Node2D" type="Node2D"]
 
@@ -194,6 +194,65 @@ position = Vector2(8352, 96)
 material = SubResource("ShaderMaterial_2akco")
 position = Vector2(9200, 96)
 
+[node name="CanvasLayer" type="CanvasLayer" parent="FrogRope4"]
+layer = -100
+
+[node name="Control" type="Control" parent="FrogRope4/CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.04, 1)
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="BGTreesReflexion3" type="Sprite2D" parent="FrogRope4/CanvasLayer/Control"]
+z_index = 1
+position = Vector2(816.375, 656.843)
+scale = Vector2(1.14292, 1.06223)
+texture = ExtResource("22_yycls")
+
+[node name="BGTreesReflexion2" type="Sprite2D" parent="FrogRope4/CanvasLayer/Control"]
+z_index = 1
+position = Vector2(386.6, 808.643)
+rotation = -0.267035
+scale = Vector2(1.14292, 1.06223)
+texture = ExtResource("22_yycls")
+
+[node name="BGTreesReflexion4" type="Sprite2D" parent="FrogRope4/CanvasLayer/Control"]
+z_index = 1
+position = Vector2(386.6, 808.643)
+rotation = 0.0890118
+scale = Vector2(1.14292, 1.06223)
+texture = ExtResource("22_yycls")
+
+[node name="BGTreesReflexion1" type="Sprite2D" parent="FrogRope4/CanvasLayer/Control"]
+z_index = 1
+position = Vector2(968.375, 779.103)
+scale = Vector2(1.14292, 1.06223)
+texture = ExtResource("22_yycls")
+flip_h = true
+
+[node name="BGColor" type="Sprite2D" parent="FrogRope4/CanvasLayer/Control"]
+position = Vector2(963.88, 512.718)
+scale = Vector2(1.06443, 1.06059)
+texture = ExtResource("23_g50p1")
+
+[node name="BGWater" type="Sprite2D" parent="FrogRope4/CanvasLayer/Control"]
+z_index = 2
+material = SubResource("ShaderMaterial_hvhax")
+position = Vector2(1000.38, 744.988)
+scale = Vector2(1.06223, 0.524712)
+texture = ExtResource("25_doat0")
+
+[node name="BGTrees" type="Sprite2D" parent="FrogRope4/CanvasLayer/Control"]
+z_index = 3
+position = Vector2(962.175, 421.313)
+scale = Vector2(1.06223, 1.1412)
+texture = ExtResource("26_pmu20")
+
 [node name="[enemy] Larva" parent="." instance=ExtResource("5_ry78d")]
 position = Vector2(3192, 544)
 currentMoveSpeed = 2555
@@ -236,62 +295,3 @@ offset_bottom = 785.0
 scale = Vector2(2.08001, 1)
 theme_override_font_sizes/font_size = 71
 text = "ESPINHOS"
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-layer = -100
-
-[node name="Control" type="Control" parent="CanvasLayer"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(1.04, 1)
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="BGTreesReflexion3" type="Sprite2D" parent="CanvasLayer/Control"]
-z_index = 1
-position = Vector2(528, 387.855)
-scale = Vector2(0.758333, 0.704794)
-texture = ExtResource("22_yycls")
-
-[node name="BGTreesReflexion2" type="Sprite2D" parent="CanvasLayer/Control"]
-z_index = 1
-position = Vector2(98.225, 539.655)
-rotation = -0.267035
-scale = Vector2(0.758333, 0.704794)
-texture = ExtResource("22_yycls")
-
-[node name="BGTreesReflexion4" type="Sprite2D" parent="CanvasLayer/Control"]
-z_index = 1
-position = Vector2(98.225, 539.655)
-rotation = 0.0890118
-scale = Vector2(0.758333, 0.704794)
-texture = ExtResource("22_yycls")
-
-[node name="BGTreesReflexion1" type="Sprite2D" parent="CanvasLayer/Control"]
-z_index = 1
-position = Vector2(680, 510.115)
-scale = Vector2(0.758333, 0.704794)
-texture = ExtResource("22_yycls")
-flip_h = true
-
-[node name="BGColor" type="Sprite2D" parent="CanvasLayer/Control"]
-position = Vector2(675.505, 243.73)
-scale = Vector2(0.70625, 0.703704)
-texture = ExtResource("23_g50p1")
-
-[node name="BGWater" type="Sprite2D" parent="CanvasLayer/Control"]
-z_index = 2
-material = SubResource("ShaderMaterial_lwqm4")
-position = Vector2(671.154, 476)
-scale = Vector2(0.704794, 0.348148)
-texture = ExtResource("25_doat0")
-
-[node name="BGTrees" type="Sprite2D" parent="CanvasLayer/Control"]
-z_index = 3
-position = Vector2(673.8, 152.325)
-scale = Vector2(0.704794, 0.757191)
-texture = ExtResource("26_pmu20")
