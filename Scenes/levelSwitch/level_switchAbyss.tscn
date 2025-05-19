@@ -1,9 +1,8 @@
 [gd_scene load_steps=3 format=3 uid="uid://kvbuvw1fglej"]
 
-[ext_resource type="Script" uid="uid://bmylu3kjpeuv" path="res://Assets/GlobalScripts/area_2d.gd" id="1_mtmam"]
+[ext_resource type="Script" uid="uid://d1uyasgla2dr6" path="res://Scenes/levelSwitch/abyss.gd" id="1_mtmam"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_atwwi"]
-size = Vector2(128, 384)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_70q0p"]
 
 [node name="level_switch_abyss" type="Node2D"]
 
@@ -11,7 +10,6 @@ size = Vector2(128, 384)
 script = ExtResource("1_mtmam")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(64, 192)
-shape = SubResource("RectangleShape2D_atwwi")
+shape = SubResource("RectangleShape2D_70q0p")
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]

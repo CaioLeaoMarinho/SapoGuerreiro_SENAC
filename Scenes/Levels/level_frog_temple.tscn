@@ -250,8 +250,8 @@ position = Vector2(12224, -610)
 position = Vector2(144, 569)
 
 [node name="level_switch_abyss" parent="." instance=ExtResource("7_xnumu")]
-position = Vector2(13560, -2288)
-scale = Vector2(1, 1.82334)
+position = Vector2(14136, -2112)
+scale = Vector2(22.1362, 43.3119)
 
 [node name="Water" type="Sprite2D" parent="."]
 z_index = 10
