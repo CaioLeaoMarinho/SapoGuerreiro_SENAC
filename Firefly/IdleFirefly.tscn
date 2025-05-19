@@ -4,6 +4,48 @@
 [ext_resource type="Texture2D" uid="uid://byc72ypvphm1g" path="res://Firefly/Sprites/Vagalume.png" id="1_p3m4w"]
 [ext_resource type="Texture2D" uid="uid://ct12lbb26u6hl" path="res://Firefly/Sprites/Vagalume_light.png" id="2_65010"]
 
+[sub_resource type="Animation" id="Animation_kb7ib"]
+resource_name = "Collected"
+length = 0.75
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CollectRange:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.75),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 0.54902, 0, 0.454902), Color(1, 0.890196, 0, 1), Color(1, 0.54902, 0, 0)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.75),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"queue_free"
+}]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("FireflySprite2D:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
 [sub_resource type="Animation" id="Animation_65010"]
 resource_name = "FlyingArround"
 length = 6.0
@@ -31,6 +73,18 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [Vector2(0, 0), Vector2(-26, -19), Vector2(-26, -19), Vector2(19, 13), Vector2(19, 13), Vector2(-16, 11), Vector2(-16, 11), Vector2(0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("FireflySprite2D:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_fgnmm"]
@@ -71,35 +125,17 @@ tracks/2/keys = {
 "update": 0,
 "values": [Color(1, 0.54902, 0, 0.454902)]
 }
-
-[sub_resource type="Animation" id="Animation_kb7ib"]
-resource_name = "Collected"
-length = 0.75
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("CollectRange:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.75),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Color(1, 0.54902, 0, 0.454902), Color(1, 0.54902, 0, 1), Color(1, 0.54902, 0, 0)]
-}
-tracks/1/type = "method"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0.75),
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("FireflySprite2D:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"values": [{
-"args": [],
-"method": &"queue_free"
-}]
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_kb7ib"]
@@ -121,6 +157,7 @@ scale = Vector2(0.252778, 0.252778)
 texture = ExtResource("2_65010")
 
 [node name="FireflySprite2D" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
 z_index = 1
 scale = Vector2(0.0376344, 0.0376344)
 texture = ExtResource("1_p3m4w")

@@ -10,5 +10,4 @@ func _ready() -> void:
 
 func collect():
 	animation_player.stop()
-	firefly_sprite_2d.free()
 	animation_player.play("Collected")
