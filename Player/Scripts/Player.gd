@@ -119,7 +119,7 @@ func get_closest_frog_rope() -> Node:
 	return closest_rope
 
 func update_acceleration():
-	if not in_inertia and not launched_by_rope:
+	if not in_inertia and not launched_by_rope or is_on_floor():
 		acceleration = instantAcceleration
 		deceleration = instantDeceleration
 	else:
@@ -163,4 +163,4 @@ func _on_invencibility_timer_timeout() -> void:
 func _on_collectables_detector_area_entered(area: Area2D) -> void:
 	if area.owner.is_in_group("Firefly_collectable"):
 		take_life(area.owner.firefly_sprite_2d.global_position, area.owner.life_increase)
-		area.owner.queue_free()
+		area.owner.collect()
