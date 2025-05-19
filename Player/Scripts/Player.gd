@@ -162,5 +162,6 @@ func _on_invencibility_timer_timeout() -> void:
 
 func _on_collectables_detector_area_entered(area: Area2D) -> void:
 	if area.owner.is_in_group("Firefly_collectable"):
+		area.owner.entity_detector.queue_free()
 		take_life(area.owner.firefly_sprite_2d.global_position, area.owner.life_increase)
 		area.owner.collect()
