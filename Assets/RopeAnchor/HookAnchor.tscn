@@ -90,5 +90,10 @@ position = Vector2(0, -28.9032)
 scale = Vector2(0.247742, 0.247742)
 texture = ExtResource("4_dfxcm")
 
+[node name="DoubleClickerTimer" type="Timer" parent="."]
+wait_time = 0.35
+one_shot = true
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="timeout" from="DoubleClickerTimer" to="." method="_on_double_clicker_timer_timeout"]

@@ -132,7 +132,7 @@ func _get_frog_hope(delta):
 		
 		Player.current_frog_rope = Player.get_closest_frog_rope()
 	
-		if Player.current_frog_rope:
+		if Player.current_frog_rope and Player.current_frog_rope.owner.double_clicker_timer.time_left <= 0:
 			var distance = Player.global_position.distance_to(Player.current_frog_rope.global_position)
 		
 			if distance >= Player.min_rope_distance:

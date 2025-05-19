@@ -51,6 +51,7 @@ func _get_markers_position():
 
 func _attach_rope():
 	is_hooked = true
+	Entity.current_frog_rope.owner.double_clicker_timer.start()
 	var ropeNode = Entity.tongue_rope.instantiate()
 	get_parent().add_child(ropeNode)
 	ropeNode._set_rope(start_pos, origin_pos)
@@ -91,7 +92,7 @@ func _detach_rope():
 	StateManager._switch_state(StateManager.idleState)
 
 func _get_detach_rope():
-	if Input.is_action_just_pressed("input_jump"):
+	if Input.is_action_just_pressed("input_jump") and Entity.current_frog_rope.owner.double_clicker_timer.time_left <= 0:
 		_detach_rope()
 
 	if abs(current_swing_angle - target_angle) < 0.6:
