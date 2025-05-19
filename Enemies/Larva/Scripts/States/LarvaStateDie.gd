@@ -14,3 +14,7 @@ func _enter_state():
 	
 	if die_type != null:
 		StateManager._switch_animation(die_type)
+		if Entity.have_firefly:
+			for firefly in Entity.fireflies_list:
+				firefly = Entity.fireflies_list.pop_back()
+				firefly.unfollow(Entity)

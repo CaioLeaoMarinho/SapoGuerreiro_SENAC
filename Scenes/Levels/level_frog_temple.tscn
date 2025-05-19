@@ -223,6 +223,7 @@ position = Vector2(3256, 416)
 
 [node name="[enemy] Larva2" parent="Enemies" instance=ExtResource("5_grtq5")]
 position = Vector2(3136, -152)
+have_firefly = true
 
 [node name="[enemy] Larva5" parent="Enemies" instance=ExtResource("5_grtq5")]
 position = Vector2(2632, -544)

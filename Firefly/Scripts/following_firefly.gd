@@ -24,11 +24,11 @@ func unfollow(previous_owner):
 	var fireflyNode = null
 	if previous_owner.is_in_group("player"):
 		fireflyNode = exit_firefly.instantiate()
+		fireflyNode.target = target
 	elif previous_owner.is_in_group("enemy"):
 		fireflyNode = idle_firefly.instantiate()
 	
 	if fireflyNode:
 		fireflyNode.global_position = firefly_sprite_2d.global_position
-		fireflyNode.target = target
-		get_parent().add_child(fireflyNode)
+		get_parent().add_child.call_deferred(fireflyNode)
 		queue_free()
