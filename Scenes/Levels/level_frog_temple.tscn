@@ -160,7 +160,7 @@ position = Vector2(10560, -704)
 
 [node name="FrogRope8" parent="HookAnchors" instance=ExtResource("2_f6whf")]
 material = SubResource("ShaderMaterial_xe1mo")
-position = Vector2(11504, -1360)
+position = Vector2(11600, -1360)
 
 [node name="FrogRope9" parent="HookAnchors" instance=ExtResource("2_f6whf")]
 material = SubResource("ShaderMaterial_24p2i")
@@ -168,7 +168,7 @@ position = Vector2(9704, -1360)
 
 [node name="FrogRope10" parent="HookAnchors" instance=ExtResource("2_f6whf")]
 material = SubResource("ShaderMaterial_2oq5h")
-position = Vector2(10584, -2160)
+position = Vector2(10529, -2160)
 
 [node name="FrogRope11" parent="HookAnchors" instance=ExtResource("2_f6whf")]
 material = SubResource("ShaderMaterial_licww")
