@@ -10,5 +10,4 @@ func _ready() -> void:
 	animation_player.play("FlyingArround")
 
 func collect():
-	animation_player.stop()
 	animation_player.play("Collected")

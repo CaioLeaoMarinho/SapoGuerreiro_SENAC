@@ -262,51 +262,118 @@ grow_vertical = 2
 scale = Vector2(1.04, 1)
 size_flags_horizontal = 3
 size_flags_vertical = 3
+mouse_filter = 2
 
-[node name="BGTreesReflexion3" type="Sprite2D" parent="CanvasLayer/Control"]
+[node name="BGTreesReflexion3" type="TextureRect" parent="CanvasLayer/Control"]
+visible = false
 z_index = 1
-position = Vector2(816.375, 656.843)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 scale = Vector2(1.14292, 1.06223)
+mouse_filter = 2
 texture = ExtResource("9_q4n83")
 
-[node name="BGTreesReflexion2" type="Sprite2D" parent="CanvasLayer/Control"]
+[node name="BGTreesReflexion2" type="TextureRect" parent="CanvasLayer/Control"]
+visible = false
 z_index = 1
-position = Vector2(386.6, 808.643)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 138.462
+offset_top = 64.0
+offset_right = 138.461
+offset_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 2
 rotation = -0.267035
 scale = Vector2(1.14292, 1.06223)
+mouse_filter = 2
 texture = ExtResource("9_q4n83")
 
-[node name="BGTreesReflexion4" type="Sprite2D" parent="CanvasLayer/Control"]
+[node name="BGTreesReflexion4" type="TextureRect" parent="CanvasLayer/Control"]
 z_index = 1
-position = Vector2(386.6, 808.643)
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 82.6923
+offset_top = -967.0
+offset_right = 82.6924
+offset_bottom = -122.0
+grow_horizontal = 2
+grow_vertical = 0
 rotation = 0.0890118
 scale = Vector2(1.14292, 1.06223)
+mouse_filter = 2
 texture = ExtResource("9_q4n83")
+expand_mode = 3
+stretch_mode = 4
 
-[node name="BGTreesReflexion1" type="Sprite2D" parent="CanvasLayer/Control"]
+[node name="BGTreesReflexion1" type="TextureRect" parent="CanvasLayer/Control"]
 z_index = 1
-position = Vector2(968.375, 779.103)
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -968.0
+offset_right = -240.0
+offset_bottom = -57.0
+grow_horizontal = 2
+grow_vertical = 0
 scale = Vector2(1.14292, 1.06223)
+mouse_filter = 2
 texture = ExtResource("9_q4n83")
+expand_mode = 3
+stretch_mode = 4
 flip_h = true
 
-[node name="BGColor" type="Sprite2D" parent="CanvasLayer/Control"]
-position = Vector2(963.88, 512.718)
+[node name="BGColor" type="TextureRect" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 scale = Vector2(1.06443, 1.06059)
+mouse_filter = 2
 texture = ExtResource("10_lxmqm")
 
-[node name="BGWater" type="Sprite2D" parent="CanvasLayer/Control"]
+[node name="BGWater" type="TextureRect" parent="CanvasLayer/Control"]
 z_index = 2
 material = SubResource("ShaderMaterial_477cn")
-position = Vector2(1000.38, 744.988)
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -609.0
+offset_bottom = 552.0
+grow_horizontal = 2
+grow_vertical = 0
 scale = Vector2(1.06223, 0.524712)
+mouse_filter = 2
 texture = ExtResource("8_8n2je")
+expand_mode = 1
 
-[node name="BGTrees" type="Sprite2D" parent="CanvasLayer/Control"]
+[node name="BGTrees" type="TextureRect" parent="CanvasLayer/Control"]
 z_index = 3
-position = Vector2(962.175, 421.313)
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_right = -111.0
+offset_bottom = 587.0
+grow_horizontal = 2
 scale = Vector2(1.06223, 1.1412)
+mouse_filter = 2
 texture = ExtResource("12_mh31q")
+expand_mode = 3
 
 [node name="deathZone" parent="." instance=ExtResource("13_rpgvj")]
 position = Vector2(15568, -1044)

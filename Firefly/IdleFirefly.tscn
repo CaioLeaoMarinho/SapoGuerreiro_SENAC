@@ -224,7 +224,7 @@ script = ExtResource("1_6afcb")
 
 [node name="CollectRange" type="Sprite2D" parent="."]
 modulate = Color(1, 0.54902, 0, 0.454902)
-z_index = 1
+z_index = -1
 scale = Vector2(0.252778, 0.252778)
 texture = ExtResource("2_65010")
 
