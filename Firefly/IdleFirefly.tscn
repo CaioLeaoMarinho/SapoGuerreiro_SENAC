@@ -1,7 +1,74 @@
-[gd_scene load_steps=7 format=3 uid="uid://coxqtj1dm1non"]
+[gd_scene load_steps=9 format=3 uid="uid://coxqtj1dm1non"]
 
 [ext_resource type="Script" uid="uid://c5o03jxd2tfr7" path="res://Firefly/Scripts/idle_firefly.gd" id="1_6afcb"]
 [ext_resource type="Texture2D" uid="uid://byc72ypvphm1g" path="res://Firefly/Sprites/Vagalume.png" id="1_p3m4w"]
+[ext_resource type="Texture2D" uid="uid://ct12lbb26u6hl" path="res://Firefly/Sprites/Vagalume_light.png" id="2_65010"]
+
+[sub_resource type="Animation" id="Animation_kb7ib"]
+resource_name = "Collected"
+length = 0.75
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CollectRange:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.75),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 0.54902, 0, 0.454902), Color(1, 0.890196, 0, 1), Color(1, 0.54902, 0, 0)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.75),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"queue_free"
+}]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("FireflySprite2D:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("EntityDetector:monitoring")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("EntityDetector:monitorable")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_65010"]
 resource_name = "FlyingArround"
@@ -31,6 +98,42 @@ tracks/1/keys = {
 "update": 0,
 "values": [Vector2(0, 0), Vector2(-26, -19), Vector2(-26, -19), Vector2(19, 13), Vector2(19, 13), Vector2(-16, 11), Vector2(-16, 11), Vector2(0, 0)]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("FireflySprite2D:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("EntityDetector:monitoring")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("EntityDetector:monitorable")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_fgnmm"]
 length = 0.001
@@ -58,9 +161,58 @@ tracks/1/keys = {
 "update": 1,
 "values": [true]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CollectRange:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 0.54902, 0, 0.454902)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("FireflySprite2D:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("EntityDetector:monitoring")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("EntityDetector:monitorable")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_kb7ib"]
 _data = {
+&"Collected": SubResource("Animation_kb7ib"),
 &"FlyingArround": SubResource("Animation_65010"),
 &"RESET": SubResource("Animation_fgnmm")
 }
@@ -70,7 +222,14 @@ _data = {
 [node name="Firefly" type="Node2D" groups=["Firefly_collectable"]]
 script = ExtResource("1_6afcb")
 
+[node name="CollectRange" type="Sprite2D" parent="."]
+modulate = Color(1, 0.54902, 0, 0.454902)
+z_index = -1
+scale = Vector2(0.252778, 0.252778)
+texture = ExtResource("2_65010")
+
 [node name="FireflySprite2D" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
 z_index = 1
 scale = Vector2(0.0376344, 0.0376344)
 texture = ExtResource("1_p3m4w")
@@ -84,6 +243,8 @@ autoplay = "FlyingArround"
 
 [node name="EntityDetector" type="Area2D" parent="."]
 collision_layer = 8
+monitoring = false
+monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EntityDetector"]
 scale = Vector2(5.86884, 5.86884)

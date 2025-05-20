@@ -3,12 +3,12 @@
 [ext_resource type="Script" uid="uid://dofqmgweliysy" path="res://Player/Scripts/Player.gd" id="1_7jske"]
 [ext_resource type="Texture2D" uid="uid://cntbuwfyacdom" path="res://Player/Sprites/Frog_Fall.png" id="1_nunj2"]
 [ext_resource type="Shader" uid="uid://b2nbajkg01b35" path="res://Assets/Shaders/HurtShader.gdshader" id="2_jrilk"]
-[ext_resource type="Texture2D" uid="uid://dcasct2w04tnd" path="res://Player/Sprites/Frog_Walk.png" id="3_jrilk"]
+[ext_resource type="Texture2D" uid="uid://btyjgdq1m7mp4" path="res://Player/Sprites/Frog_Walk.png" id="3_jrilk"]
 [ext_resource type="Texture2D" uid="uid://b055silck6bh0" path="res://Player/Sprites/Frog_Roll.png" id="3_sdmge"]
 [ext_resource type="Texture2D" uid="uid://bhygw1nbqwcfd" path="res://Player/Sprites/Frog_Rope_D.png" id="4_jrilk"]
 [ext_resource type="Script" uid="uid://beipk67epegmc" path="res://Player/Scripts/PlayerStateManager.gd" id="6_mjpkv"]
-[ext_resource type="Texture2D" uid="uid://dxhv1ifgr8lcs" path="res://Player/Sprites/Frog_Idle.png" id="6_sdmge"]
-[ext_resource type="Texture2D" uid="uid://bp2341ojclaxc" path="res://Player/Sprites/Frog_Pulo.png" id="7_djiqc"]
+[ext_resource type="Texture2D" uid="uid://c7338ruqex7j7" path="res://Player/Sprites/Frog_Idle.png" id="6_sdmge"]
+[ext_resource type="Texture2D" uid="uid://mkv5ov2pibck" path="res://Player/Sprites/Frog_Pulo.png" id="7_djiqc"]
 [ext_resource type="Script" uid="uid://d1proqqfd26dp" path="res://Player/Scripts/States/PlayerStateIdle.gd" id="7_fvo7o"]
 [ext_resource type="Script" uid="uid://biev7c248h26q" path="res://Player/Scripts/States/PlayerStateWalk.gd" id="8_82ym4"]
 [ext_resource type="Script" uid="uid://yw7wbk1ablr3" path="res://Player/Scripts/States/PlayerStateJump.gd" id="9_blrg1"]
@@ -760,7 +760,6 @@ one_shot = true
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(0, -88)
 position_smoothing_enabled = true
-position_smoothing_speed = 3.0
 script = ExtResource("10_k0tbs")
 
 [node name="FrogRopeDetector" type="Area2D" parent="."]

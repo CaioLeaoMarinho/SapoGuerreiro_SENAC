@@ -2,8 +2,10 @@ extends Sprite2D
 
 @onready var input_icon: Sprite2D = $InputIcon
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var double_clicker_timer: Timer = $DoubleClickerTimer
 
 var player = null
+var can_change = true
 var can_hook = true
 const outline_color = Color(1,1,1,1)
 const outline_thickness = 2.0
@@ -25,6 +27,7 @@ func _on_area_2d_body_exited(body):
 			player = null
 			self.get_material().set_shader_parameter("enable_outline", false)
 			input_icon.visible = false
+			double_clicker_timer.stop()
 
 func _process(_delta):
 	if player:
@@ -36,3 +39,7 @@ func _process(_delta):
 		else:
 			self.get_material().set_shader_parameter("enable_outline", false)
 			input_icon.visible = false
+
+
+func _on_double_clicker_timer_timeout() -> void:
+	can_change = true
