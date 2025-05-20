@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=4 uid="uid://cxqu673uxvioq"]
+[gd_scene load_steps=34 format=4 uid="uid://cxqu673uxvioq"]
 
 [ext_resource type="PackedScene" uid="uid://caw0votrv6yn" path="res://tile_map_layer_0.tscn" id="1_dqklk"]
 [ext_resource type="PackedScene" uid="uid://cdg2il1ckafl8" path="res://Assets/RopeAnchor/HookAnchor.tscn" id="2_f6whf"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://5w1qxak8p0km" path="res://Scenes/levelSwitch/death_zone.tscn" id="13_rpgvj"]
 [ext_resource type="PackedScene" uid="uid://kvbuvw1fglej" path="res://Scenes/levelSwitch/level_switchAbyss.tscn" id="13_xnumu"]
 [ext_resource type="PackedScene" uid="uid://coxqtj1dm1non" path="res://Firefly/IdleFirefly.tscn" id="14_f6whf"]
+[ext_resource type="Texture2D" uid="uid://clq6lpjcwgugl" path="res://Scenes/Inputs_tutorial/Botão A.png" id="16_1m3x1"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_kdxsx"]
 resource_local_to_scene = true
@@ -221,6 +222,7 @@ region_rect = Rect2(0.235, 8.5, 342.5, 7.946)
 
 [node name="[enemy] Larva" parent="Enemies" instance=ExtResource("5_grtq5")]
 position = Vector2(3256, 416)
+have_firefly = true
 
 [node name="[enemy] Larva2" parent="Enemies" instance=ExtResource("5_grtq5")]
 position = Vector2(3136, -152)
@@ -393,3 +395,9 @@ material = SubResource("ShaderMaterial_yncpb")
 position = Vector2(2332, 913.625)
 scale = Vector2(3.90625, 0.341435)
 texture = ExtResource("8_8n2je")
+
+[node name="BotãoA" type="Sprite2D" parent="."]
+z_index = 7
+position = Vector2(160, 538.375)
+scale = Vector2(1, 2.48313)
+texture = ExtResource("16_1m3x1")
