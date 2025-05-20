@@ -125,7 +125,7 @@ position = Vector2(8047, -25)
 
 [node name="FrogRope4" parent="FrogRopes" instance=ExtResource("4_ieiuy")]
 material = SubResource("ShaderMaterial_e63lj")
-position = Vector2(8856, -41)
+position = Vector2(8856, -27)
 
 [node name="FrogRope5" parent="FrogRopes" instance=ExtResource("4_ieiuy")]
 material = SubResource("ShaderMaterial_nc1oa")
