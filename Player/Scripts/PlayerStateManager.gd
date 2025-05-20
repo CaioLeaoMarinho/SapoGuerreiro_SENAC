@@ -59,35 +59,38 @@ func _switch_animation(nextAnimation):
 
 #region Custom Methods
 func _get_horizontal_movement():
-	Player.moveDirectionX = Input.get_axis("input_left", "input_right")
+	if not Player.in_transition:
+		Player.moveDirectionX = Input.get_axis("input_left", "input_right")
 
-	if Player.moveDirectionX != 0:
-		Player.velocity.x = move_toward(Player.velocity.x, Player.moveDirectionX * Player.currentMoveSpeed, Player.acceleration)
-	else:
-		Player.velocity.x = move_toward(Player.velocity.x, Player.moveDirectionX * Player.currentMoveSpeed, Player.deceleration)
+		if Player.moveDirectionX != 0:
+			Player.velocity.x = move_toward(Player.velocity.x, Player.moveDirectionX * Player.currentMoveSpeed, Player.acceleration)
+		else:
+			Player.velocity.x = move_toward(Player.velocity.x, Player.moveDirectionX * Player.currentMoveSpeed, Player.deceleration)
 
 func _get_jump():
-	if Player.is_on_floor():
-		if Player.currentJumps < Player.maxJumps:
-			if Input.is_action_just_pressed("input_jump") or Player.jump_buffer_timer.time_left > 0:
-				Player.jump_buffer_timer.stop()
+	if not Player.in_transition:
+		if Player.is_on_floor():
+			if Player.currentJumps < Player.maxJumps:
+				if Input.is_action_just_pressed("input_jump") or Player.jump_buffer_timer.time_left > 0:
+					Player.jump_buffer_timer.stop()
+					Player.currentJumps += 1
+					_switch_state(jumpState)
+		else:
+			if Player.currentJumps < Player.maxJumps and Player.currentJumps > 0 and Input.is_action_just_pressed("input_jump"):
 				Player.currentJumps += 1
 				_switch_state(jumpState)
-	else:
-		if Player.currentJumps < Player.maxJumps and Player.currentJumps > 0 and Input.is_action_just_pressed("input_jump"):
-			Player.currentJumps += 1
-			_switch_state(jumpState)
-		if Player.coyote_jump_timer.time_left > 0:
-			if Input.is_action_just_pressed("input_jump") and Player.currentJumps < Player.maxJumps:
-				Player.coyote_jump_timer.stop()
-				Player.currentJumps += 1
-				_switch_state(jumpState)
+			if Player.coyote_jump_timer.time_left > 0:
+				if Input.is_action_just_pressed("input_jump") and Player.currentJumps < Player.maxJumps:
+					Player.coyote_jump_timer.stop()
+					Player.currentJumps += 1
+					_switch_state(jumpState)
 
 func _get_input_direction():
-	if Input.is_action_pressed("input_left"):
-		Player.facing = -1
-	if Input.is_action_pressed("input_right"):
-		Player.facing = 1
+	if not Player.in_transition:
+		if Input.is_action_pressed("input_left"):
+			Player.facing = -1
+		if Input.is_action_pressed("input_right"):
+			Player.facing = 1
 
 func _get_flip_h():
 	Player.sprite2d.flip_h = (Player.facing < 0)
@@ -113,8 +116,9 @@ func _get_idle():
 		_switch_state(idleState)
 
 func _get_walk():
-	if Player.moveDirectionX != 0:
-		_switch_state(walkState)
+	if not Player.in_transition:
+		if Player.moveDirectionX != 0:
+			_switch_state(walkState)
 
 func _get_jump_peak():
 	if Player.velocity.y >= 0:
@@ -124,22 +128,23 @@ func _get_jump_peak():
 		_switch_state(jumpPeakState)
 
 func _get_frog_hope(delta):
-	_process_rope_buffer(delta)
+	if not Player.in_transition:
+		_process_rope_buffer(delta)
 	
-	if Input.is_action_just_pressed("input_hook") and Player.can_hook:
-		if not Player.can_hook:
-			return
+		if Input.is_action_just_pressed("input_hook") and Player.can_hook:
+			if not Player.can_hook:
+				return
 		
-		Player.current_frog_rope = Player.get_closest_frog_rope()
+			Player.current_frog_rope = Player.get_closest_frog_rope()
 	
-		if Player.current_frog_rope and Player.current_frog_rope.owner.double_clicker_timer.time_left <= 0:
-			var distance = Player.global_position.distance_to(Player.current_frog_rope.global_position)
+			if Player.current_frog_rope and Player.current_frog_rope.owner.double_clicker_timer.time_left <= 0:
+				var distance = Player.global_position.distance_to(Player.current_frog_rope.global_position)
 		
-			if distance >= Player.min_rope_distance:
-				_execute_hook()
-			else:
-				Player.rope_buffered = true
-				Player.rope_buffer_timer = Player.rope_buffer_time
+				if distance >= Player.min_rope_distance:
+					_execute_hook()
+				else:
+					Player.rope_buffered = true
+					Player.rope_buffer_timer = Player.rope_buffer_time
 
 func _process_rope_buffer(delta):
 	if Player.rope_buffered:
@@ -164,6 +169,11 @@ func die():
 	_switch_state(dieState)
 
 func _get_jump_buffer():
-	if Input.is_action_just_pressed("input_jump"):
-		Player.jump_buffer_timer.start()
+	if not Player.in_transition:
+		if Input.is_action_just_pressed("input_jump"):
+			Player.jump_buffer_timer.start()
+			
+func _get_in_transition():
+	if Player.in_transition:
+		_switch_state(idleState)
 #endregion

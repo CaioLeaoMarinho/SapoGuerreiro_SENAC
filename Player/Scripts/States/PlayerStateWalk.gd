@@ -14,4 +14,4 @@ func _update_state(_delta : float):
 	StateManager._get_horizontal_movement()
 	StateManager._get_flip_h()
 	StateManager._get_idle()
-	
+	StateManager._get_in_transition()

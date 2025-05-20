@@ -63,6 +63,7 @@ var rope_buffer_timer = 0.0
 var facing = 1
 
 var canSwitchState = true
+var in_transition : bool = true
 
 var can_hook = true
 var current_frog_rope: Node = null
