@@ -4,7 +4,9 @@ extends CanvasLayer
 var scene_to_go : String = ""
 
 func _ready() -> void:
-	get_tree().get_first_node_in_group("player").in_transition = false
+	var player = get_tree().get_first_node_in_group("player")
+	if player: 
+		player.in_transition = false
 
 func transition_to(scene : String, transition_type : String):
 	scene_to_go = scene

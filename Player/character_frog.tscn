@@ -723,14 +723,14 @@ rope_buffer_time = 0.2
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_sdmge")
-position = Vector2(-8, -30.105)
+position = Vector2(-4, -32)
 rotation = -3.14159
 scale = Vector2(0.166667, 0.166667)
 texture = ExtResource("3_sdmge")
 flip_v = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(3.565, -32)
+position = Vector2(0, -32)
 shape = SubResource("CapsuleShape2D_352do")
 debug_color = Color(0, 0.6, 0.701961, 0.188235)
 
@@ -760,6 +760,7 @@ one_shot = true
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(0, -88)
 position_smoothing_enabled = true
+position_smoothing_speed = 3.0
 script = ExtResource("10_k0tbs")
 
 [node name="FrogRopeDetector" type="Area2D" parent="."]
