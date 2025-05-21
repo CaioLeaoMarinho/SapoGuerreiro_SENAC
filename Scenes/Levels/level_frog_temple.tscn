@@ -96,7 +96,7 @@ shader_parameter/enable_outline = false
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_2oq5h"]
 frequency = 0.03
 
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_f6whf"]
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_xnumu"]
 seamless = true
 noise = SubResource("FastNoiseLite_2oq5h")
 
@@ -104,7 +104,7 @@ noise = SubResource("FastNoiseLite_2oq5h")
 shader = ExtResource("11_dguot")
 shader_parameter/wave_speed = Vector2(0.03, -0.03)
 shader_parameter/distorcion = 0.025
-shader_parameter/noise_texture = SubResource("NoiseTexture2D_f6whf")
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_xnumu")
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_0pfu6"]
 frequency = 0.03
