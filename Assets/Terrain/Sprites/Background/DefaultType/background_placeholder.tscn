@@ -1,0 +1,147 @@
+[gd_scene load_steps=9 format=3 uid="uid://bsfnunulb5osk"]
+
+[ext_resource type="Texture2D" uid="uid://d0olrrsyeo2gh" path="res://Assets/Terrain/Sprites/Background/DefaultType/background_trees_reflexion.png" id="1_tt1se"]
+[ext_resource type="Texture2D" uid="uid://b8jotitmal816" path="res://Assets/Terrain/Sprites/Background/DefaultType/background_color.png" id="2_r0ftf"]
+[ext_resource type="Shader" uid="uid://bjb35jc5mloxj" path="res://Assets/Shaders/backgroundWater.gdshader" id="3_juyoy"]
+[ext_resource type="Texture2D" uid="uid://bh6m5k56qbwp3" path="res://Assets/GlobalSprites/white.png" id="4_rg3ry"]
+[ext_resource type="Texture2D" uid="uid://b248ugqeanyy0" path="res://Assets/Terrain/Sprites/Background/DefaultType/background_trees.png" id="5_5ey24"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_2oq5h"]
+frequency = 0.03
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_f6whf"]
+seamless = true
+noise = SubResource("FastNoiseLite_2oq5h")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_477cn"]
+shader = ExtResource("3_juyoy")
+shader_parameter/wave_speed = Vector2(0.03, -0.03)
+shader_parameter/distorcion = 0.025
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_f6whf")
+
+[node name="BackgroundPlaceholder" type="CanvasLayer"]
+layer = -100
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.04, 1)
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 2
+
+[node name="BGTreesReflexion3" type="TextureRect" parent="Control"]
+visible = false
+z_index = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.14292, 1.06223)
+mouse_filter = 2
+texture = ExtResource("1_tt1se")
+
+[node name="BGTreesReflexion2" type="TextureRect" parent="Control"]
+visible = false
+z_index = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 138.462
+offset_top = 64.0
+offset_right = 138.461
+offset_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -0.267035
+scale = Vector2(1.14292, 1.06223)
+mouse_filter = 2
+texture = ExtResource("1_tt1se")
+
+[node name="BGTreesReflexion4" type="TextureRect" parent="Control"]
+z_index = 1
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 82.6923
+offset_top = -967.0
+offset_right = 82.6924
+offset_bottom = -122.0
+grow_horizontal = 2
+grow_vertical = 0
+rotation = 0.0890118
+scale = Vector2(1.14292, 1.06223)
+mouse_filter = 2
+texture = ExtResource("1_tt1se")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="BGTreesReflexion1" type="TextureRect" parent="Control"]
+z_index = 1
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -968.0
+offset_right = -240.0
+offset_bottom = -57.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(1.14292, 1.06223)
+mouse_filter = 2
+texture = ExtResource("1_tt1se")
+expand_mode = 3
+stretch_mode = 4
+flip_h = true
+
+[node name="BGColor" type="TextureRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.06443, 1.06059)
+mouse_filter = 2
+texture = ExtResource("2_r0ftf")
+
+[node name="BGWater" type="TextureRect" parent="Control"]
+z_index = 2
+material = SubResource("ShaderMaterial_477cn")
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -609.0
+offset_bottom = 552.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(1.06223, 0.524712)
+mouse_filter = 2
+texture = ExtResource("4_rg3ry")
+expand_mode = 1
+
+[node name="BGTrees" type="TextureRect" parent="Control"]
+z_index = 3
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = -29.8077
+offset_right = -140.808
+offset_bottom = 587.0
+grow_horizontal = 2
+scale = Vector2(1.06223, 1.1412)
+mouse_filter = 2
+texture = ExtResource("5_5ey24")
+expand_mode = 3
