@@ -1,0 +1,83 @@
+[gd_scene format=3 uid="uid://b7pemphcd7oke"]
+
+[node name="Pause_Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="background" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="background"]
+layout_mode = 2
+color = Color(0, 0, 0, 0.207843)
+
+[node name="MarginContainer" type="MarginContainer" parent="background"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="ColorRect" type="ColorRect" parent="background/MarginContainer"]
+custom_minimum_size = Vector2(723, 523)
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="background/MarginContainer/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="background/MarginContainer/ColorRect/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 22
+
+[node name="Button" type="Button" parent="background/MarginContainer/ColorRect/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(403, 68)
+layout_mode = 2
+text = "jogar"
+
+[node name="Button2" type="Button" parent="background/MarginContainer/ColorRect/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(403, 68)
+layout_mode = 2
+text = "Opções"
+
+[node name="Button3" type="Button" parent="background/MarginContainer/ColorRect/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(403, 68)
+layout_mode = 2
+text = "Voltar para o menu"
+
+[node name="Button4" type="Button" parent="background/MarginContainer/ColorRect/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(403, 68)
+layout_mode = 2
+text = "Sair"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="background/MarginContainer/ColorRect/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+
+[node name="Button" type="Button" parent="background/MarginContainer/ColorRect/MarginContainer/HBoxContainer"]
+layout_mode = 2
+text = "[] Selecionar"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="background/MarginContainer/ColorRect/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+
+[node name="Button" type="Button" parent="background/MarginContainer/ColorRect/MarginContainer/HBoxContainer2"]
+layout_mode = 2
+text = "[] Voltar"
