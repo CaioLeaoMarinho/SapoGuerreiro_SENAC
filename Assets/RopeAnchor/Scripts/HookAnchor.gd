@@ -16,6 +16,7 @@ func _ready():
 	self.set_material(selfMaterial)
 	self.get_material().set_shader_parameter("line_color", outline_color)
 	self.get_material().set_shader_parameter("line_thickness", outline_thickness)
+	self.get_material().set_shader_parameter("enable_outline", false)
 
 func _on_area_2d_body_entered(body):
 	if body.name == "Player":
