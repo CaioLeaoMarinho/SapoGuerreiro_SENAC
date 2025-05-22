@@ -93,6 +93,8 @@ func _initilialize_player_components():
 		get_parent().add_child.call_deferred(fireflyNode)
 		fireflyNode.target = self
 		fireflies_list.append(fireflyNode)
+		
+	sprite2d.get_material().set_shader_parameter("hit_effect", false)
 	
 func get_valid_frog_ropes() -> Array:
 	var valid_ropes = []
