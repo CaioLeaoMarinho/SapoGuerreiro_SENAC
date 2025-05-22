@@ -1,0 +1,72 @@
+[gd_scene format=3 uid="uid://cf4f20a4itdu3"]
+
+[node name="Setting_menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="background" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="janela" type="MarginContainer" parent="background"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="ColorRect" type="ColorRect" parent="background/janela"]
+custom_minimum_size = Vector2(1093, 611)
+layout_mode = 2
+color = Color(0, 0, 0, 0.482353)
+
+[node name="MarginContainer" type="MarginContainer" parent="background/janela"]
+layout_mode = 2
+theme_override_constants/margin_top = 70
+theme_override_constants/margin_bottom = 90
+
+[node name="VBoxContainer" type="VBoxContainer" parent="background/janela/MarginContainer"]
+custom_minimum_size = Vector2(958, 52)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+
+[node name="Button" type="Button" parent="background/janela/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(958, 52)
+layout_mode = 2
+
+[node name="Button2" type="Button" parent="background/janela/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(958, 52)
+layout_mode = 2
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="background/janela/MarginContainer"]
+custom_minimum_size = Vector2(958, 52)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Button" type="Button" parent="background/janela/MarginContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(958, 52)
+layout_mode = 2
+
+[node name="Button2" type="Button" parent="background/janela/MarginContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(958, 52)
+layout_mode = 2
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="background/janela/MarginContainer"]
+custom_minimum_size = Vector2(958, 52)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+
+[node name="Button2" type="Button" parent="background/janela/MarginContainer/VBoxContainer3"]
+custom_minimum_size = Vector2(958, 52)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
