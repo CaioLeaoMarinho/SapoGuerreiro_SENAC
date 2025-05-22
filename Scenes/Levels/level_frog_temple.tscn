@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=4 uid="uid://cxqu673uxvioq"]
+[gd_scene load_steps=27 format=4 uid="uid://cxqu673uxvioq"]
 
 [ext_resource type="PackedScene" uid="uid://caw0votrv6yn" path="res://tile_map_layer_0.tscn" id="1_dqklk"]
 [ext_resource type="PackedScene" uid="uid://cdg2il1ckafl8" path="res://Assets/RopeAnchor/HookAnchor.tscn" id="2_f6whf"]
@@ -9,6 +9,7 @@
 [ext_resource type="Shader" uid="uid://c4hdxw54n35xd" path="res://Assets/Shaders/lagoonWater.gdshader" id="7_dnhlc"]
 [ext_resource type="PackedScene" uid="uid://bsfnunulb5osk" path="res://Assets/Terrain/Sprites/Background/DefaultType/background_placeholder.tscn" id="7_u1ydj"]
 [ext_resource type="Texture2D" uid="uid://bh6m5k56qbwp3" path="res://Assets/GlobalSprites/white.png" id="8_8n2je"]
+[ext_resource type="PackedScene" uid="uid://kvbuvw1fglej" path="res://Scenes/levelSwitch/level_switchAbyss.tscn" id="12_7ewfm"]
 [ext_resource type="PackedScene" uid="uid://5w1qxak8p0km" path="res://Scenes/levelSwitch/death_zone.tscn" id="13_rpgvj"]
 [ext_resource type="PackedScene" uid="uid://coxqtj1dm1non" path="res://Firefly/IdleFirefly.tscn" id="14_f6whf"]
 
@@ -248,3 +249,7 @@ material = SubResource("ShaderMaterial_yncpb")
 position = Vector2(2332, 913.625)
 scale = Vector2(3.90625, 0.341435)
 texture = ExtResource("8_8n2je")
+
+[node name="level_switch_abyss" parent="." instance=ExtResource("12_7ewfm")]
+position = Vector2(13816, -2016)
+scale = Vector2(12.562, 29.4276)
