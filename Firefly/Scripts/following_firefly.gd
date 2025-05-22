@@ -29,6 +29,6 @@ func unfollow(previous_owner):
 		fireflyNode = idle_firefly.instantiate()
 	
 	if fireflyNode:
-		fireflyNode.global_position = firefly_sprite_2d.global_position
+		fireflyNode.global_position = global_position
 		get_parent().add_child.call_deferred(fireflyNode)
 		queue_free()

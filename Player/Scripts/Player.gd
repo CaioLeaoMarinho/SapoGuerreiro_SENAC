@@ -4,6 +4,7 @@ extends CharacterBody2D
 @onready var sprite2d: Sprite2D = $Sprite2D
 @onready var collision2d: CollisionShape2D = $CollisionShape2D
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var states_animation_player: AnimationPlayer = $StatesAnimationPlayer
 @onready var hurt_animation_player: AnimationPlayer = $HurtAnimationPlayer
 @onready var camera_2d: Camera2D = $Camera2D
 @onready var state_manager = $StateMachine
