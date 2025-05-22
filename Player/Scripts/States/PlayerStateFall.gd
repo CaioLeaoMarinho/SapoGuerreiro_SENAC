@@ -30,8 +30,9 @@ func _exit_state():
 
 #region Custom Methods
 func _on_stomp_area(area: Area2D):
-	if area.is_in_group("stomp_hurtbox"):
-		stomp_attack(area.owner)
+	if area.is_in_group("stomp_hurtbox"): 
+		if Entity.stomp_attack_area.global_position.y < area.global_position.y:
+			stomp_attack(area.owner)
 
 func stomp_attack(body):
 	body.take_damage(1, "stomp")
