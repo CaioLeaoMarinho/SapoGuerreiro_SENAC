@@ -1,12 +1,24 @@
-[gd_scene format=3 uid="uid://cy7obdtwlgb2t"]
+[gd_scene load_steps=4 format=3 uid="uid://cy7obdtwlgb2t"]
+
+[ext_resource type="Script" uid="uid://nvjrqe7yj6pa" path="res://Scenes/MainMenu/pause_menu.gd" id="1_7fyto"]
+
+[sub_resource type="InputEventKey" id="InputEventKey_7fyto"]
+device = -1
+keycode = 4194305
+
+[sub_resource type="Shortcut" id="Shortcut_nxup3"]
+events = [SubResource("InputEventKey_7fyto")]
 
 [node name="Pause_Menu" type="Control"]
+process_mode = 3
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_7fyto")
 
 [node name="background" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -17,6 +29,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="ColorRect" type="ColorRect" parent="background"]
+process_mode = 3
 layout_mode = 2
 color = Color(0, 0, 0, 0.207843)
 
@@ -30,62 +43,6 @@ custom_minimum_size = Vector2(723, 523)
 layout_mode = 2
 color = Color(0, 0, 0, 1)
 
-[node name="MarginContainer" type="MarginContainer" parent="background/MarginContainer/ColorRect"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="VBoxContainer" type="VBoxContainer" parent="background/MarginContainer/ColorRect/MarginContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-theme_override_constants/separation = 22
-
-[node name="Button" type="Button" parent="background/MarginContainer/ColorRect/MarginContainer/VBoxContainer"]
-custom_minimum_size = Vector2(403, 68)
-layout_mode = 2
-theme_override_font_sizes/font_size = 30
-text = "Continuar"
-
-[node name="Button2" type="Button" parent="background/MarginContainer/ColorRect/MarginContainer/VBoxContainer"]
-custom_minimum_size = Vector2(403, 68)
-layout_mode = 2
-theme_override_font_sizes/font_size = 30
-text = "Opções"
-
-[node name="Button3" type="Button" parent="background/MarginContainer/ColorRect/MarginContainer/VBoxContainer"]
-custom_minimum_size = Vector2(403, 68)
-layout_mode = 2
-theme_override_font_sizes/font_size = 30
-text = "Voltar para o menu"
-
-[node name="Button4" type="Button" parent="background/MarginContainer/ColorRect/MarginContainer/VBoxContainer"]
-custom_minimum_size = Vector2(403, 68)
-layout_mode = 2
-theme_override_font_sizes/font_size = 30
-text = "Sair"
-
-[node name="HBoxContainer" type="HBoxContainer" parent="background/MarginContainer/ColorRect/MarginContainer"]
-layout_mode = 2
-size_flags_horizontal = 8
-size_flags_vertical = 8
-
-[node name="Button" type="Button" parent="background/MarginContainer/ColorRect/MarginContainer/HBoxContainer"]
-layout_mode = 2
-text = "[] Selecionar"
-
-[node name="HBoxContainer2" type="HBoxContainer" parent="background/MarginContainer/ColorRect/MarginContainer"]
-layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 8
-
-[node name="Button" type="Button" parent="background/MarginContainer/ColorRect/MarginContainer/HBoxContainer2"]
-layout_mode = 2
-text = "[] Voltar"
-
 [node name="MarginContainer" type="MarginContainer" parent="background/MarginContainer"]
 layout_mode = 2
 theme_override_constants/margin_top = -40
@@ -97,3 +54,39 @@ size_flags_vertical = 0
 theme_override_font_sizes/font_size = 50
 text = "JOGO PAUSADO"
 horizontal_alignment = 1
+
+[node name="Opções" type="VBoxContainer" parent="background/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 22
+
+[node name="Continuar" type="Button" parent="background/MarginContainer/Opções"]
+custom_minimum_size = Vector2(403, 68)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+shortcut = SubResource("Shortcut_nxup3")
+text = "Continuar"
+
+[node name="Resetar" type="Button" parent="background/MarginContainer/Opções"]
+custom_minimum_size = Vector2(403, 68)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Resetar"
+
+[node name="VoltarMenu" type="Button" parent="background/MarginContainer/Opções"]
+custom_minimum_size = Vector2(403, 68)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Voltar para o menu"
+
+[node name="Sair" type="Button" parent="background/MarginContainer/Opções"]
+custom_minimum_size = Vector2(403, 68)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Sair"
+
+[connection signal="pressed" from="background/MarginContainer/Opções/Continuar" to="." method="_on_continuar_pressed"]
+[connection signal="pressed" from="background/MarginContainer/Opções/Resetar" to="." method="_on_resetar_pressed"]
+[connection signal="pressed" from="background/MarginContainer/Opções/VoltarMenu" to="." method="_on_voltar_menu_pressed"]
+[connection signal="pressed" from="background/MarginContainer/Opções/Sair" to="." method="_on_sair_pressed"]

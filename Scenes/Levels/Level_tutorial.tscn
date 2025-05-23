@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=4 uid="uid://bx8efc37fee0a"]
+[gd_scene load_steps=28 format=4 uid="uid://bx8efc37fee0a"]
 
 [ext_resource type="PackedScene" uid="uid://caw0votrv6yn" path="res://tile_map_layer_0.tscn" id="1_b72yq"]
 [ext_resource type="PackedScene" uid="uid://cr7x3kf1nqqjl" path="res://Player/character_frog.tscn" id="2_omm2d"]
@@ -22,6 +22,7 @@
 [ext_resource type="Texture2D" uid="uid://bknbimj24usbu" path="res://tutorial/Seta baixo.png" id="17_ceskh"]
 [ext_resource type="PackedScene" uid="uid://bsfnunulb5osk" path="res://Assets/Terrain/Sprites/Background/DefaultType/background_placeholder.tscn" id="22_l1wyn"]
 [ext_resource type="PackedScene" uid="uid://kvbuvw1fglej" path="res://Scenes/levelSwitch/level_switcher.tscn" id="22_l27g4"]
+[ext_resource type="PackedScene" uid="uid://cy7obdtwlgb2t" path="res://Scenes/MainMenu/PauseMenu.tscn" id="23_l27g4"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_itqdp"]
 resource_local_to_scene = true
@@ -204,3 +205,7 @@ scale = Vector2(97.7343, 13.4493)
 position = Vector2(10819, 285)
 scale = Vector2(5.83326, 17.5847)
 nextLevel = "res://Scenes/Levels/level_frog_temple.tscn"
+
+[node name="Pause" type="CanvasLayer" parent="."]
+
+[node name="Pause_Menu" parent="Pause" instance=ExtResource("23_l27g4")]

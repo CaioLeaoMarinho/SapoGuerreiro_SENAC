@@ -30,31 +30,27 @@ custom_minimum_size = Vector2(1093, 300)
 layout_mode = 2
 color = Color(0, 0, 0, 1)
 
-[node name="MarginContainer" type="MarginContainer" parent="background/MarginContainer"]
+[node name="HUD" type="MarginContainer" parent="background/MarginContainer"]
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
+theme_override_constants/margin_top = 20
 
-[node name="MarginContainer2" type="MarginContainer" parent="background/MarginContainer"]
-layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 0
-
-[node name="Efeitos" type="VBoxContainer" parent="background/MarginContainer/MarginContainer2"]
+[node name="Efeitos" type="VBoxContainer" parent="background/MarginContainer/HUD"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="background/MarginContainer/MarginContainer2/Efeitos"]
+[node name="Label" type="Label" parent="background/MarginContainer/HUD/Efeitos"]
 layout_mode = 2
 text = "HUD"
 
-[node name="CheckButton" type="CheckButton" parent="background/MarginContainer/MarginContainer2/Efeitos"]
+[node name="CheckButton" type="CheckButton" parent="background/MarginContainer/HUD/Efeitos"]
 layout_direction = 3
 layout_mode = 2
 button_pressed = true
 text = "Outline (Frog Rope)"
 icon_alignment = 2
 
-[node name="CheckButton2" type="CheckButton" parent="background/MarginContainer/MarginContainer2/Efeitos"]
+[node name="CheckButton2" type="CheckButton" parent="background/MarginContainer/HUD/Efeitos"]
 layout_direction = 3
 layout_mode = 2
 button_pressed = true
@@ -64,6 +60,7 @@ text = "Indicador de Botões"
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 4
+theme_override_constants/margin_top = 15
 
 [node name="Efeitos" type="VBoxContainer" parent="background/MarginContainer/MarginContainer3"]
 layout_mode = 2
