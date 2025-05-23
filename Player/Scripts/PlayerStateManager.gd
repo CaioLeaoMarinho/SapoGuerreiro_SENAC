@@ -122,10 +122,10 @@ func _get_walk():
 
 func _get_jump_peak():
 	if Player.velocity.y >= 0:
-		_switch_state(jumpPeakState)
+		_switch_state(fallState)
 	if not Input.is_action_pressed("input_jump"):
 		Player.velocity.y *= Player.jumpHeightMult
-		_switch_state(jumpPeakState)
+		_switch_state(fallState)
 
 func _get_frog_hope(delta):
 	if not Player.in_transition:
