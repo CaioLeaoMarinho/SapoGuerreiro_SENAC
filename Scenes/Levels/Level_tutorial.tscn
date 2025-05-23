@@ -21,7 +21,7 @@
 [ext_resource type="Texture2D" uid="uid://tkhwdrhc3cos" path="res://Assets/GlobalScripts/UI_FrogRopeControllerIcon.tres" id="14_op75u"]
 [ext_resource type="Texture2D" uid="uid://bknbimj24usbu" path="res://tutorial/Seta baixo.png" id="17_ceskh"]
 [ext_resource type="PackedScene" uid="uid://bsfnunulb5osk" path="res://Assets/Terrain/Sprites/Background/DefaultType/background_placeholder.tscn" id="22_l1wyn"]
-[ext_resource type="PackedScene" path="res://Scenes/levelSwitch/level_switcher.tscn" id="22_l27g4"]
+[ext_resource type="PackedScene" uid="uid://kvbuvw1fglej" path="res://Scenes/levelSwitch/level_switcher.tscn" id="22_l27g4"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_itqdp"]
 resource_local_to_scene = true

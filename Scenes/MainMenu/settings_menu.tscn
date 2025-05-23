@@ -1,0 +1,79 @@
+[gd_scene format=3 uid="uid://igpr4e0pr6dd"]
+
+[node name="Settings_menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="background" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="background"]
+layout_mode = 2
+color = Color(0, 0, 0, 0.207843)
+
+[node name="MarginContainer" type="MarginContainer" parent="background"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="ColorRect" type="ColorRect" parent="background/MarginContainer"]
+custom_minimum_size = Vector2(1093, 300)
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="background/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="MarginContainer2" type="MarginContainer" parent="background/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="Efeitos" type="VBoxContainer" parent="background/MarginContainer/MarginContainer2"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="background/MarginContainer/MarginContainer2/Efeitos"]
+layout_mode = 2
+text = "HUD"
+
+[node name="CheckButton" type="CheckButton" parent="background/MarginContainer/MarginContainer2/Efeitos"]
+layout_direction = 3
+layout_mode = 2
+button_pressed = true
+text = "Outline (Frog Rope)"
+icon_alignment = 2
+
+[node name="CheckButton2" type="CheckButton" parent="background/MarginContainer/MarginContainer2/Efeitos"]
+layout_direction = 3
+layout_mode = 2
+button_pressed = true
+text = "Indicador de Botões"
+
+[node name="MarginContainer3" type="MarginContainer" parent="background/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+
+[node name="Efeitos" type="VBoxContainer" parent="background/MarginContainer/MarginContainer3"]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="background/MarginContainer/MarginContainer3/Efeitos"]
+layout_mode = 2
+text = "EFEITOS NA TELA"
+
+[node name="CheckButton" type="CheckButton" parent="background/MarginContainer/MarginContainer3/Efeitos"]
+layout_direction = 3
+layout_mode = 2
+button_pressed = true
+text = "Efeito de tremedeira"

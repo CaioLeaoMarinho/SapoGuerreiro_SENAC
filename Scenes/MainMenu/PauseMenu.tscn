@@ -47,21 +47,25 @@ theme_override_constants/separation = 22
 [node name="Button" type="Button" parent="background/MarginContainer/ColorRect/MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(403, 68)
 layout_mode = 2
-text = "jogar"
+theme_override_font_sizes/font_size = 30
+text = "Continuar"
 
 [node name="Button2" type="Button" parent="background/MarginContainer/ColorRect/MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(403, 68)
 layout_mode = 2
+theme_override_font_sizes/font_size = 30
 text = "Opções"
 
 [node name="Button3" type="Button" parent="background/MarginContainer/ColorRect/MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(403, 68)
 layout_mode = 2
+theme_override_font_sizes/font_size = 30
 text = "Voltar para o menu"
 
 [node name="Button4" type="Button" parent="background/MarginContainer/ColorRect/MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(403, 68)
 layout_mode = 2
+theme_override_font_sizes/font_size = 30
 text = "Sair"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="background/MarginContainer/ColorRect/MarginContainer"]
@@ -81,3 +85,15 @@ size_flags_vertical = 8
 [node name="Button" type="Button" parent="background/MarginContainer/ColorRect/MarginContainer/HBoxContainer2"]
 layout_mode = 2
 text = "[] Voltar"
+
+[node name="MarginContainer" type="MarginContainer" parent="background/MarginContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = -40
+
+[node name="Label" type="Label" parent="background/MarginContainer/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 50
+text = "JOGO PAUSADO"
+horizontal_alignment = 1
