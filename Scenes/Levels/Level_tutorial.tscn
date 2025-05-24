@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=4 uid="uid://bx8efc37fee0a"]
+[gd_scene load_steps=28 format=4 uid="uid://bx8efc37fee0a"]
 
 [ext_resource type="PackedScene" uid="uid://caw0votrv6yn" path="res://tile_map_layer_0.tscn" id="1_b72yq"]
 [ext_resource type="PackedScene" uid="uid://cr7x3kf1nqqjl" path="res://Player/character_frog.tscn" id="2_omm2d"]
@@ -12,7 +12,6 @@
 [ext_resource type="PackedScene" uid="uid://ddphek4m1vwbw" path="res://Enemies/Larva/[enemy]_larva.tscn" id="5_ry78d"]
 [ext_resource type="PackedScene" uid="uid://cki0la0m0gkhi" path="res://Assets/Terrain/Spikes/spikes.tscn" id="6_2akco"]
 [ext_resource type="Texture2D" uid="uid://dbe7rch0df01x" path="res://tutorial/Seta cima.png" id="6_38hg2"]
-[ext_resource type="PackedScene" uid="uid://crhlsk021oi35" path="res://Scenes/levelSwitch/switch_frogTemple.tscn" id="6_itqdp"]
 [ext_resource type="Texture2D" uid="uid://b352o0ehrlwx8" path="res://tutorial/Dummy pulo.png" id="7_a3wmv"]
 [ext_resource type="Texture2D" uid="uid://rfdaabnqj3vh" path="res://tutorial/Seta direita.png" id="7_gopmm"]
 [ext_resource type="PackedScene" uid="uid://5w1qxak8p0km" path="res://Scenes/levelSwitch/death_zone.tscn" id="7_t3cp8"]
@@ -22,6 +21,8 @@
 [ext_resource type="Texture2D" uid="uid://tkhwdrhc3cos" path="res://Assets/GlobalScripts/UI_FrogRopeControllerIcon.tres" id="14_op75u"]
 [ext_resource type="Texture2D" uid="uid://bknbimj24usbu" path="res://tutorial/Seta baixo.png" id="17_ceskh"]
 [ext_resource type="PackedScene" uid="uid://bsfnunulb5osk" path="res://Assets/Terrain/Sprites/Background/DefaultType/background_placeholder.tscn" id="22_l1wyn"]
+[ext_resource type="PackedScene" uid="uid://kvbuvw1fglej" path="res://Scenes/levelSwitch/level_switcher.tscn" id="22_l27g4"]
+[ext_resource type="PackedScene" uid="uid://cy7obdtwlgb2t" path="res://Scenes/MainMenu/PauseMenu.tscn" id="23_l27g4"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_itqdp"]
 resource_local_to_scene = true
@@ -194,11 +195,17 @@ texture = ExtResource("7_a3wmv")
 [node name="[enemy] Larva2" parent="." instance=ExtResource("5_ry78d")]
 position = Vector2(7848, 416)
 
-[node name="level_switch" parent="." instance=ExtResource("6_itqdp")]
-position = Vector2(10952, 72)
-
 [node name="deathZone" parent="." instance=ExtResource("7_t3cp8")]
 position = Vector2(9104, 1080)
 scale = Vector2(97.7343, 13.4493)
 
 [node name="BackgroundPlaceholder" parent="." instance=ExtResource("22_l1wyn")]
+
+[node name="level_switcher_area" parent="." instance=ExtResource("22_l27g4")]
+position = Vector2(10819, 285)
+scale = Vector2(5.83326, 17.5847)
+nextLevel = "res://Scenes/Levels/level_frog_temple.tscn"
+
+[node name="Pause" type="CanvasLayer" parent="."]
+
+[node name="Pause_Menu" parent="Pause" instance=ExtResource("23_l27g4")]

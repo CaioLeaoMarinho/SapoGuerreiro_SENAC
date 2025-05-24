@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://cdm8fgok6w2av"]
+
+[ext_resource type="Script" uid="uid://b0vxonsqdxbs3" path="res://time_start_area.gd" id="1_mxgei"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_inhx8"]
+
+[node name="time_start_area" type="Node2D"]
+script = ExtResource("1_mxgei")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_inhx8")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

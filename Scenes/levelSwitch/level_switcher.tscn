@@ -1,15 +1,15 @@
 [gd_scene load_steps=3 format=3 uid="uid://kvbuvw1fglej"]
 
-[ext_resource type="Script" uid="uid://d1uyasgla2dr6" path="res://Scenes/levelSwitch/abyss.gd" id="1_mtmam"]
+[ext_resource type="Script" uid="uid://d1uyasgla2dr6" path="res://Scenes/levelSwitch/level_switcher.gd" id="1_mtmam"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_70q0p"]
 
-[node name="level_switch_abyss" type="Node2D"]
+[node name="level_switcher_area" type="Node2D"]
+script = ExtResource("1_mtmam")
 
 [node name="Area2D" type="Area2D" parent="."]
-script = ExtResource("1_mtmam")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("RectangleShape2D_70q0p")
 
-[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
