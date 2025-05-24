@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://divl44m6v8bvm"]
+
+[ext_resource type="Script" uid="uid://0w2t1b6ia74c" path="res://time_pause_area.gd" id="1_wug2b"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q3nou"]
+
+[node name="Time_Pause_Area" type="Node2D"]
+script = ExtResource("1_wug2b")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_q3nou")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

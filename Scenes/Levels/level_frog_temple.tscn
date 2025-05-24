@@ -250,7 +250,6 @@ position = Vector2(2332, 913.625)
 scale = Vector2(3.90625, 0.341435)
 texture = ExtResource("8_8n2je")
 
-[node name="level_switcher_area" parent="." instance=ExtResource("12_7ewfm")]
-position = Vector2(13648, -1952)
-scale = Vector2(8.01614, 22.6408)
-nextLevel = "res://Scenes/Levels/frog_abyss.tscn"
+[node name="level_switch_abyss" parent="." instance=ExtResource("12_7ewfm")]
+position = Vector2(13816, -2016)
+scale = Vector2(12.562, 29.4276)
