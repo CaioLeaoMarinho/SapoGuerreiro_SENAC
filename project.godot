@@ -19,6 +19,7 @@ run/max_fps=60
 
 ControllerIcons="*res://addons/controller_icons/ControllerIcons.gd"
 VitoriaRegeaTransitionScreen="*res://Scenes/levelSwitch/VitoriaRegeaTransitionScreen.tscn"
+GlobalTime="*res://Scenes/MainMenu/global_time.gd"
 
 [display]
 

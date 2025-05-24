@@ -67,6 +67,7 @@ layout_mode = 2
 color = Color(0, 0, 0, 0.207843)
 
 [node name="WaterRipples" type="TextureRect" parent="background"]
+visible = false
 modulate = Color(1, 1, 0, 0.211765)
 material = SubResource("ShaderMaterial_jfehp")
 layout_mode = 2
@@ -143,6 +144,7 @@ flip_h = true
 [node name="WaterRipples" type="TextureRect" parent="background/MarginContainer/Janela"]
 modulate = Color(1, 1, 0, 0.211765)
 material = SubResource("ShaderMaterial_jfehp")
+layout_mode = 0
 mouse_filter = 2
 texture = ExtResource("4_aykhy")
 expand_mode = 3

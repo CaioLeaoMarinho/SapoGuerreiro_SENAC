@@ -1,0 +1,25 @@
+[gd_scene load_steps=2 format=3 uid="uid://bp3y76ogb8fpd"]
+
+[ext_resource type="Script" uid="uid://dx5rdymhlwx8c" path="res://cronometro.gd" id="1_vcbri"]
+
+[node name="cronometro" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vcbri")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 64.0
+offset_right = 240.0
+offset_bottom = 117.0
+theme_override_font_sizes/font_size = 50
+text = "00:00"
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
