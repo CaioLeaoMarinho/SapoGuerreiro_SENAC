@@ -224,6 +224,21 @@ position = Vector2(-264, 288)
 scale = Vector2(0.662983, 0.662983)
 texture = ExtResource("6_0vr43")
 
+[node name="PlataformaMeioChao141" type="Sprite2D" parent="."]
+position = Vector2(-368, 288)
+scale = Vector2(0.662983, 0.662983)
+texture = ExtResource("6_0vr43")
+
+[node name="PlataformaMeioChao142" type="Sprite2D" parent="."]
+position = Vector2(-488, 288)
+scale = Vector2(0.662983, 0.662983)
+texture = ExtResource("6_0vr43")
+
+[node name="PlataformaMeioChao143" type="Sprite2D" parent="."]
+position = Vector2(-608, 288)
+scale = Vector2(0.662983, 0.662983)
+texture = ExtResource("6_0vr43")
+
 [node name="PlataformaMeioChao2" type="Sprite2D" parent="."]
 position = Vector2(-144, 288)
 scale = Vector2(0.662983, 0.662983)
@@ -430,7 +445,492 @@ scale = Vector2(0.662983, 0.662983)
 texture = ExtResource("6_0vr43")
 
 [node name="PlataformaMeioChao43" type="Sprite2D" parent="."]
-position = Vector2(15768, 584)
+position = Vector2(15768, 608)
+scale = Vector2(0.662983, 0.662983)
+texture = ExtResource("6_0vr43")
+
+[node name="PlataformaMeioChao44" type="Sprite2D" parent="."]
+position = Vector2(15888, 608)
+scale = Vector2(0.662983, 0.662983)
+texture = ExtResource("6_0vr43")
+
+[node name="PlataformaMeioChao45" type="Sprite2D" parent="."]
+position = Vector2(16008, 608)
+scale = Vector2(0.662983, 0.662983)
+texture = ExtResource("6_0vr43")
+
+[node name="PlataformaMeioChao46" type="Sprite2D" parent="."]
+position = Vector2(16128, 608)
+scale = Vector2(0.662983, 0.662983)
+texture = ExtResource("6_0vr43")
+
+[node name="PlataformaMeioChao47" type="Sprite2D" parent="."]
+position = Vector2(16248, 608)
+scale = Vector2(0.662983, 0.662983)
+texture = ExtResource("6_0vr43")
+
+[node name="PlataformaMeioChao48" type="Sprite2D" parent="."]
+position = Vector2(16368, 608)
+scale = Vector2(0.662983, 0.662983)
+texture = ExtResource("6_0vr43")
+
+[node name="PlataformaMeioChao49" type="Sprite2D" parent="."]
+position = Vector2(18424, 608)
+scale = Vector2(0.662983, 0.662983)
+texture = ExtResource("6_0vr43")
+
+[node name="PlataformaMeioChao50" type="Sprite2D" parent="."]
+position = Vector2(18544, 608)
+scale = Vector2(0.662983, 0.662983)
+texture = ExtResource("6_0vr43")
+
+[node name="PlataformaMeioChao51" type="Sprite2D" parent="."]
+position = Vector2(18664, 608)
+scale = Vector2(0.662983, 0.662983)
+texture = ExtResource("6_0vr43")
+
+[node name="PlataformaMeioChao52" type="Sprite2D" parent="."]
+position = Vector2(18784, 608)
+scale = Vector2(0.662983, 0.662983)
+texture = ExtResource("6_0vr43")
+
+[node name="PlataformaMeioChao53" type="Sprite2D" parent="."]
+position = Vector2(18904, 608)
+scale = Vector2(0.662983, 0.662983)
+texture = ExtResource("6_0vr43")
+
+[node name="PlataformaMeioChao54" type="Sprite2D" parent="."]
+position = Vector2(19328, 480)
+scale = Vector2(0.662983, 0.662983)
+texture = ExtResource("6_0vr43")
+
+[node name="PlataformaMeioChao55" type="Sprite2D" parent="."]
+position = Vector2(20608, 608)
+scale = Vector2(0.662983, 0.662983)
+texture = ExtResource("6_0vr43")
+
+[node name="PlataformaMeioChao56" type="Sprite2D" parent="."]
+position = Vector2(20728, 608)
+scale = Vector2(0.662983, 0.662983)
+texture = ExtResource("6_0vr43")
+
+[node name="PlataformaMeioChao57" type="Sprite2D" parent="."]
+position = Vector2(20848, 608)
+scale = Vector2(0.662983, 0.662983)
+texture = ExtResource("6_0vr43")
+
+[node name="PlataformaMeioChao58" type="Sprite2D" parent="."]
+position = Vector2(22824, 608)
+scale = Vector2(0.662983, 0.662983)
+texture = ExtResource("6_0vr43")
+
+[node name="PlataformaMeioChao59" type="Sprite2D" parent="."]
+position = Vector2(22944, 608)
+scale = Vector2(0.662983, 0.662983)
+texture = ExtResource("6_0vr43")
+
+[node name="PlataformaMeioChao60" type="Sprite2D" parent="."]
+position = Vector2(23064, 608)
+scale = Vector2(0.662983, 0.662983)
+texture = ExtResource("6_0vr43")
+
+[node name="PlataformaMeioChao61" type="Sprite2D" parent="."]
+position = Vector2(23552, 480)
+scale = Vector2(0.662983, 0.662983)
+texture = ExtResource("6_0vr43")
+
+[node name="PlataformaMeioChao62" type="Sprite2D" parent="."]
+position = Vector2(23872, 608)
+scale = Vector2(0.662983, 0.662983)
+texture = ExtResource("6_0vr43")
+
+[node name="PlataformaMeioChao63" type="Sprite2D" parent="."]
+position = Vector2(23992, 608)
+scale = Vector2(0.662983, 0.662983)
+texture = ExtResource("6_0vr43")
+
+[node name="PlataformaMeioChao64" type="Sprite2D" parent="."]
+position = Vector2(24064, 608)
+scale = Vector2(0.662983, 0.662983)
+texture = ExtResource("6_0vr43")
+
+[node name="PlataformaMeioChao65" type="Sprite2D" parent="."]
+position = Vector2(25120, 608)
+scale = Vector2(0.662983, 0.662983)
+texture = ExtResource("6_0vr43")
+
+[node name="PlataformaMeioChao66" type="Sprite2D" parent="."]
+position = Vector2(25240, 608)
+scale = Vector2(0.662983, 0.662983)
+texture = ExtResource("6_0vr43")
+
+[node name="PlataformaMeioChao67" type="Sprite2D" parent="."]
+position = Vector2(25360, 608)
+scale = Vector2(0.662983, 0.662983)
+texture = ExtResource("6_0vr43")
+
+[node name="PlataformaMeioChao68" type="Sprite2D" parent="."]
+position = Vector2(25920, 480)
+scale = Vector2(0.662983, 0.662983)
+texture = ExtResource("6_0vr43")
+
+[node name="PlataformaMeioChao69" type="Sprite2D" parent="."]
+position = Vector2(26176, 608)
+scale = Vector2(0.662983, 0.662983)
+texture = ExtResource("6_0vr43")
+
+[node name="PlataformaMeioChao70" type="Sprite2D" parent="."]
+position = Vector2(26296, 608)
+scale = Vector2(0.662983, 0.662983)
+texture = ExtResource("6_0vr43")
+
+[node name="PlataformaMeioChao71" type="Sprite2D" parent="."]
+position = Vector2(26416, 608)
+scale = Vector2(0.662983, 0.662983)
+texture = ExtResource("6_0vr43")
+
+[node name="PlataformaMeioChao72" type="Sprite2D" parent="."]
+position = Vector2(26536, 608)
+scale = Vector2(0.662983, 0.662983)
+texture = ExtResource("6_0vr43")
+
+[node name="PlataformaMeioChao73" type="Sprite2D" parent="."]
+position = Vector2(26752, 480)
+scale = Vector2(0.662983, 0.662983)
+texture = ExtResource("6_0vr43")
+
+[node name="PlataformaMeioChao74" type="Sprite2D" parent="."]
+position = Vector2(27776, 608)
+scale = Vector2(0.662983, 0.662983)
+texture = ExtResource("6_0vr43")
+
+[node name="PlataformaMeioChao75" type="Sprite2D" parent="."]
+position = Vector2(27896, 608)
+scale = Vector2(0.662983, 0.662983)
+texture = ExtResource("6_0vr43")
+
+[node name="PlataformaMeioChao76" type="Sprite2D" parent="."]
+position = Vector2(28016, 608)
+scale = Vector2(0.662983, 0.662983)
+texture = ExtResource("6_0vr43")
+
+[node name="PlataformaMeioChao77" type="Sprite2D" parent="."]
+position = Vector2(28128, 608)
+scale = Vector2(0.662983, 0.662983)
+texture = ExtResource("6_0vr43")
+
+[node name="PlataformaMeioChao78" type="Sprite2D" parent="."]
+position = Vector2(28160, 608)
+scale = Vector2(0.662983, 0.662983)
+texture = ExtResource("6_0vr43")
+
+[node name="PlataformaMeioChao79" type="Sprite2D" parent="."]
+position = Vector2(29240, 608)
+scale = Vector2(0.662983, 0.662983)
+texture = ExtResource("6_0vr43")
+
+[node name="PlataformaMeioChao81" type="Sprite2D" parent="."]
+position = Vector2(29360, 608)
+scale = Vector2(0.662983, 0.662983)
+texture = ExtResource("6_0vr43")
+
+[node name="PlataformaMeioChao82" type="Sprite2D" parent="."]
+position = Vector2(29480, 608)
+scale = Vector2(0.662983, 0.662983)
+texture = ExtResource("6_0vr43")
+
+[node name="PlataformaMeioChao83" type="Sprite2D" parent="."]
+position = Vector2(29568, 608)
+scale = Vector2(0.662983, 0.662983)
+texture = ExtResource("6_0vr43")
+
+[node name="PlataformaMeioChao84" type="Sprite2D" parent="."]
+position = Vector2(29952, 608)
+scale = Vector2(0.662983, 0.662983)
+texture = ExtResource("6_0vr43")
+
+[node name="PlataformaMeioChao85" type="Sprite2D" parent="."]
+position = Vector2(30064, 608)
+scale = Vector2(0.662983, 0.662983)
+texture = ExtResource("6_0vr43")
+
+[node name="PlataformaMeioChao86" type="Sprite2D" parent="."]
+position = Vector2(30144, 608)
+scale = Vector2(0.662983, 0.662983)
+texture = ExtResource("6_0vr43")
+
+[node name="PlataformaMeioChao87" type="Sprite2D" parent="."]
+position = Vector2(30656, 544)
+scale = Vector2(0.662983, 0.662983)
+texture = ExtResource("6_0vr43")
+
+[node name="PlataformaMeioChao88" type="Sprite2D" parent="."]
+position = Vector2(31808, 608)
+scale = Vector2(0.662983, 0.662983)
+texture = ExtResource("6_0vr43")
+
+[node name="PlataformaMeioChao89" type="Sprite2D" parent="."]
+position = Vector2(31928, 608)
+scale = Vector2(0.662983, 0.662983)
+texture = ExtResource("6_0vr43")
+
+[node name="PlataformaMeioChao90" type="Sprite2D" parent="."]
+position = Vector2(32048, 608)
+scale = Vector2(0.662983, 0.662983)
+texture = ExtResource("6_0vr43")
+
+[node name="PlataformaMeioChao91" type="Sprite2D" parent="."]
+position = Vector2(32168, 608)
+scale = Vector2(0.662983, 0.662983)
+texture = ExtResource("6_0vr43")
+
+[node name="PlataformaMeioChao92" type="Sprite2D" parent="."]
+position = Vector2(32264, 608)
+scale = Vector2(0.662983, 0.662983)
+texture = ExtResource("6_0vr43")
+
+[node name="PlataformaMeioChao93" type="Sprite2D" parent="."]
+position = Vector2(32512, 544)
+scale = Vector2(0.662983, 0.662983)
+texture = ExtResource("6_0vr43")
+
+[node name="PlataformaMeioChao94" type="Sprite2D" parent="."]
+position = Vector2(32896, 608)
+scale = Vector2(0.662983, 0.662983)
+texture = ExtResource("6_0vr43")
+
+[node name="PlataformaMeioChao95" type="Sprite2D" parent="."]
+position = Vector2(33784, 608)
+scale = Vector2(0.662983, 0.662983)
+texture = ExtResource("6_0vr43")
+
+[node name="PlataformaMeioChao96" type="Sprite2D" parent="."]
+position = Vector2(33904, 608)
+scale = Vector2(0.662983, 0.662983)
+texture = ExtResource("6_0vr43")
+
+[node name="PlataformaMeioChao97" type="Sprite2D" parent="."]
+position = Vector2(34024, 608)
+scale = Vector2(0.662983, 0.662983)
+texture = ExtResource("6_0vr43")
+
+[node name="PlataformaMeioChao98" type="Sprite2D" parent="."]
+position = Vector2(34144, 608)
+scale = Vector2(0.662983, 0.662983)
+texture = ExtResource("6_0vr43")
+
+[node name="PlataformaMeioChao99" type="Sprite2D" parent="."]
+position = Vector2(34240, 608)
+scale = Vector2(0.662983, 0.662983)
+texture = ExtResource("6_0vr43")
+
+[node name="PlataformaMeioChao100" type="Sprite2D" parent="."]
+position = Vector2(34432, 544)
+scale = Vector2(0.662983, 0.662983)
+texture = ExtResource("6_0vr43")
+
+[node name="PlataformaMeioChao101" type="Sprite2D" parent="."]
+position = Vector2(34688, 544)
+scale = Vector2(0.662983, 0.662983)
+texture = ExtResource("6_0vr43")
+
+[node name="PlataformaMeioChao102" type="Sprite2D" parent="."]
+position = Vector2(38144, 608)
+scale = Vector2(0.662983, 0.662983)
+texture = ExtResource("6_0vr43")
+
+[node name="PlataformaMeioChao103" type="Sprite2D" parent="."]
+position = Vector2(38256, 608)
+scale = Vector2(0.662983, 0.662983)
+texture = ExtResource("6_0vr43")
+
+[node name="PlataformaMeioChao104" type="Sprite2D" parent="."]
+position = Vector2(38376, 608)
+scale = Vector2(0.662983, 0.662983)
+texture = ExtResource("6_0vr43")
+
+[node name="PlataformaMeioChao111" type="Sprite2D" parent="."]
+position = Vector2(38496, 608)
+scale = Vector2(0.662983, 0.662983)
+texture = ExtResource("6_0vr43")
+
+[node name="PlataformaMeioChao112" type="Sprite2D" parent="."]
+position = Vector2(38496, 608)
+scale = Vector2(0.662983, 0.662983)
+texture = ExtResource("6_0vr43")
+
+[node name="PlataformaMeioChao113" type="Sprite2D" parent="."]
+position = Vector2(38720, 608)
+scale = Vector2(0.662983, 0.662983)
+texture = ExtResource("6_0vr43")
+
+[node name="PlataformaMeioChao114" type="Sprite2D" parent="."]
+position = Vector2(38840, 608)
+scale = Vector2(0.662983, 0.662983)
+texture = ExtResource("6_0vr43")
+
+[node name="PlataformaMeioChao115" type="Sprite2D" parent="."]
+position = Vector2(38960, 608)
+scale = Vector2(0.662983, 0.662983)
+texture = ExtResource("6_0vr43")
+
+[node name="PlataformaMeioChao116" type="Sprite2D" parent="."]
+position = Vector2(39080, 608)
+scale = Vector2(0.662983, 0.662983)
+texture = ExtResource("6_0vr43")
+
+[node name="PlataformaMeioChao117" type="Sprite2D" parent="."]
+position = Vector2(39200, 608)
+scale = Vector2(0.662983, 0.662983)
+texture = ExtResource("6_0vr43")
+
+[node name="PlataformaMeioChao118" type="Sprite2D" parent="."]
+position = Vector2(39312, 608)
+scale = Vector2(0.662983, 0.662983)
+texture = ExtResource("6_0vr43")
+
+[node name="PlataformaMeioChao119" type="Sprite2D" parent="."]
+position = Vector2(39432, 608)
+scale = Vector2(0.662983, 0.662983)
+texture = ExtResource("6_0vr43")
+
+[node name="PlataformaMeioChao120" type="Sprite2D" parent="."]
+position = Vector2(39552, 608)
+scale = Vector2(0.662983, 0.662983)
+texture = ExtResource("6_0vr43")
+
+[node name="PlataformaMeioChao121" type="Sprite2D" parent="."]
+position = Vector2(39672, 608)
+scale = Vector2(0.662983, 0.662983)
+texture = ExtResource("6_0vr43")
+
+[node name="PlataformaMeioChao122" type="Sprite2D" parent="."]
+position = Vector2(39792, 608)
+scale = Vector2(0.662983, 0.662983)
+texture = ExtResource("6_0vr43")
+
+[node name="PlataformaMeioChao123" type="Sprite2D" parent="."]
+position = Vector2(39912, 608)
+scale = Vector2(0.662983, 0.662983)
+texture = ExtResource("6_0vr43")
+
+[node name="PlataformaMeioChao124" type="Sprite2D" parent="."]
+position = Vector2(40032, 608)
+scale = Vector2(0.662983, 0.662983)
+texture = ExtResource("6_0vr43")
+
+[node name="PlataformaMeioChao125" type="Sprite2D" parent="."]
+position = Vector2(40152, 608)
+scale = Vector2(0.662983, 0.662983)
+texture = ExtResource("6_0vr43")
+
+[node name="PlataformaMeioChao126" type="Sprite2D" parent="."]
+position = Vector2(40272, 608)
+scale = Vector2(0.662983, 0.662983)
+texture = ExtResource("6_0vr43")
+
+[node name="PlataformaMeioChao127" type="Sprite2D" parent="."]
+position = Vector2(40392, 608)
+scale = Vector2(0.662983, 0.662983)
+texture = ExtResource("6_0vr43")
+
+[node name="PlataformaMeioChao128" type="Sprite2D" parent="."]
+position = Vector2(40512, 608)
+scale = Vector2(0.662983, 0.662983)
+texture = ExtResource("6_0vr43")
+
+[node name="PlataformaMeioChao129" type="Sprite2D" parent="."]
+position = Vector2(40632, 608)
+scale = Vector2(0.662983, 0.662983)
+texture = ExtResource("6_0vr43")
+
+[node name="PlataformaMeioChao130" type="Sprite2D" parent="."]
+position = Vector2(40752, 608)
+scale = Vector2(0.662983, 0.662983)
+texture = ExtResource("6_0vr43")
+
+[node name="PlataformaMeioChao131" type="Sprite2D" parent="."]
+position = Vector2(40872, 608)
+scale = Vector2(0.662983, 0.662983)
+texture = ExtResource("6_0vr43")
+
+[node name="PlataformaMeioChao132" type="Sprite2D" parent="."]
+position = Vector2(40992, 608)
+scale = Vector2(0.662983, 0.662983)
+texture = ExtResource("6_0vr43")
+
+[node name="PlataformaMeioChao133" type="Sprite2D" parent="."]
+position = Vector2(41112, 608)
+scale = Vector2(0.662983, 0.662983)
+texture = ExtResource("6_0vr43")
+
+[node name="PlataformaMeioChao134" type="Sprite2D" parent="."]
+position = Vector2(41112, 608)
+scale = Vector2(0.662983, 0.662983)
+texture = ExtResource("6_0vr43")
+
+[node name="PlataformaMeioChao135" type="Sprite2D" parent="."]
+position = Vector2(41232, 608)
+scale = Vector2(0.662983, 0.662983)
+texture = ExtResource("6_0vr43")
+
+[node name="PlataformaMeioChao136" type="Sprite2D" parent="."]
+position = Vector2(41352, 608)
+scale = Vector2(0.662983, 0.662983)
+texture = ExtResource("6_0vr43")
+
+[node name="PlataformaMeioChao137" type="Sprite2D" parent="."]
+position = Vector2(41472, 608)
+scale = Vector2(0.662983, 0.662983)
+texture = ExtResource("6_0vr43")
+
+[node name="PlataformaMeioChao138" type="Sprite2D" parent="."]
+position = Vector2(41592, 608)
+scale = Vector2(0.662983, 0.662983)
+texture = ExtResource("6_0vr43")
+
+[node name="PlataformaMeioChao139" type="Sprite2D" parent="."]
+position = Vector2(41712, 608)
+scale = Vector2(0.662983, 0.662983)
+texture = ExtResource("6_0vr43")
+
+[node name="PlataformaMeioChao140" type="Sprite2D" parent="."]
+position = Vector2(41832, 608)
+scale = Vector2(0.662983, 0.662983)
+texture = ExtResource("6_0vr43")
+
+[node name="PlataformaMeioChao109" type="Sprite2D" parent="."]
+position = Vector2(38144, 608)
+scale = Vector2(0.662983, 0.662983)
+texture = ExtResource("6_0vr43")
+
+[node name="PlataformaMeioChao110" type="Sprite2D" parent="."]
+position = Vector2(38144, 608)
+scale = Vector2(0.662983, 0.662983)
+texture = ExtResource("6_0vr43")
+
+[node name="PlataformaMeioChao105" type="Sprite2D" parent="."]
+position = Vector2(38608, 608)
+scale = Vector2(0.662983, 0.662983)
+texture = ExtResource("6_0vr43")
+
+[node name="PlataformaMeioChao80" type="Sprite2D" parent="."]
+position = Vector2(29120, 608)
+scale = Vector2(0.662983, 0.662983)
+texture = ExtResource("6_0vr43")
+
+[node name="PlataformaMeioChao106" type="Sprite2D" parent="."]
+position = Vector2(29120, 608)
+scale = Vector2(0.662983, 0.662983)
+texture = ExtResource("6_0vr43")
+
+[node name="PlataformaMeioChao107" type="Sprite2D" parent="."]
+position = Vector2(29120, 608)
+scale = Vector2(0.662983, 0.662983)
+texture = ExtResource("6_0vr43")
+
+[node name="PlataformaMeioChao108" type="Sprite2D" parent="."]
+position = Vector2(29120, 608)
 scale = Vector2(0.662983, 0.662983)
 texture = ExtResource("6_0vr43")
 
