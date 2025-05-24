@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://igpr4e0pr6dd"]
+[gd_scene load_steps=0 format=3 uid="uid://igpr4e0pr6dd"]
 
 [node name="Settings_menu" type="Control"]
 layout_mode = 3
