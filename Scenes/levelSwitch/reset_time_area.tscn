@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://bqdq0jcgtdq2n"]
+
+[ext_resource type="Script" uid="uid://y12fms5oqcl2" path="res://reset_time_area.gd" id="1_vky23"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ed6ng"]
+
+[node name="reset_time_area" type="Node2D"]
+script = ExtResource("1_vky23")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_ed6ng")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
