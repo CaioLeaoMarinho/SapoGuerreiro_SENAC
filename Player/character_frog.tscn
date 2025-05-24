@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://cr7x3kf1nqqjl"]
+[gd_scene load_steps=40 format=3 uid="uid://cr7x3kf1nqqjl"]
 
 [ext_resource type="Script" uid="uid://dofqmgweliysy" path="res://Player/Scripts/Player.gd" id="1_7jske"]
 [ext_resource type="Texture2D" uid="uid://cntbuwfyacdom" path="res://Player/Sprites/Frog_Fall.png" id="1_nunj2"]
@@ -115,10 +115,21 @@ tracks/6/keys = {
 "update": 0,
 "values": [Vector2(15.93, -36.03)]
 }
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Sprite2D:scale")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.166667, 0.166667)]
+}
 
 [sub_resource type="Animation" id="Animation_v6c6k"]
 resource_name = "fall"
-loop_mode = 1
 step = 1.0
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -268,6 +279,18 @@ tracks/5/keys = {
 "update": 1,
 "values": [false]
 }
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Sprite2D:scale")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.157734, 0.173334)]
+}
 
 [sub_resource type="Animation" id="Animation_ix5u2"]
 resource_name = "frogRope_D"
@@ -344,6 +367,18 @@ tracks/5/keys = {
 "update": 0,
 "values": [Vector2(15.93, -36.03)]
 }
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Sprite2D:scale")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.157734, 0.173334)]
+}
 
 [sub_resource type="Animation" id="Animation_k0tbs"]
 resource_name = "frogRope_E"
@@ -419,6 +454,18 @@ tracks/5/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(15.93, -23.735)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Sprite2D:scale")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.157734, 0.173334)]
 }
 
 [sub_resource type="Animation" id="Animation_qywpd"]
@@ -498,10 +545,21 @@ tracks/5/keys = {
 "update": 1,
 "values": [false]
 }
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Sprite2D:scale")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.157734, 0.173334)]
+}
 
 [sub_resource type="Animation" id="Animation_bvfjd"]
 resource_name = "jump"
-loop_mode = 1
 step = 1.0
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -653,6 +711,18 @@ tracks/5/keys = {
 "update": 1,
 "values": [false]
 }
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Sprite2D:scale")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.166667, 0.166667)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_tr2kp"]
 _data = {
@@ -664,6 +734,43 @@ _data = {
 &"idle": SubResource("Animation_qywpd"),
 &"jump": SubResource("Animation_bvfjd"),
 &"walk": SubResource("Animation_e4u1q")
+}
+
+[sub_resource type="Animation" id="Animation_lcrwr"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.157734, 0.173334)]
+}
+
+[sub_resource type="Animation" id="Animation_pugjy"]
+resource_name = "jump"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0.157734, 0.173334), Vector2(0.122, 0.217), Vector2(0.157734, 0.173334)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_sof8r"]
+_data = {
+&"RESET": SubResource("Animation_lcrwr"),
+&"jump": SubResource("Animation_pugjy")
 }
 
 [sub_resource type="Animation" id="Animation_jrilk"]
@@ -707,10 +814,10 @@ _data = {
 radius = 32.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_djiqc"]
-size = Vector2(32, 52)
+size = Vector2(32, 56)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r3r6e"]
-size = Vector2(32, 8)
+size = Vector2(32, 3.5524)
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 z_index = 1
@@ -725,7 +832,7 @@ rope_buffer_time = 0.2
 material = SubResource("ShaderMaterial_sdmge")
 position = Vector2(-4, -32)
 rotation = -3.14159
-scale = Vector2(0.166667, 0.166667)
+scale = Vector2(0.157734, 0.173334)
 texture = ExtResource("3_sdmge")
 flip_v = true
 
@@ -739,6 +846,12 @@ libraries = {
 &"": SubResource("AnimationLibrary_tr2kp")
 }
 autoplay = "idle"
+
+[node name="StatesAnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_sof8r")
+}
+autoplay = "RESET"
 
 [node name="HurtAnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -787,7 +900,7 @@ collision_mask = 32
 monitoring = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
-position = Vector2(4, -34)
+position = Vector2(4, -32)
 shape = SubResource("RectangleShape2D_djiqc")
 debug_color = Color(0.705882, 0.603922, 0, 0.0666667)
 
@@ -799,7 +912,7 @@ collision_mask = 64
 monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StompAttackArea"]
-position = Vector2(4, 4)
+position = Vector2(4, 3.5524)
 shape = SubResource("RectangleShape2D_r3r6e")
 debug_color = Color(0.996078, 0, 0.2, 0.141176)
 

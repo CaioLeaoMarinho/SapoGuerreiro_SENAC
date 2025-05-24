@@ -8,6 +8,7 @@ func _enter_state():
 	Entity.velocity.y = Entity.jumpVelocity
 	
 	StateManager._switch_animation("jump")
+	Entity.states_animation_player.play("jump")
 
 func _update_state(_delta : float):
 	super(_delta)
@@ -18,6 +19,11 @@ func _update_state(_delta : float):
 	StateManager._get_flip_h()
 	StateManager._get_jump_peak()
 	StateManager._get_frog_hope(_delta)
+
+func _exit_state():
+	super()
+	
+	Entity.states_animation_player.stop()
 
 func _calculate_jump_velocity(jumpHeight: float):
 	Entity.jumpGravity = 2 * Entity.jumpHeight / pow(Entity.jumpTimeToPeak, 2)

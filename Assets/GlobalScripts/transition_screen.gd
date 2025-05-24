@@ -17,9 +17,11 @@ func change_scene():
 
 func transition_started():
 	var player = get_tree().get_first_node_in_group("player")
-	player.velocity.x = 0
-	player.in_transition = true
+	if player:
+		player.velocity.x = 0
+		player.in_transition = true
 
 func transition_completed():
 	var player = get_tree().get_first_node_in_group("player")
-	player.in_transition = false
+	if player:
+		player.in_transition = false
