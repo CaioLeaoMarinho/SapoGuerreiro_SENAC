@@ -9,7 +9,7 @@
 [ext_resource type="Shader" uid="uid://c4hdxw54n35xd" path="res://Assets/Shaders/lagoonWater.gdshader" id="7_dnhlc"]
 [ext_resource type="PackedScene" uid="uid://bsfnunulb5osk" path="res://Assets/Terrain/Sprites/Background/DefaultType/background_placeholder.tscn" id="7_u1ydj"]
 [ext_resource type="Texture2D" uid="uid://bh6m5k56qbwp3" path="res://Assets/GlobalSprites/white.png" id="8_8n2je"]
-[ext_resource type="PackedScene" uid="uid://kvbuvw1fglej" path="res://Scenes/levelSwitch/level_switchAbyss.tscn" id="12_7ewfm"]
+[ext_resource type="PackedScene" uid="uid://kvbuvw1fglej" path="res://Scenes/levelSwitch/level_switcher.tscn" id="12_7ewfm"]
 [ext_resource type="PackedScene" uid="uid://5w1qxak8p0km" path="res://Scenes/levelSwitch/death_zone.tscn" id="13_rpgvj"]
 [ext_resource type="PackedScene" uid="uid://coxqtj1dm1non" path="res://Firefly/IdleFirefly.tscn" id="14_f6whf"]
 
