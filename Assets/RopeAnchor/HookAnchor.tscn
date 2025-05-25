@@ -163,7 +163,6 @@ one_shot = true
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
 position = Vector2(0, 24.7742)
-scale = Vector2(1, 1)
 emitting = false
 amount = 7
 texture = ExtResource("4_fgirl")
