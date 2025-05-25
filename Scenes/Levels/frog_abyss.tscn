@@ -924,6 +924,11 @@ position = Vector2(10816, 416)
 scale = Vector2(0.640892, 0.663)
 texture = ExtResource("25_cq2xk")
 
+[node name="PlataformaDireita17" type="Sprite2D" parent="Node"]
+position = Vector2(14136, 608)
+scale = Vector2(0.640892, 0.663)
+texture = ExtResource("25_cq2xk")
+
 [node name="PlataformaDireita10" type="Sprite2D" parent="Node"]
 position = Vector2(3768, 352)
 scale = Vector2(0.640892, 0.663)
@@ -953,3 +958,8 @@ texture = ExtResource("25_cq2xk")
 position = Vector2(376, 288)
 scale = Vector2(0.663, 0.663)
 texture = ExtResource("25_cq2xk")
+
+[node name="PlataformaMeioChao35" type="Sprite2D" parent="."]
+position = Vector2(13672, 608)
+scale = Vector2(0.685082, 0.662983)
+texture = ExtResource("23_0vr43")
