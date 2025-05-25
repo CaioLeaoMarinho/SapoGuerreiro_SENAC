@@ -19,6 +19,3 @@ void fragment() {
         COLOR.a = 0.;
     }
 }
-
- 
-
