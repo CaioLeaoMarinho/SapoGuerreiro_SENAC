@@ -10,6 +10,9 @@ var swing_direction: int = 1
 var origin_pos: Vector2
 var start_pos: Vector2
 var end_pos: Vector2
+
+const FROG_ANCHOR_TEXTURE : Texture2D = preload("res://Assets/RopeAnchor/Sprites/frog_anchor.png")
+const FROG_ANCHOR_TEXTURE_ATIVADO : Texture2D = preload("res://Assets/RopeAnchor/Sprites/frog_anchor_ativado.png")
 #endregion
 
 #region Default State Methods
@@ -55,6 +58,7 @@ func _attach_rope():
 	var ropeNode = Entity.tongue_rope.instantiate()
 	get_parent().add_child(ropeNode)
 	ropeNode._set_rope(start_pos, origin_pos)
+	Entity.current_frog_rope.owner.sprite_2d.texture = FROG_ANCHOR_TEXTURE_ATIVADO
 	
 	current_swing_angle = (start_pos - origin_pos).angle()
 
@@ -85,7 +89,7 @@ func _detach_rope():
 	is_hooked = false
 	Entity.launched_by_rope = true
 	get_tree().get_first_node_in_group("tongue_rope").queue_free()
-	
+	Entity.current_frog_rope.owner.sprite_2d.texture = FROG_ANCHOR_TEXTURE
 	var tangent_vector = Vector2(-sin(current_swing_angle), cos(current_swing_angle))
 	Entity.velocity = tangent_vector * Entity.target_rope_speed * swing_direction
 	

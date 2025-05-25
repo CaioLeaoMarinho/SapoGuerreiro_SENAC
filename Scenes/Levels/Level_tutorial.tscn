@@ -1007,8 +1007,8 @@ flip_h = true
 
 [node name="ParedeBase7" type="Sprite2D" parent="."]
 z_index = -2
-position = Vector2(3780, 528)
-scale = Vector2(1, 1.02174)
+position = Vector2(3780, 528.5)
+scale = Vector2(1, 1.03261)
 texture = ExtResource("27_83q56")
 
 [node name="ParedeBase8" type="Sprite2D" parent="."]
