@@ -1,20 +1,21 @@
-[gd_scene load_steps=57 format=4 uid="uid://bifkhquel44pg"]
+[gd_scene load_steps=58 format=4 uid="uid://bifkhquel44pg"]
 
 [ext_resource type="PackedScene" uid="uid://caw0votrv6yn" path="res://tile_map_layer_0.tscn" id="1_64a8c"]
-[ext_resource type="Script" path="res://Scenes/Levels/frog_abyss_ready.gd" id="1_wo7a3"]
+[ext_resource type="Script" uid="uid://csny1hlaxm0x2" path="res://Scenes/Levels/frog_abyss_ready.gd" id="1_wo7a3"]
 [ext_resource type="PackedScene" uid="uid://5w1qxak8p0km" path="res://Scenes/levelSwitch/death_zone.tscn" id="2_elxti"]
-[ext_resource type="PackedScene" path="res://Scenes/MainMenu/cronometro.tscn" id="3_0xkqg"]
+[ext_resource type="PackedScene" uid="uid://bp3y76ogb8fpd" path="res://Scenes/MainMenu/cronometro.tscn" id="3_0xkqg"]
 [ext_resource type="PackedScene" uid="uid://cr7x3kf1nqqjl" path="res://Player/character_frog.tscn" id="3_ieiuy"]
 [ext_resource type="PackedScene" uid="uid://cdg2il1ckafl8" path="res://Assets/RopeAnchor/HookAnchor.tscn" id="4_ieiuy"]
 [ext_resource type="PackedScene" uid="uid://ddphek4m1vwbw" path="res://Enemies/Larva/[enemy]_larva.tscn" id="4_tdsw3"]
 [ext_resource type="Shader" uid="uid://b7l4abhefeu7" path="res://Assets/Shaders/HookOutline.gdshader" id="5_tdsw3"]
-[ext_resource type="PackedScene" path="res://Scenes/levelSwitch/time_pause_area.tscn" id="5_u241b"]
+[ext_resource type="PackedScene" uid="uid://divl44m6v8bvm" path="res://Scenes/levelSwitch/time_pause_area.tscn" id="5_u241b"]
 [ext_resource type="PackedScene" uid="uid://cki0la0m0gkhi" path="res://Assets/Terrain/Spikes/spikes.tscn" id="7_ckkgs"]
 [ext_resource type="Texture2D" uid="uid://d0olrrsyeo2gh" path="res://Assets/Terrain/Sprites/Background/DefaultType/background_trees_reflexion.png" id="8_gbdgo"]
 [ext_resource type="Texture2D" uid="uid://b8jotitmal816" path="res://Assets/Terrain/Sprites/Background/DefaultType/background_color.png" id="9_6roga"]
 [ext_resource type="Shader" uid="uid://bjb35jc5mloxj" path="res://Assets/Shaders/backgroundWater.gdshader" id="10_pwjal"]
 [ext_resource type="Texture2D" uid="uid://bh6m5k56qbwp3" path="res://Assets/GlobalSprites/white.png" id="11_axkqr"]
 [ext_resource type="Texture2D" uid="uid://b248ugqeanyy0" path="res://Assets/Terrain/Sprites/Background/DefaultType/background_trees.png" id="12_hw87q"]
+[ext_resource type="PackedScene" uid="uid://bsfnunulb5osk" path="res://Assets/Terrain/Sprites/Background/DefaultType/background_placeholder.tscn" id="12_ol70s"]
 [ext_resource type="Texture2D" uid="uid://c7338ruqex7j7" path="res://Player/Sprites/Frog_Idle.png" id="13_pwjal"]
 [ext_resource type="Texture2D" uid="uid://dwcpss3vhhno7" path="res://Player/Sprites/Captura de tela 2025-05-21 174052.png" id="14_axkqr"]
 [ext_resource type="Texture2D" uid="uid://3qkkqoxsm1vo" path="res://Assets/GlobalSprites/Logo.png" id="14_hw87q"]
@@ -205,7 +206,6 @@ script = ExtResource("1_wo7a3")
 [node name="Cronometro hud" type="CanvasLayer" parent="."]
 
 [node name="cronometro" parent="Cronometro hud" instance=ExtResource("3_0xkqg")]
-visible = false
 
 [node name="Pause" type="CanvasLayer" parent="."]
 visible = false
@@ -458,10 +458,14 @@ position = Vector2(30336, 496)
 scale = Vector2(2.65521, 5.15813)
 region_rect = Rect2(0.235, 8.5, 46.74, 7.946)
 
+[node name="BackgroundPlaceholder" parent="." instance=ExtResource("12_ol70s")]
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = -100
+visible = false
 
 [node name="Control" type="Control" parent="CanvasLayer"]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -505,6 +509,7 @@ mouse_filter = 2
 texture = ExtResource("8_gbdgo")
 
 [node name="BGTreesReflexion4" type="TextureRect" parent="CanvasLayer/Control"]
+visible = false
 z_index = 1
 layout_mode = 1
 anchors_preset = 12
@@ -525,6 +530,7 @@ expand_mode = 3
 stretch_mode = 4
 
 [node name="BGTreesReflexion1" type="TextureRect" parent="CanvasLayer/Control"]
+visible = false
 z_index = 1
 layout_mode = 1
 anchors_preset = 12
@@ -544,6 +550,7 @@ stretch_mode = 4
 flip_h = true
 
 [node name="BGColor" type="TextureRect" parent="CanvasLayer/Control"]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -555,6 +562,7 @@ mouse_filter = 2
 texture = ExtResource("9_6roga")
 
 [node name="BGWater" type="TextureRect" parent="CanvasLayer/Control"]
+visible = false
 z_index = 2
 material = SubResource("ShaderMaterial_rorsh")
 layout_mode = 1
@@ -572,6 +580,7 @@ texture = ExtResource("11_axkqr")
 expand_mode = 1
 
 [node name="BGTrees" type="TextureRect" parent="CanvasLayer/Control"]
+visible = false
 z_index = 3
 layout_mode = 1
 anchors_preset = 10
@@ -5994,18 +6003,21 @@ scale = Vector2(1.16276, 1)
 texture = ExtResource("27_2l1pp")
 
 [node name="GravetoDireito2" type="Sprite2D" parent="."]
+visible = false
 z_index = -3
 position = Vector2(-39, -66)
 scale = Vector2(1, 0.923077)
 texture = ExtResource("29_aficq")
 
 [node name="GravetoMeio4" type="Sprite2D" parent="."]
+visible = false
 z_index = -3
 position = Vector2(-124, -66)
 scale = Vector2(1, 0.923078)
 texture = ExtResource("30_ol70s")
 
 [node name="GravetoEsquerda2" type="Sprite2D" parent="."]
+visible = false
 z_index = -3
 position = Vector2(-209, -66)
 scale = Vector2(1, 0.923077)
