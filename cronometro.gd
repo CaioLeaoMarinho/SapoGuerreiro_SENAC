@@ -5,7 +5,7 @@ func _ready():
 	$Timer.one_shot = false
 	$Timer.autostart = false
 
-func _process(delta):
+func _process(_delta):
 	if GlobalTime.start and $Timer.is_stopped():
 		$Timer.start()
 		

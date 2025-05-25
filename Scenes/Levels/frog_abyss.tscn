@@ -21,7 +21,7 @@
 [ext_resource type="Texture2D" uid="uid://dq8djv3ig678d" path="res://Player/Sprites/Itch.io_logo.svg" id="15_axkqr"]
 [ext_resource type="Texture2D" uid="uid://rfdaabnqj3vh" path="res://tutorial/Seta direita.png" id="17_8i12v"]
 [ext_resource type="PackedScene" uid="uid://kvbuvw1fglej" path="res://Scenes/levelSwitch/level_switcher.tscn" id="18_hkulc"]
-[ext_resource type="PackedScene" path="res://Scenes/MainMenu/PauseMenu.tscn" id="19_7gimy"]
+[ext_resource type="PackedScene" uid="uid://dhl0ryt37382s" path="res://Scenes/MainMenu/PauseMenu.tscn" id="19_7gimy"]
 [ext_resource type="Texture2D" uid="uid://bs5ibjwdfvhvx" path="res://Assets/Terrain/Tiles/plataforma_meio_chao.png" id="23_0vr43"]
 [ext_resource type="Texture2D" uid="uid://xe2ghwalsvj8" path="res://Assets/Terrain/Tiles/plataforma_esquerda_.png" id="24_xnflq"]
 [ext_resource type="Texture2D" uid="uid://v076mncyyo0q" path="res://Assets/Terrain/Tiles/plataforma_direita_.png" id="25_cq2xk"]

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cia8awjnnr0km"
-path="res://.godot/imported/anchor.png-27af42359e0332164a3db4698f1c62a8.ctex"
+uid="uid://damv4getv4wmu"
+path="res://.godot/imported/anchor_particle.png-125cdb6f002d3808d9a52752fda44135.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Terrain/Tiles/anchor.png"
-dest_files=["res://.godot/imported/anchor.png-27af42359e0332164a3db4698f1c62a8.ctex"]
+source_file="res://Assets/RopeAnchor/Sprites/anchor_particle.png"
+dest_files=["res://.godot/imported/anchor_particle.png-125cdb6f002d3808d9a52752fda44135.ctex"]
 
 [params]
 

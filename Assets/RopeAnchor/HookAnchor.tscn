@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://cdg2il1ckafl8"]
+[gd_scene load_steps=16 format=3 uid="uid://cdg2il1ckafl8"]
 
 [ext_resource type="Shader" uid="uid://b7l4abhefeu7" path="res://Assets/Shaders/HookOutline.gdshader" id="1_s2f65"]
-[ext_resource type="Texture2D" uid="uid://dkklh6tk8f8f7" path="res://Assets/RopeAnchor/Sprites/HookAnchor-export.png" id="2_dfxcm"]
 [ext_resource type="Script" uid="uid://cuyi8eyxqa6vp" path="res://Assets/RopeAnchor/Scripts/HookAnchor.gd" id="2_ogutp"]
 [ext_resource type="Texture2D" uid="uid://tkhwdrhc3cos" path="res://Assets/GlobalScripts/UI_FrogRopeControllerIcon.tres" id="4_dfxcm"]
+[ext_resource type="Texture2D" uid="uid://damv4getv4wmu" path="res://Assets/RopeAnchor/Sprites/anchor_particle.png" id="4_fgirl"]
+[ext_resource type="Texture2D" uid="uid://d07qq6rjgcgth" path="res://Assets/RopeAnchor/Sprites/frog_anchor.png" id="4_px2fd"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_td7fn"]
 resource_local_to_scene = true
@@ -17,7 +18,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath(".:offset")
+tracks/0/path = NodePath("Sprite2D:offset")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -26,20 +27,58 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector2(0, 0)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("GPUParticles2D:emitting")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_dfxcm"]
 resource_name = "hooked"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath(".:offset")
-tracks/0/interp = 1
+tracks/0/path = NodePath("Sprite2D:offset")
+tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.233333, 0.366667),
-"transitions": PackedFloat32Array(2.82843, 0.277392, 3.605, 0.31864),
+"times": PackedFloat32Array(0, 0.1, 0.23, 0.36),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(0, 0), Vector2(0, -6.295), Vector2(0, 6), Vector2(0, 0)]
+"values": [Vector2(0, 0), Vector2(0, -10), Vector2(0, 20), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("GPUParticles2D:emitting")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("GPUParticles2D")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [false],
+"method": &"restart"
+}]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_fgirl"]
@@ -57,11 +96,40 @@ shader_parameter/line_color = Color(1, 1, 1, 1)
 shader_parameter/line_thickness = 4.383
 shader_parameter/enable_outline = true
 
-[node name="FrogRope" type="Sprite2D"]
+[sub_resource type="Gradient" id="Gradient_1e0yl"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(0, 0.180791, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_1v7q4"]
+gradient = SubResource("Gradient_1e0yl")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_dfxcm"]
+particle_flag_rotate_y = true
+particle_flag_disable_z = true
+emission_shape = 2
+emission_sphere_radius = 30.0
+angle_min = -492.8
+angle_max = 1.07288e-05
+direction = Vector3(0, 1, 0)
+spread = 30.138
+initial_velocity_min = 68.34
+initial_velocity_max = 141.25
+gravity = Vector3(0, 0, 0)
+scale_min = 0.3
+scale_max = 0.75
+color_ramp = SubResource("GradientTexture1D_1v7q4")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fgirl"]
+shader = ExtResource("1_s2f65")
+shader_parameter/line_color = Color(1, 1, 1, 1)
+shader_parameter/line_thickness = 4.574
+shader_parameter/enable_outline = false
+
+[node name="FrogRope" type="Node2D"]
 z_index = 2
 material = SubResource("ShaderMaterial_td7fn")
 scale = Vector2(1.9375, 1.9375)
-texture = ExtResource("2_dfxcm")
 script = ExtResource("2_ogutp")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -83,16 +151,30 @@ position = Vector2(-99.0968, 66.0645)
 position = Vector2(99.0968, 66.0645)
 
 [node name="InputIcon" type="Sprite2D" parent="."]
-visible = false
 z_index = 2
 material = SubResource("ShaderMaterial_dfxcm")
-position = Vector2(0, -28.9032)
-scale = Vector2(0.247742, 0.247742)
+position = Vector2(0, -37.1613)
+scale = Vector2(0.412903, 0.412903)
 texture = ExtResource("4_dfxcm")
 
 [node name="DoubleClickerTimer" type="Timer" parent="."]
 wait_time = 0.35
 one_shot = true
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+position = Vector2(0, 24.7742)
+scale = Vector2(1, 1)
+emitting = false
+amount = 7
+texture = ExtResource("4_fgirl")
+lifetime = 0.5
+one_shot = true
+process_material = SubResource("ParticleProcessMaterial_dfxcm")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_fgirl")
+scale = Vector2(0.317618, 0.317618)
+texture = ExtResource("4_px2fd")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

@@ -1,12 +1,9 @@
-[gd_scene load_steps=16 format=3 uid="uid://cy7obdtwlgb2t"]
+[gd_scene load_steps=13 format=3 uid="uid://dhl0ryt37382s"]
 
-[ext_resource type="Script" uid="uid://nvjrqe7yj6pa" path="res://Scenes/MainMenu/pause_menu.gd" id="1_7fyto"]
-[ext_resource type="Texture2D" uid="uid://nx4t75osmwxy" path="res://Scenes/MainMenu/Sprites/FinalReflex.png" id="2_jfehp"]
+[ext_resource type="Script" path="res://Scenes/MainMenu/pause_menu.gd" id="1_7fyto"]
 [ext_resource type="Shader" uid="uid://dui40dof8881p" path="res://Scenes/MainMenu/PauseMenu_janela.gdshader" id="2_nxup3"]
-[ext_resource type="Texture2D" uid="uid://dm1m1g5s384xf" path="res://Scenes/MainMenu/Sprites/Final.png" id="3_1lmqt"]
 [ext_resource type="Shader" uid="uid://bjb35jc5mloxj" path="res://Assets/Shaders/backgroundWater.gdshader" id="3_4qtbs"]
 [ext_resource type="Texture2D" uid="uid://bh6m5k56qbwp3" path="res://Assets/GlobalSprites/white.png" id="4_aykhy"]
-[ext_resource type="Script" uid="uid://blmeps7tlr8e3" path="res://Scenes/MainMenu/Scripts/frogMenu.gd" id="5_8frbb"]
 [ext_resource type="Shader" uid="uid://dkfl1o38khvby" path="res://Assets/Shaders/MenuWaterRipples.gdshader" id="5_aykhy"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_jfehp"]
@@ -110,67 +107,18 @@ mouse_filter = 2
 texture = ExtResource("4_aykhy")
 expand_mode = 1
 
-[node name="FrogReflexion" type="TextureRect" parent="background/MarginContainer/Janela"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -959.5
-offset_top = -403.5
-offset_right = -81.7858
-offset_bottom = -19.5
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-texture = ExtResource("2_jfehp")
-expand_mode = 3
-flip_h = true
-
-[node name="WaterRipples2" type="TextureRect" parent="background/MarginContainer/Janela/FrogReflexion"]
+[node name="WaterRipples2" type="TextureRect" parent="background/MarginContainer/Janela"]
 modulate = Color(1, 1, 0, 0.211765)
 material = SubResource("ShaderMaterial_jfehp")
 layout_mode = 2
-offset_left = 0.000183105
-offset_top = -136.0
-offset_right = 1920.0
-offset_bottom = 944.0
+offset_left = -691.0
+offset_top = -326.0
+offset_right = 1586.0
+offset_bottom = 850.0
 mouse_filter = 2
 texture = ExtResource("4_aykhy")
 expand_mode = 3
 flip_h = true
-
-[node name="WaterRipples" type="TextureRect" parent="background/MarginContainer/Janela"]
-modulate = Color(1, 1, 0, 0.211765)
-material = SubResource("ShaderMaterial_jfehp")
-layout_mode = 0
-mouse_filter = 2
-texture = ExtResource("4_aykhy")
-expand_mode = 3
-flip_h = true
-
-[node name="Frog" type="TextureRect" parent="background/MarginContainer/Janela"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -903.5
-offset_top = -451.5
-offset_right = -217.5
-offset_bottom = -151.5
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-texture = ExtResource("3_1lmqt")
-expand_mode = 3
-flip_h = true
-script = ExtResource("5_8frbb")
-amplitude_posicao = Vector2(1, 1)
-amplitude_rotacao = 0.01
-velocidade = 0.5
 
 [node name="MarginContainer" type="MarginContainer" parent="background/MarginContainer"]
 layout_mode = 2
