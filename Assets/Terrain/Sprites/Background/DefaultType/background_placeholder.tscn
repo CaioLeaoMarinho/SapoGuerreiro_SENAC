@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://bsfnunulb5osk"]
+[gd_scene load_steps=10 format=3 uid="uid://bsfnunulb5osk"]
 
 [ext_resource type="Texture2D" uid="uid://d0olrrsyeo2gh" path="res://Assets/Terrain/Sprites/Background/DefaultType/background_trees_reflexion.png" id="1_tt1se"]
 [ext_resource type="Texture2D" uid="uid://b8jotitmal816" path="res://Assets/Terrain/Sprites/Background/DefaultType/background_color.png" id="2_r0ftf"]
 [ext_resource type="Shader" uid="uid://bjb35jc5mloxj" path="res://Assets/Shaders/backgroundWater.gdshader" id="3_juyoy"]
 [ext_resource type="Texture2D" uid="uid://bh6m5k56qbwp3" path="res://Assets/GlobalSprites/white.png" id="4_rg3ry"]
 [ext_resource type="Texture2D" uid="uid://b248ugqeanyy0" path="res://Assets/Terrain/Sprites/Background/DefaultType/background_trees.png" id="5_5ey24"]
+[ext_resource type="Texture2D" uid="uid://otm6ee3mgwat" path="res://Assets/Terrain/Fog/Fog.png" id="6_r0ftf"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_2oq5h"]
 frequency = 0.03
@@ -145,3 +146,9 @@ scale = Vector2(1.06223, 1.1412)
 mouse_filter = 2
 texture = ExtResource("5_5ey24")
 expand_mode = 3
+
+[node name="Fog" type="Sprite2D" parent="."]
+z_index = 3
+position = Vector2(960, 372)
+scale = Vector2(0.76875, 1)
+texture = ExtResource("6_r0ftf")

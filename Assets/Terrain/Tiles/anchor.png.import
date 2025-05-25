@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d07qq6rjgcgth"
-path="res://.godot/imported/frog_anchor.png-f15d56a40b83e89ef7ff58246814058e.ctex"
+uid="uid://cia8awjnnr0km"
+path="res://.godot/imported/anchor.png-27af42359e0332164a3db4698f1c62a8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Terrain/Tiles/frog_anchor.png"
-dest_files=["res://.godot/imported/frog_anchor.png-f15d56a40b83e89ef7ff58246814058e.ctex"]
+source_file="res://Assets/Terrain/Tiles/anchor.png"
+dest_files=["res://.godot/imported/anchor.png-27af42359e0332164a3db4698f1c62a8.ctex"]
 
 [params]
 
