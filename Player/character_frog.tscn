@@ -829,6 +829,7 @@ target_rope_speed = 1250.0
 rope_buffer_time = 0.2
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 2
 material = SubResource("ShaderMaterial_sdmge")
 position = Vector2(-4, -32)
 rotation = -3.14159
