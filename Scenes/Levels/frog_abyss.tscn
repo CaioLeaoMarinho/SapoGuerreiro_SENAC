@@ -208,7 +208,6 @@ script = ExtResource("1_wo7a3")
 [node name="cronometro" parent="Cronometro hud" instance=ExtResource("3_0xkqg")]
 
 [node name="Pause" type="CanvasLayer" parent="."]
-visible = false
 
 [node name="Pause_Menu" parent="Pause" instance=ExtResource("19_7gimy")]
 
