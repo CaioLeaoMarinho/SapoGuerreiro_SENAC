@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=3 uid="uid://dhl0ryt37382s"]
 
-[ext_resource type="Script" path="res://Scenes/MainMenu/pause_menu.gd" id="1_7fyto"]
+[ext_resource type="Script" uid="uid://nvjrqe7yj6pa" path="res://Scenes/MainMenu/pause_menu.gd" id="1_7fyto"]
 [ext_resource type="Shader" uid="uid://dui40dof8881p" path="res://Scenes/MainMenu/PauseMenu_janela.gdshader" id="2_nxup3"]
 [ext_resource type="Shader" uid="uid://bjb35jc5mloxj" path="res://Assets/Shaders/backgroundWater.gdshader" id="3_4qtbs"]
 [ext_resource type="Texture2D" uid="uid://bh6m5k56qbwp3" path="res://Assets/GlobalSprites/white.png" id="4_aykhy"]

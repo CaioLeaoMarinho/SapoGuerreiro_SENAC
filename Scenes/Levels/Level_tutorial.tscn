@@ -1,6 +1,7 @@
-[gd_scene load_steps=39 format=4 uid="uid://bx8efc37fee0a"]
+[gd_scene load_steps=40 format=4 uid="uid://bx8efc37fee0a"]
 
 [ext_resource type="PackedScene" uid="uid://caw0votrv6yn" path="res://tile_map_layer_0.tscn" id="1_b72yq"]
+[ext_resource type="Script" uid="uid://bt5fp2h8q07w8" path="res://Scenes/Levels/level_tutorial.gd" id="1_lewr4"]
 [ext_resource type="PackedScene" uid="uid://cr7x3kf1nqqjl" path="res://Player/character_frog.tscn" id="2_omm2d"]
 [ext_resource type="Texture2D" uid="uid://0vl6uis5g6bi" path="res://Assets/GlobalScripts/UI_RightControllerIcon.tres" id="2_op75u"]
 [ext_resource type="Texture2D" uid="uid://clcw8rywiarj0" path="res://Assets/GlobalScripts/UI_LeftControllerIcon.tres" id="3_2nnu6"]
@@ -64,6 +65,7 @@ shader_parameter/line_thickness = 2.0
 shader_parameter/enable_outline = false
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource("1_lewr4")
 
 [node name="TileMapLayer0" parent="." instance=ExtResource("1_b72yq")]
 visible = false
