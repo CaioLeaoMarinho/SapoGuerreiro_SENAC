@@ -22,6 +22,7 @@ func _on_resetar_pressed() -> void:
 	var player = get_tree().get_first_node_in_group("player")
 	if player:
 		player.state_manager._switch_state(player.state_manager.dieState)
+	
 func _on_voltar_menu_pressed() -> void:
 	visible = false
 	get_tree().paused = false

@@ -28,3 +28,4 @@ func start_to_menu():
 
 func _on_animation_finished():
 	StateManager._switch_state(StateManager.main_menuState)
+	get_tree().change_scene_to_file("res://Scenes/Levels/Level_tutorial.tscn")
