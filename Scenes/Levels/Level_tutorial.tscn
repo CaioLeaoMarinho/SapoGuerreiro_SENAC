@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://0vl6uis5g6bi" path="res://Assets/GlobalScripts/UI_RightControllerIcon.tres" id="2_op75u"]
 [ext_resource type="Texture2D" uid="uid://clcw8rywiarj0" path="res://Assets/GlobalScripts/UI_LeftControllerIcon.tres" id="3_2nnu6"]
 [ext_resource type="PackedScene" uid="uid://cdg2il1ckafl8" path="res://Assets/RopeAnchor/HookAnchor.tscn" id="3_nn78s"]
-[ext_resource type="Shader" uid="uid://b7l4abhefeu7" path="res://Assets/Shaders/HookOutline.gdshader" id="4_ry78d"]
+[ext_resource type="Shader" path="res://Assets/Shaders/HookOutline.gdshader" id="4_ry78d"]
 [ext_resource type="Texture2D" uid="uid://cne8pfbt3eos3" path="res://Assets/GlobalScripts/UI_JumpControllerIcon.tres" id="4_vksku"]
 [ext_resource type="Texture2D" uid="uid://48x2dyapsyc7" path="res://tutorial/Segura.png" id="5_a3wmv"]
 [ext_resource type="Texture2D" uid="uid://c0po1d8wrturv" path="res://tutorial/Aperta.png" id="5_op75u"]

@@ -1,11 +1,11 @@
-[gd_scene load_steps=39 format=4 uid="uid://cxqu673uxvioq"]
+[gd_scene load_steps=41 format=4 uid="uid://cxqu673uxvioq"]
 
 [ext_resource type="PackedScene" uid="uid://caw0votrv6yn" path="res://tile_map_layer_0.tscn" id="1_dqklk"]
 [ext_resource type="PackedScene" uid="uid://cdg2il1ckafl8" path="res://Assets/RopeAnchor/HookAnchor.tscn" id="2_f6whf"]
 [ext_resource type="PackedScene" uid="uid://cdm8fgok6w2av" path="res://Scenes/levelSwitch/time_start_area.tscn" id="2_xnumu"]
 [ext_resource type="PackedScene" uid="uid://bp3y76ogb8fpd" path="res://Scenes/MainMenu/cronometro.tscn" id="3_1m3x1"]
 [ext_resource type="PackedScene" uid="uid://dhl0ryt37382s" path="res://Scenes/MainMenu/PauseMenu.tscn" id="3_mh31q"]
-[ext_resource type="Shader" uid="uid://b7l4abhefeu7" path="res://Assets/Shaders/HookOutline.gdshader" id="3_xnumu"]
+[ext_resource type="Shader" path="res://Assets/Shaders/HookOutline.gdshader" id="3_xnumu"]
 [ext_resource type="PackedScene" uid="uid://cki0la0m0gkhi" path="res://Assets/Terrain/Spikes/spikes.tscn" id="4_1m3x1"]
 [ext_resource type="PackedScene" uid="uid://ddphek4m1vwbw" path="res://Enemies/Larva/[enemy]_larva.tscn" id="5_grtq5"]
 [ext_resource type="PackedScene" uid="uid://cr7x3kf1nqqjl" path="res://Player/character_frog.tscn" id="6_xba8w"]
@@ -24,6 +24,8 @@
 [ext_resource type="Texture2D" uid="uid://bhlyudslgvlj8" path="res://Assets/Terrain/Tiles/graveto_direito.png" id="21_dguot"]
 [ext_resource type="Texture2D" uid="uid://dhn5j8e3ybtr5" path="res://Assets/Terrain/Tiles/graveto_esquerda.png" id="22_mh31q"]
 [ext_resource type="Texture2D" uid="uid://veemn7p1qsxj" path="res://Assets/Terrain/Tiles/graveto_meio.png" id="23_rpgvj"]
+[ext_resource type="Texture2D" uid="uid://c6mwjmmi13ffi" path="res://Assets/Terrain/Spikes/Sprites/espinhoMaior.png" id="25_fupkn"]
+[ext_resource type="Texture2D" uid="uid://djti4watyi6jp" path="res://Assets/Terrain/Spikes/Sprites/espinhoMenor.png" id="26_akmtj"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_kdxsx"]
 resource_local_to_scene = true
@@ -138,6 +140,7 @@ scale = Vector2(-6.9936, 39.8105)
 [node name="Pause" type="CanvasLayer" parent="."]
 
 [node name="Pause_Menu" parent="Pause" instance=ExtResource("3_mh31q")]
+visible = false
 
 [node name="HookAnchors" type="Node" parent="."]
 
@@ -188,41 +191,49 @@ position = Vector2(12224, -2160)
 [node name="Spikes" type="Node" parent="."]
 
 [node name="Spike" parent="Spikes" instance=ExtResource("4_1m3x1")]
+visible = false
 position = Vector2(1216, 688)
 scale = Vector2(2.65521, 5.15813)
 region_rect = Rect2(0.235, 8.5, 335.36, 7.946)
 
 [node name="Spike2" parent="Spikes" instance=ExtResource("4_1m3x1")]
+visible = false
 position = Vector2(3264, 688)
 scale = Vector2(2.65521, 5.15813)
 region_rect = Rect2(0.235, 8.5, 294.455, 7.946)
 
 [node name="Spike3" parent="Spikes" instance=ExtResource("4_1m3x1")]
+visible = false
 position = Vector2(3360, 48)
 scale = Vector2(2.65521, 5.15813)
 region_rect = Rect2(0.235, 8.5, 359.97, 7.946)
 
 [node name="Spike4" parent="Spikes" instance=ExtResource("4_1m3x1")]
+visible = false
 position = Vector2(3808, -464)
 scale = Vector2(2.65521, 5.15813)
 region_rect = Rect2(0.235, 8.5, 406, 7.946)
 
 [node name="Spike5" parent="Spikes" instance=ExtResource("4_1m3x1")]
+visible = false
 position = Vector2(6944, -208)
 scale = Vector2(2.65521, 5.15813)
 region_rect = Rect2(0.235, 8.5, 366.9, 7.946)
 
 [node name="Spike8" parent="Spikes" instance=ExtResource("4_1m3x1")]
+visible = false
 position = Vector2(6368, -208)
 scale = Vector2(2.65521, 5.15813)
 region_rect = Rect2(0.235, 8.5, 366.9, 7.946)
 
 [node name="Spike6" parent="Spikes" instance=ExtResource("4_1m3x1")]
+visible = false
 position = Vector2(8872, -208)
 scale = Vector2(2.65521, 5.15813)
 region_rect = Rect2(0.235, 8.5, 316.525, 7.946)
 
 [node name="Spike7" parent="Spikes" instance=ExtResource("4_1m3x1")]
+visible = false
 position = Vector2(10560, -208)
 scale = Vector2(2.65521, 5.15813)
 region_rect = Rect2(0.235, 8.5, 342.5, 7.946)
@@ -4405,3 +4416,814 @@ z_index = -3
 position = Vector2(12179.8, -888)
 scale = Vector2(1.12353, 0.923078)
 texture = ExtResource("23_rpgvj")
+
+[node name="EspinhoMaior" type="Sprite2D" parent="."]
+position = Vector2(804, 688)
+scale = Vector2(0.153, 0.153)
+texture = ExtResource("25_fupkn")
+flip_h = true
+
+[node name="EspinhoMaior2" type="Sprite2D" parent="."]
+position = Vector2(875, 688)
+scale = Vector2(0.153, 0.153)
+texture = ExtResource("25_fupkn")
+
+[node name="EspinhoMaior3" type="Sprite2D" parent="."]
+position = Vector2(953, 688)
+scale = Vector2(0.153, 0.153)
+texture = ExtResource("25_fupkn")
+
+[node name="EspinhoMaior4" type="Sprite2D" parent="."]
+position = Vector2(1024, 688)
+scale = Vector2(0.153, 0.153)
+texture = ExtResource("25_fupkn")
+
+[node name="EspinhoMaior5" type="Sprite2D" parent="."]
+position = Vector2(1066, 688)
+scale = Vector2(0.153, 0.153)
+texture = ExtResource("25_fupkn")
+flip_h = true
+
+[node name="EspinhoMaior6" type="Sprite2D" parent="."]
+position = Vector2(1129, 688)
+scale = Vector2(0.153, 0.153)
+texture = ExtResource("25_fupkn")
+
+[node name="EspinhoMaior7" type="Sprite2D" parent="."]
+position = Vector2(1170, 688)
+scale = Vector2(0.153, 0.153)
+texture = ExtResource("25_fupkn")
+
+[node name="EspinhoMaior8" type="Sprite2D" parent="."]
+position = Vector2(1211, 688)
+scale = Vector2(0.153, 0.153)
+texture = ExtResource("25_fupkn")
+flip_h = true
+
+[node name="EspinhoMaior9" type="Sprite2D" parent="."]
+position = Vector2(1252, 688)
+scale = Vector2(0.153, 0.153)
+texture = ExtResource("25_fupkn")
+
+[node name="EspinhoMaior10" type="Sprite2D" parent="."]
+position = Vector2(1293, 688)
+scale = Vector2(0.153, 0.153)
+texture = ExtResource("25_fupkn")
+
+[node name="EspinhoMaior11" type="Sprite2D" parent="."]
+position = Vector2(1336, 688)
+scale = Vector2(0.153, 0.153)
+texture = ExtResource("25_fupkn")
+flip_h = true
+
+[node name="EspinhoMaior12" type="Sprite2D" parent="."]
+position = Vector2(1403, 688)
+scale = Vector2(0.153, 0.153)
+texture = ExtResource("25_fupkn")
+flip_h = true
+
+[node name="EspinhoMaior13" type="Sprite2D" parent="."]
+position = Vector2(1432, 688)
+scale = Vector2(0.153, 0.153)
+texture = ExtResource("25_fupkn")
+flip_h = true
+
+[node name="EspinhoMaior14" type="Sprite2D" parent="."]
+position = Vector2(1483, 688)
+scale = Vector2(0.153, 0.153)
+texture = ExtResource("25_fupkn")
+flip_h = true
+
+[node name="EspinhoMaior15" type="Sprite2D" parent="."]
+position = Vector2(1538, 688)
+scale = Vector2(0.153, 0.153)
+texture = ExtResource("25_fupkn")
+flip_h = true
+
+[node name="EspinhoMaior16" type="Sprite2D" parent="."]
+position = Vector2(1593, 688)
+scale = Vector2(0.153, 0.153)
+texture = ExtResource("25_fupkn")
+
+[node name="EspinhoMaior17" type="Sprite2D" parent="."]
+position = Vector2(1634, 688)
+scale = Vector2(0.153, 0.153)
+texture = ExtResource("25_fupkn")
+
+[node name="EspinhoMaior18" type="Sprite2D" parent="."]
+position = Vector2(1669, 688)
+scale = Vector2(0.153, 0.153)
+texture = ExtResource("25_fupkn")
+flip_h = true
+
+[node name="EspinhoMenor" type="Sprite2D" parent="."]
+position = Vector2(754, 695)
+scale = Vector2(0.153, 0.153)
+texture = ExtResource("26_akmtj")
+
+[node name="EspinhoMenor2" type="Sprite2D" parent="."]
+position = Vector2(1701, 695)
+scale = Vector2(0.153, 0.153)
+texture = ExtResource("26_akmtj")
+flip_h = true
+
+[node name="EspinhoMaior19" type="Sprite2D" parent="."]
+position = Vector2(2913.5, 689.021)
+scale = Vector2(0.153, 0.153)
+texture = ExtResource("25_fupkn")
+
+[node name="EspinhoMaior20" type="Sprite2D" parent="."]
+position = Vector2(2984.5, 689.021)
+scale = Vector2(0.153, 0.153)
+texture = ExtResource("25_fupkn")
+
+[node name="EspinhoMaior21" type="Sprite2D" parent="."]
+position = Vector2(3062.5, 689.021)
+scale = Vector2(0.153, 0.153)
+texture = ExtResource("25_fupkn")
+flip_h = true
+
+[node name="EspinhoMaior22" type="Sprite2D" parent="."]
+position = Vector2(3133.5, 689.021)
+scale = Vector2(0.153, 0.153)
+texture = ExtResource("25_fupkn")
+
+[node name="EspinhoMaior23" type="Sprite2D" parent="."]
+position = Vector2(3175.5, 689.021)
+scale = Vector2(0.153, 0.153)
+texture = ExtResource("25_fupkn")
+
+[node name="EspinhoMaior24" type="Sprite2D" parent="."]
+position = Vector2(3238.5, 689.021)
+scale = Vector2(0.153, 0.153)
+texture = ExtResource("25_fupkn")
+flip_h = true
+
+[node name="EspinhoMaior25" type="Sprite2D" parent="."]
+position = Vector2(3279.5, 689.021)
+scale = Vector2(0.153, 0.153)
+texture = ExtResource("25_fupkn")
+
+[node name="EspinhoMaior26" type="Sprite2D" parent="."]
+position = Vector2(3320.5, 689.021)
+scale = Vector2(0.153, 0.153)
+texture = ExtResource("25_fupkn")
+flip_h = true
+
+[node name="EspinhoMaior27" type="Sprite2D" parent="."]
+position = Vector2(3361.5, 689.021)
+scale = Vector2(0.153, 0.153)
+texture = ExtResource("25_fupkn")
+
+[node name="EspinhoMaior28" type="Sprite2D" parent="."]
+position = Vector2(3402.5, 689.021)
+scale = Vector2(0.153, 0.153)
+texture = ExtResource("25_fupkn")
+flip_h = true
+
+[node name="EspinhoMaior29" type="Sprite2D" parent="."]
+position = Vector2(3445.5, 689.021)
+scale = Vector2(0.153, 0.153)
+texture = ExtResource("25_fupkn")
+
+[node name="EspinhoMaior30" type="Sprite2D" parent="."]
+position = Vector2(3512.5, 689.021)
+scale = Vector2(0.153, 0.153)
+texture = ExtResource("25_fupkn")
+
+[node name="EspinhoMaior31" type="Sprite2D" parent="."]
+position = Vector2(3541.5, 689.021)
+scale = Vector2(0.153, 0.153)
+texture = ExtResource("25_fupkn")
+flip_h = true
+
+[node name="EspinhoMaior32" type="Sprite2D" parent="."]
+position = Vector2(3592.5, 689.021)
+scale = Vector2(0.153, 0.153)
+texture = ExtResource("25_fupkn")
+flip_h = true
+
+[node name="EspinhoMaior33" type="Sprite2D" parent="."]
+position = Vector2(3633, 689)
+scale = Vector2(0.153, 0.153)
+texture = ExtResource("25_fupkn")
+flip_h = true
+
+[node name="EspinhoMenor3" type="Sprite2D" parent="."]
+position = Vector2(2863.5, 696.021)
+scale = Vector2(0.153, 0.153)
+texture = ExtResource("26_akmtj")
+
+[node name="EspinhoMenor4" type="Sprite2D" parent="."]
+position = Vector2(3684, 696)
+scale = Vector2(0.153, 0.153)
+texture = ExtResource("26_akmtj")
+flip_h = true
+
+[node name="EspinhoMaior34" type="Sprite2D" parent="."]
+position = Vector2(8508.5, -211.958)
+scale = Vector2(0.153, 0.153)
+texture = ExtResource("25_fupkn")
+
+[node name="EspinhoMaior115" type="Sprite2D" parent="."]
+position = Vector2(8479, -212)
+scale = Vector2(0.153, 0.153)
+texture = ExtResource("25_fupkn")
+
+[node name="EspinhoMaior35" type="Sprite2D" parent="."]
+position = Vector2(8579.5, -211.958)
+scale = Vector2(0.153, 0.153)
+texture = ExtResource("25_fupkn")
+flip_h = true
+
+[node name="EspinhoMaior36" type="Sprite2D" parent="."]
+position = Vector2(8657.5, -211.958)
+scale = Vector2(0.153, 0.153)
+texture = ExtResource("25_fupkn")
+flip_h = true
+
+[node name="EspinhoMaior103" type="Sprite2D" parent="."]
+position = Vector2(8728.5, -211.958)
+scale = Vector2(0.153, 0.153)
+texture = ExtResource("25_fupkn")
+
+[node name="EspinhoMaior104" type="Sprite2D" parent="."]
+position = Vector2(8770.5, -211.958)
+scale = Vector2(0.153, 0.153)
+texture = ExtResource("25_fupkn")
+flip_h = true
+
+[node name="EspinhoMaior105" type="Sprite2D" parent="."]
+position = Vector2(8833.5, -211.958)
+scale = Vector2(0.153, 0.153)
+texture = ExtResource("25_fupkn")
+
+[node name="EspinhoMaior106" type="Sprite2D" parent="."]
+position = Vector2(8874.5, -211.958)
+scale = Vector2(0.153, 0.153)
+texture = ExtResource("25_fupkn")
+flip_h = true
+
+[node name="EspinhoMaior107" type="Sprite2D" parent="."]
+position = Vector2(8915.5, -211.958)
+scale = Vector2(0.153, 0.153)
+texture = ExtResource("25_fupkn")
+flip_h = true
+
+[node name="EspinhoMaior108" type="Sprite2D" parent="."]
+position = Vector2(8956.5, -211.958)
+scale = Vector2(0.153, 0.153)
+texture = ExtResource("25_fupkn")
+
+[node name="EspinhoMaior109" type="Sprite2D" parent="."]
+position = Vector2(8997.5, -211.958)
+scale = Vector2(0.153, 0.153)
+texture = ExtResource("25_fupkn")
+flip_h = true
+
+[node name="EspinhoMaior110" type="Sprite2D" parent="."]
+position = Vector2(9040.5, -211.958)
+scale = Vector2(0.153, 0.153)
+texture = ExtResource("25_fupkn")
+
+[node name="EspinhoMaior111" type="Sprite2D" parent="."]
+position = Vector2(9107.5, -211.958)
+scale = Vector2(0.153, 0.153)
+texture = ExtResource("25_fupkn")
+
+[node name="EspinhoMaior112" type="Sprite2D" parent="."]
+position = Vector2(9136.5, -211.958)
+scale = Vector2(0.153, 0.153)
+texture = ExtResource("25_fupkn")
+flip_h = true
+
+[node name="EspinhoMaior113" type="Sprite2D" parent="."]
+position = Vector2(9187.5, -211.958)
+scale = Vector2(0.153, 0.153)
+texture = ExtResource("25_fupkn")
+flip_h = true
+
+[node name="EspinhoMaior114" type="Sprite2D" parent="."]
+position = Vector2(9228, -211.979)
+scale = Vector2(0.153, 0.153)
+texture = ExtResource("25_fupkn")
+flip_h = true
+
+[node name="EspinhoMenor7" type="Sprite2D" parent="."]
+position = Vector2(8433, -205)
+scale = Vector2(0.153, 0.153)
+texture = ExtResource("26_akmtj")
+
+[node name="EspinhoMenor13" type="Sprite2D" parent="."]
+position = Vector2(9279, -204.979)
+scale = Vector2(0.153, 0.153)
+texture = ExtResource("26_akmtj")
+flip_h = true
+
+[node name="EspinhoMaior116" type="Sprite2D" parent="."]
+position = Vector2(10184, -211.937)
+scale = Vector2(0.153, 0.153)
+texture = ExtResource("25_fupkn")
+
+[node name="EspinhoMaior117" type="Sprite2D" parent="."]
+position = Vector2(10154.5, -211.979)
+scale = Vector2(0.153, 0.153)
+texture = ExtResource("25_fupkn")
+
+[node name="EspinhoMaior118" type="Sprite2D" parent="."]
+position = Vector2(10255, -211.937)
+scale = Vector2(0.153, 0.153)
+texture = ExtResource("25_fupkn")
+
+[node name="EspinhoMaior119" type="Sprite2D" parent="."]
+position = Vector2(10333, -211.937)
+scale = Vector2(0.153, 0.153)
+texture = ExtResource("25_fupkn")
+
+[node name="EspinhoMaior120" type="Sprite2D" parent="."]
+position = Vector2(10404, -211.937)
+scale = Vector2(0.153, 0.153)
+texture = ExtResource("25_fupkn")
+
+[node name="EspinhoMaior121" type="Sprite2D" parent="."]
+position = Vector2(10446, -211.937)
+scale = Vector2(0.153, 0.153)
+texture = ExtResource("25_fupkn")
+flip_h = true
+
+[node name="EspinhoMaior122" type="Sprite2D" parent="."]
+position = Vector2(10509, -211.937)
+scale = Vector2(0.153, 0.153)
+texture = ExtResource("25_fupkn")
+
+[node name="EspinhoMaior123" type="Sprite2D" parent="."]
+position = Vector2(10550, -211.937)
+scale = Vector2(0.153, 0.153)
+texture = ExtResource("25_fupkn")
+flip_h = true
+
+[node name="EspinhoMaior124" type="Sprite2D" parent="."]
+position = Vector2(10591, -211.937)
+scale = Vector2(0.153, 0.153)
+texture = ExtResource("25_fupkn")
+
+[node name="EspinhoMaior125" type="Sprite2D" parent="."]
+position = Vector2(10632, -211.937)
+scale = Vector2(0.153, 0.153)
+texture = ExtResource("25_fupkn")
+flip_h = true
+
+[node name="EspinhoMaior126" type="Sprite2D" parent="."]
+position = Vector2(10673, -211.937)
+scale = Vector2(0.153, 0.153)
+texture = ExtResource("25_fupkn")
+
+[node name="EspinhoMaior127" type="Sprite2D" parent="."]
+position = Vector2(10716, -211.937)
+scale = Vector2(0.153, 0.153)
+texture = ExtResource("25_fupkn")
+
+[node name="EspinhoMaior128" type="Sprite2D" parent="."]
+position = Vector2(10783, -211.937)
+scale = Vector2(0.153, 0.153)
+texture = ExtResource("25_fupkn")
+flip_h = true
+
+[node name="EspinhoMaior129" type="Sprite2D" parent="."]
+position = Vector2(10812, -211.937)
+scale = Vector2(0.153, 0.153)
+texture = ExtResource("25_fupkn")
+flip_h = true
+
+[node name="EspinhoMaior130" type="Sprite2D" parent="."]
+position = Vector2(10863, -211.937)
+scale = Vector2(0.153, 0.153)
+texture = ExtResource("25_fupkn")
+flip_h = true
+
+[node name="EspinhoMaior131" type="Sprite2D" parent="."]
+position = Vector2(10903.5, -211.958)
+scale = Vector2(0.153, 0.153)
+texture = ExtResource("25_fupkn")
+flip_h = true
+
+[node name="EspinhoMaior132" type="Sprite2D" parent="."]
+position = Vector2(10976, -212)
+scale = Vector2(0.153, 0.153)
+texture = ExtResource("25_fupkn")
+
+[node name="EspinhoMaior133" type="Sprite2D" parent="."]
+position = Vector2(11007, -212)
+scale = Vector2(0.153, 0.153)
+texture = ExtResource("25_fupkn")
+
+[node name="EspinhoMenor14" type="Sprite2D" parent="."]
+position = Vector2(10108.5, -204.979)
+scale = Vector2(0.153, 0.153)
+texture = ExtResource("26_akmtj")
+
+[node name="EspinhoMenor15" type="Sprite2D" parent="."]
+position = Vector2(11039, -205)
+scale = Vector2(0.153, 0.153)
+texture = ExtResource("26_akmtj")
+flip_h = true
+
+[node name="EspinhoMaior37" type="Sprite2D" parent="."]
+position = Vector2(2921.5, 40.021)
+scale = Vector2(0.153, 0.153)
+texture = ExtResource("25_fupkn")
+
+[node name="EspinhoMaior38" type="Sprite2D" parent="."]
+position = Vector2(2992.5, 40.021)
+scale = Vector2(0.153, 0.153)
+texture = ExtResource("25_fupkn")
+flip_h = true
+
+[node name="EspinhoMaior39" type="Sprite2D" parent="."]
+position = Vector2(3070.5, 40.021)
+scale = Vector2(0.153, 0.153)
+texture = ExtResource("25_fupkn")
+
+[node name="EspinhoMaior40" type="Sprite2D" parent="."]
+position = Vector2(3141.5, 40.021)
+scale = Vector2(0.153, 0.153)
+texture = ExtResource("25_fupkn")
+
+[node name="EspinhoMaior41" type="Sprite2D" parent="."]
+position = Vector2(3183.5, 40.021)
+scale = Vector2(0.153, 0.153)
+texture = ExtResource("25_fupkn")
+flip_h = true
+
+[node name="EspinhoMaior42" type="Sprite2D" parent="."]
+position = Vector2(3246.5, 40.021)
+scale = Vector2(0.153, 0.153)
+texture = ExtResource("25_fupkn")
+
+[node name="EspinhoMaior43" type="Sprite2D" parent="."]
+position = Vector2(3287.5, 40.021)
+scale = Vector2(0.153, 0.153)
+texture = ExtResource("25_fupkn")
+flip_h = true
+
+[node name="EspinhoMaior44" type="Sprite2D" parent="."]
+position = Vector2(3328.5, 40.021)
+scale = Vector2(0.153, 0.153)
+texture = ExtResource("25_fupkn")
+
+[node name="EspinhoMaior45" type="Sprite2D" parent="."]
+position = Vector2(3369.5, 40.021)
+scale = Vector2(0.153, 0.153)
+texture = ExtResource("25_fupkn")
+
+[node name="EspinhoMaior46" type="Sprite2D" parent="."]
+position = Vector2(3410.5, 40.021)
+scale = Vector2(0.153, 0.153)
+texture = ExtResource("25_fupkn")
+flip_h = true
+
+[node name="EspinhoMaior47" type="Sprite2D" parent="."]
+position = Vector2(3453.5, 40.021)
+scale = Vector2(0.153, 0.153)
+texture = ExtResource("25_fupkn")
+flip_h = true
+
+[node name="EspinhoMaior48" type="Sprite2D" parent="."]
+position = Vector2(3520.5, 40.021)
+scale = Vector2(0.153, 0.153)
+texture = ExtResource("25_fupkn")
+
+[node name="EspinhoMaior49" type="Sprite2D" parent="."]
+position = Vector2(3549.5, 40.021)
+scale = Vector2(0.153, 0.153)
+texture = ExtResource("25_fupkn")
+flip_h = true
+
+[node name="EspinhoMaior50" type="Sprite2D" parent="."]
+position = Vector2(3600.5, 40.021)
+scale = Vector2(0.153, 0.153)
+texture = ExtResource("25_fupkn")
+flip_h = true
+
+[node name="EspinhoMaior51" type="Sprite2D" parent="."]
+position = Vector2(3655.5, 40.021)
+scale = Vector2(0.153, 0.153)
+texture = ExtResource("25_fupkn")
+flip_h = true
+
+[node name="EspinhoMaior52" type="Sprite2D" parent="."]
+position = Vector2(3710.5, 40.021)
+scale = Vector2(0.153, 0.153)
+texture = ExtResource("25_fupkn")
+
+[node name="EspinhoMaior53" type="Sprite2D" parent="."]
+position = Vector2(3751.5, 40.021)
+scale = Vector2(0.153, 0.153)
+texture = ExtResource("25_fupkn")
+
+[node name="EspinhoMaior54" type="Sprite2D" parent="."]
+position = Vector2(3786.5, 40.021)
+scale = Vector2(0.153, 0.153)
+texture = ExtResource("25_fupkn")
+
+[node name="EspinhoMenor5" type="Sprite2D" parent="."]
+position = Vector2(2871.5, 47.021)
+scale = Vector2(0.153, 0.153)
+texture = ExtResource("26_akmtj")
+
+[node name="EspinhoMenor6" type="Sprite2D" parent="."]
+position = Vector2(3818.5, 47.021)
+scale = Vector2(0.153, 0.153)
+texture = ExtResource("26_akmtj")
+flip_h = true
+
+[node name="EspinhoMaior55" type="Sprite2D" parent="."]
+position = Vector2(3442.5, -465.979)
+scale = Vector2(0.153, 0.153)
+texture = ExtResource("25_fupkn")
+flip_h = true
+
+[node name="EspinhoMaior73" type="Sprite2D" parent="."]
+position = Vector2(3380, -466)
+scale = Vector2(0.153, 0.153)
+texture = ExtResource("25_fupkn")
+
+[node name="EspinhoMaior74" type="Sprite2D" parent="."]
+position = Vector2(3326, -466)
+scale = Vector2(0.153, 0.153)
+texture = ExtResource("25_fupkn")
+
+[node name="EspinhoMaior56" type="Sprite2D" parent="."]
+position = Vector2(3513.5, -465.979)
+scale = Vector2(0.153, 0.153)
+texture = ExtResource("25_fupkn")
+
+[node name="EspinhoMaior57" type="Sprite2D" parent="."]
+position = Vector2(3591.5, -465.979)
+scale = Vector2(0.153, 0.153)
+texture = ExtResource("25_fupkn")
+
+[node name="EspinhoMaior58" type="Sprite2D" parent="."]
+position = Vector2(3662.5, -465.979)
+scale = Vector2(0.153, 0.153)
+texture = ExtResource("25_fupkn")
+flip_h = true
+
+[node name="EspinhoMaior59" type="Sprite2D" parent="."]
+position = Vector2(3704.5, -465.979)
+scale = Vector2(0.153, 0.153)
+texture = ExtResource("25_fupkn")
+
+[node name="EspinhoMaior60" type="Sprite2D" parent="."]
+position = Vector2(3767.5, -465.979)
+scale = Vector2(0.153, 0.153)
+texture = ExtResource("25_fupkn")
+flip_h = true
+
+[node name="EspinhoMaior61" type="Sprite2D" parent="."]
+position = Vector2(3808.5, -465.979)
+scale = Vector2(0.153, 0.153)
+texture = ExtResource("25_fupkn")
+
+[node name="EspinhoMaior62" type="Sprite2D" parent="."]
+position = Vector2(3849.5, -465.979)
+scale = Vector2(0.153, 0.153)
+texture = ExtResource("25_fupkn")
+flip_h = true
+
+[node name="EspinhoMaior63" type="Sprite2D" parent="."]
+position = Vector2(3890.5, -465.979)
+scale = Vector2(0.153, 0.153)
+texture = ExtResource("25_fupkn")
+flip_h = true
+
+[node name="EspinhoMaior64" type="Sprite2D" parent="."]
+position = Vector2(3931.5, -465.979)
+scale = Vector2(0.153, 0.153)
+texture = ExtResource("25_fupkn")
+flip_h = true
+
+[node name="EspinhoMaior65" type="Sprite2D" parent="."]
+position = Vector2(3974.5, -465.979)
+scale = Vector2(0.153, 0.153)
+texture = ExtResource("25_fupkn")
+
+[node name="EspinhoMaior66" type="Sprite2D" parent="."]
+position = Vector2(4041.5, -465.979)
+scale = Vector2(0.153, 0.153)
+texture = ExtResource("25_fupkn")
+flip_h = true
+
+[node name="EspinhoMaior67" type="Sprite2D" parent="."]
+position = Vector2(4070.5, -465.979)
+scale = Vector2(0.153, 0.153)
+texture = ExtResource("25_fupkn")
+flip_h = true
+
+[node name="EspinhoMaior68" type="Sprite2D" parent="."]
+position = Vector2(4121.5, -465.979)
+scale = Vector2(0.153, 0.153)
+texture = ExtResource("25_fupkn")
+flip_h = true
+
+[node name="EspinhoMaior69" type="Sprite2D" parent="."]
+position = Vector2(4176.5, -465.979)
+scale = Vector2(0.153, 0.153)
+texture = ExtResource("25_fupkn")
+flip_h = true
+
+[node name="EspinhoMaior70" type="Sprite2D" parent="."]
+position = Vector2(4231.5, -465.979)
+scale = Vector2(0.153, 0.153)
+texture = ExtResource("25_fupkn")
+
+[node name="EspinhoMaior71" type="Sprite2D" parent="."]
+position = Vector2(4272.5, -465.979)
+scale = Vector2(0.153, 0.153)
+texture = ExtResource("25_fupkn")
+
+[node name="EspinhoMaior72" type="Sprite2D" parent="."]
+position = Vector2(4307.5, -465.979)
+scale = Vector2(0.153, 0.153)
+texture = ExtResource("25_fupkn")
+
+[node name="EspinhoMenor9" type="Sprite2D" parent="."]
+position = Vector2(3276, -459)
+scale = Vector2(0.153, 0.153)
+texture = ExtResource("26_akmtj")
+
+[node name="EspinhoMenor8" type="Sprite2D" parent="."]
+position = Vector2(4339.5, -458.979)
+scale = Vector2(0.153, 0.153)
+texture = ExtResource("26_akmtj")
+flip_h = true
+
+[node name="EspinhoMaior75" type="Sprite2D" parent="."]
+position = Vector2(6049.99, -210.958)
+scale = Vector2(0.153, 0.153)
+texture = ExtResource("25_fupkn")
+
+[node name="EspinhoMaior76" type="Sprite2D" parent="."]
+position = Vector2(5987.5, -210.979)
+scale = Vector2(0.153, 0.153)
+texture = ExtResource("25_fupkn")
+
+[node name="EspinhoMaior77" type="Sprite2D" parent="."]
+position = Vector2(5933.5, -210.979)
+scale = Vector2(0.153, 0.153)
+texture = ExtResource("25_fupkn")
+flip_h = true
+
+[node name="EspinhoMaior78" type="Sprite2D" parent="."]
+position = Vector2(6120.99, -210.958)
+scale = Vector2(0.153, 0.153)
+texture = ExtResource("25_fupkn")
+flip_h = true
+
+[node name="EspinhoMaior79" type="Sprite2D" parent="."]
+position = Vector2(6198.99, -210.958)
+scale = Vector2(0.153, 0.153)
+texture = ExtResource("25_fupkn")
+flip_h = true
+
+[node name="EspinhoMaior80" type="Sprite2D" parent="."]
+position = Vector2(6269.99, -210.958)
+scale = Vector2(0.153, 0.153)
+texture = ExtResource("25_fupkn")
+
+[node name="EspinhoMaior81" type="Sprite2D" parent="."]
+position = Vector2(6311.99, -210.958)
+scale = Vector2(0.153, 0.153)
+texture = ExtResource("25_fupkn")
+flip_h = true
+
+[node name="EspinhoMaior82" type="Sprite2D" parent="."]
+position = Vector2(6374.99, -210.958)
+scale = Vector2(0.153, 0.153)
+texture = ExtResource("25_fupkn")
+
+[node name="EspinhoMaior83" type="Sprite2D" parent="."]
+position = Vector2(6415.99, -210.958)
+scale = Vector2(0.153, 0.153)
+texture = ExtResource("25_fupkn")
+flip_h = true
+
+[node name="EspinhoMaior84" type="Sprite2D" parent="."]
+position = Vector2(6456.99, -210.958)
+scale = Vector2(0.153, 0.153)
+texture = ExtResource("25_fupkn")
+
+[node name="EspinhoMaior85" type="Sprite2D" parent="."]
+position = Vector2(6497.99, -210.958)
+scale = Vector2(0.153, 0.153)
+texture = ExtResource("25_fupkn")
+
+[node name="EspinhoMaior86" type="Sprite2D" parent="."]
+position = Vector2(6538.99, -210.958)
+scale = Vector2(0.153, 0.153)
+texture = ExtResource("25_fupkn")
+
+[node name="EspinhoMaior87" type="Sprite2D" parent="."]
+position = Vector2(6581.99, -210.958)
+scale = Vector2(0.153, 0.153)
+texture = ExtResource("25_fupkn")
+
+[node name="EspinhoMaior88" type="Sprite2D" parent="."]
+position = Vector2(6648.99, -210.958)
+scale = Vector2(0.153, 0.153)
+texture = ExtResource("25_fupkn")
+
+[node name="EspinhoMaior89" type="Sprite2D" parent="."]
+position = Vector2(6677.99, -210.958)
+scale = Vector2(0.153, 0.153)
+texture = ExtResource("25_fupkn")
+flip_h = true
+
+[node name="EspinhoMaior90" type="Sprite2D" parent="."]
+position = Vector2(6728.99, -210.958)
+scale = Vector2(0.153, 0.153)
+texture = ExtResource("25_fupkn")
+flip_h = true
+
+[node name="EspinhoMaior91" type="Sprite2D" parent="."]
+position = Vector2(6783.99, -210.958)
+scale = Vector2(0.153, 0.153)
+texture = ExtResource("25_fupkn")
+flip_h = true
+
+[node name="EspinhoMaior92" type="Sprite2D" parent="."]
+position = Vector2(6838.99, -210.958)
+scale = Vector2(0.153, 0.153)
+texture = ExtResource("25_fupkn")
+
+[node name="EspinhoMaior93" type="Sprite2D" parent="."]
+position = Vector2(6879.99, -210.958)
+scale = Vector2(0.153, 0.153)
+texture = ExtResource("25_fupkn")
+
+[node name="EspinhoMaior94" type="Sprite2D" parent="."]
+position = Vector2(6914.99, -210.958)
+scale = Vector2(0.153, 0.153)
+texture = ExtResource("25_fupkn")
+flip_h = true
+
+[node name="EspinhoMenor10" type="Sprite2D" parent="."]
+position = Vector2(5883.5, -203.979)
+scale = Vector2(0.153, 0.153)
+texture = ExtResource("26_akmtj")
+
+[node name="EspinhoMenor11" type="Sprite2D" parent="."]
+position = Vector2(6946.99, -203.958)
+scale = Vector2(0.153, 0.153)
+texture = ExtResource("26_akmtj")
+flip_h = true
+
+[node name="EspinhoMaior95" type="Sprite2D" parent="."]
+position = Vector2(7066.98, -210.958)
+scale = Vector2(0.153, 0.153)
+texture = ExtResource("25_fupkn")
+flip_h = true
+
+[node name="EspinhoMaior96" type="Sprite2D" parent="."]
+position = Vector2(7004.48, -210.979)
+scale = Vector2(0.153, 0.153)
+texture = ExtResource("25_fupkn")
+flip_h = true
+
+[node name="EspinhoMaior97" type="Sprite2D" parent="."]
+position = Vector2(6950.48, -210.979)
+scale = Vector2(0.153, 0.153)
+texture = ExtResource("25_fupkn")
+flip_h = true
+
+[node name="EspinhoMaior98" type="Sprite2D" parent="."]
+position = Vector2(7137.98, -210.958)
+scale = Vector2(0.153, 0.153)
+texture = ExtResource("25_fupkn")
+flip_h = true
+
+[node name="EspinhoMaior99" type="Sprite2D" parent="."]
+position = Vector2(7215.98, -210.958)
+scale = Vector2(0.153, 0.153)
+texture = ExtResource("25_fupkn")
+
+[node name="EspinhoMaior100" type="Sprite2D" parent="."]
+position = Vector2(7286.98, -210.958)
+scale = Vector2(0.153, 0.153)
+texture = ExtResource("25_fupkn")
+
+[node name="EspinhoMaior101" type="Sprite2D" parent="."]
+position = Vector2(7328.98, -210.958)
+scale = Vector2(0.153, 0.153)
+texture = ExtResource("25_fupkn")
+
+[node name="EspinhoMaior102" type="Sprite2D" parent="."]
+position = Vector2(7391.98, -210.958)
+scale = Vector2(0.153, 0.153)
+texture = ExtResource("25_fupkn")
+
+[node name="EspinhoMenor12" type="Sprite2D" parent="."]
+position = Vector2(7435.98, -204)
+scale = Vector2(0.153, 0.153)
+texture = ExtResource("26_akmtj")
+flip_h = true
