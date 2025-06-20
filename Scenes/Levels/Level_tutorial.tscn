@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://0vl6uis5g6bi" path="res://Assets/GlobalScripts/UI_RightControllerIcon.tres" id="2_op75u"]
 [ext_resource type="Texture2D" uid="uid://clcw8rywiarj0" path="res://Assets/GlobalScripts/UI_LeftControllerIcon.tres" id="3_2nnu6"]
 [ext_resource type="PackedScene" uid="uid://cdg2il1ckafl8" path="res://Assets/RopeAnchor/HookAnchor.tscn" id="3_nn78s"]
-[ext_resource type="Shader" path="res://Assets/Shaders/HookOutline.gdshader" id="4_ry78d"]
+[ext_resource type="Shader" uid="uid://b7l4abhefeu7" path="res://Assets/Shaders/HookOutline.gdshader" id="4_ry78d"]
 [ext_resource type="Texture2D" uid="uid://cne8pfbt3eos3" path="res://Assets/GlobalScripts/UI_JumpControllerIcon.tres" id="4_vksku"]
 [ext_resource type="Texture2D" uid="uid://48x2dyapsyc7" path="res://tutorial/Segura.png" id="5_a3wmv"]
 [ext_resource type="Texture2D" uid="uid://c0po1d8wrturv" path="res://tutorial/Aperta.png" id="5_op75u"]
@@ -137,6 +137,7 @@ scale = Vector2(0.488889, 0.466667)
 texture = ExtResource("8_ceskh")
 
 [node name="dummy_pulo" type="Sprite2D" parent="."]
+z_index = 1
 position = Vector2(1920, 564)
 scale = Vector2(0.355556, 0.305556)
 texture = ExtResource("7_a3wmv")
@@ -147,6 +148,7 @@ scale = Vector2(0.355556, 0.305556)
 texture = ExtResource("7_a3wmv")
 
 [node name="dummy_pulo2" type="Sprite2D" parent="."]
+z_index = 1
 position = Vector2(888, 572)
 scale = Vector2(0.355556, 0.305556)
 texture = ExtResource("7_a3wmv")
@@ -197,7 +199,7 @@ material = SubResource("ShaderMaterial_2akco")
 position = Vector2(9200, 96)
 
 [node name="[enemy] Larva" parent="." instance=ExtResource("5_ry78d")]
-position = Vector2(3192, 544)
+position = Vector2(3192, 552)
 currentMoveSpeed = 2555
 
 [node name="seta_baixo" type="Sprite2D" parent="[enemy] Larva"]
@@ -211,7 +213,7 @@ scale = Vector2(0.355556, 0.305556)
 texture = ExtResource("7_a3wmv")
 
 [node name="[enemy] Larva2" parent="." instance=ExtResource("5_ry78d")]
-position = Vector2(7848, 416)
+position = Vector2(7840, 432)
 
 [node name="deathZone" parent="." instance=ExtResource("7_t3cp8")]
 position = Vector2(9104, 1080)

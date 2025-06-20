@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://cr7x3kf1nqqjl" path="res://Player/character_frog.tscn" id="3_ieiuy"]
 [ext_resource type="PackedScene" uid="uid://cdg2il1ckafl8" path="res://Assets/RopeAnchor/HookAnchor.tscn" id="4_ieiuy"]
 [ext_resource type="PackedScene" uid="uid://ddphek4m1vwbw" path="res://Enemies/Larva/[enemy]_larva.tscn" id="4_tdsw3"]
-[ext_resource type="Shader" path="res://Assets/Shaders/HookOutline.gdshader" id="5_tdsw3"]
+[ext_resource type="Shader" uid="uid://b7l4abhefeu7" path="res://Assets/Shaders/HookOutline.gdshader" id="5_tdsw3"]
 [ext_resource type="PackedScene" uid="uid://divl44m6v8bvm" path="res://Scenes/levelSwitch/time_pause_area.tscn" id="5_u241b"]
 [ext_resource type="PackedScene" uid="uid://cki0la0m0gkhi" path="res://Assets/Terrain/Spikes/spikes.tscn" id="7_ckkgs"]
 [ext_resource type="Texture2D" uid="uid://d0olrrsyeo2gh" path="res://Assets/Terrain/Sprites/Background/DefaultType/background_trees_reflexion.png" id="8_gbdgo"]
@@ -232,40 +232,52 @@ scale = Vector2(6.53193, 35.5639)
 [node name="Enemies" type="Node" parent="."]
 
 [node name="[enemy] Larva" parent="Enemies" instance=ExtResource("4_tdsw3")]
-position = Vector2(1616, 160)
+position = Vector2(1624, 168)
+scale = Vector2(0.793397, 1)
 
 [node name="[enemy] Larva2" parent="Enemies" instance=ExtResource("4_tdsw3")]
-position = Vector2(3688, 288)
+position = Vector2(3688, 304)
+scale = Vector2(0.793397, 1)
 
 [node name="[enemy] Larva3" parent="Enemies" instance=ExtResource("4_tdsw3")]
-position = Vector2(5048, 288)
+position = Vector2(5048, 296)
+scale = Vector2(0.793397, 1)
 
 [node name="[enemy] Larva4" parent="Enemies" instance=ExtResource("4_tdsw3")]
-position = Vector2(7672, 288)
+position = Vector2(7672, 296)
+scale = Vector2(0.793397, 1)
 
 [node name="[enemy] Larva5" parent="Enemies" instance=ExtResource("4_tdsw3")]
-position = Vector2(14656, 480)
+position = Vector2(14656, 488)
+scale = Vector2(0.793397, 1)
 
 [node name="[enemy] Larva6" parent="Enemies" instance=ExtResource("4_tdsw3")]
-position = Vector2(19320, 416)
+position = Vector2(19320, 424)
+scale = Vector2(0.793397, 1)
 
 [node name="[enemy] Larva7" parent="Enemies" instance=ExtResource("4_tdsw3")]
-position = Vector2(23544, 416)
+position = Vector2(23544, 424)
+scale = Vector2(0.793397, 1)
 
 [node name="[enemy] Larva8" parent="Enemies" instance=ExtResource("4_tdsw3")]
-position = Vector2(25920, 416)
+position = Vector2(25920, 424)
+scale = Vector2(0.793397, 1)
 
 [node name="[enemy] Larva9" parent="Enemies" instance=ExtResource("4_tdsw3")]
-position = Vector2(26752, 416)
+position = Vector2(26752, 424)
+scale = Vector2(0.793397, 1)
 
 [node name="[enemy] Larva10" parent="Enemies" instance=ExtResource("4_tdsw3")]
-position = Vector2(30648, 478)
+position = Vector2(30648, 488)
+scale = Vector2(0.793397, 1)
 
 [node name="[enemy] Larva11" parent="Enemies" instance=ExtResource("4_tdsw3")]
-position = Vector2(32888, 542)
+position = Vector2(32888, 552)
+scale = Vector2(0.793397, 1)
 
 [node name="[enemy] Larva12" parent="Enemies" instance=ExtResource("4_tdsw3")]
-position = Vector2(34680, 478)
+position = Vector2(34680, 488)
+scale = Vector2(0.793397, 1)
 
 [node name="FrogRopes" type="Node" parent="."]
 

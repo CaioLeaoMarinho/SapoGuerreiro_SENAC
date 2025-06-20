@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://cdm8fgok6w2av" path="res://Scenes/levelSwitch/time_start_area.tscn" id="2_xnumu"]
 [ext_resource type="PackedScene" uid="uid://bp3y76ogb8fpd" path="res://Scenes/MainMenu/cronometro.tscn" id="3_1m3x1"]
 [ext_resource type="PackedScene" uid="uid://dhl0ryt37382s" path="res://Scenes/MainMenu/PauseMenu.tscn" id="3_mh31q"]
-[ext_resource type="Shader" path="res://Assets/Shaders/HookOutline.gdshader" id="3_xnumu"]
+[ext_resource type="Shader" uid="uid://b7l4abhefeu7" path="res://Assets/Shaders/HookOutline.gdshader" id="3_xnumu"]
 [ext_resource type="PackedScene" uid="uid://cki0la0m0gkhi" path="res://Assets/Terrain/Spikes/spikes.tscn" id="4_1m3x1"]
 [ext_resource type="PackedScene" uid="uid://ddphek4m1vwbw" path="res://Enemies/Larva/[enemy]_larva.tscn" id="5_grtq5"]
 [ext_resource type="PackedScene" uid="uid://cr7x3kf1nqqjl" path="res://Player/character_frog.tscn" id="6_xba8w"]
@@ -241,32 +241,32 @@ region_rect = Rect2(0.235, 8.5, 342.5, 7.946)
 [node name="Enemies" type="Node" parent="."]
 
 [node name="[enemy] Larva" parent="Enemies" instance=ExtResource("5_grtq5")]
-position = Vector2(3256, 416)
+position = Vector2(3256, 424)
 
 [node name="[enemy] Larva2" parent="Enemies" instance=ExtResource("5_grtq5")]
-position = Vector2(3132, -168)
+position = Vector2(3128, -144)
 have_firefly = true
 
 [node name="[enemy] Larva5" parent="Enemies" instance=ExtResource("5_grtq5")]
-position = Vector2(2632, -544)
+position = Vector2(2632, -528)
 
 [node name="[enemy] Larva3" parent="Enemies" instance=ExtResource("5_grtq5")]
-position = Vector2(5672, -416)
+position = Vector2(5672, -408)
 
 [node name="[enemy] Larva4" parent="Enemies" instance=ExtResource("5_grtq5")]
-position = Vector2(8688, -1568)
+position = Vector2(8688, -1560)
 
 [node name="[enemy] Larva7" parent="Enemies" instance=ExtResource("5_grtq5")]
-position = Vector2(10072, -1890)
+position = Vector2(10064, -1880)
 
 [node name="[enemy] Larva9" parent="Enemies" instance=ExtResource("5_grtq5")]
-position = Vector2(11808, -1896)
+position = Vector2(11800, -1872)
 
 [node name="[enemy] Larva8" parent="Enemies" instance=ExtResource("5_grtq5")]
-position = Vector2(12016, -1056)
+position = Vector2(12016, -1048)
 
 [node name="[enemy] Larva6" parent="Enemies" instance=ExtResource("5_grtq5")]
-position = Vector2(12224, -610)
+position = Vector2(12224, -600)
 
 [node name="Player" parent="." instance=ExtResource("6_xba8w")]
 position = Vector2(144, 569)

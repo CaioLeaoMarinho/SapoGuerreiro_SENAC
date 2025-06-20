@@ -1,6 +1,6 @@
 [gd_scene load_steps=16 format=3 uid="uid://cdg2il1ckafl8"]
 
-[ext_resource type="Shader" path="res://Assets/Shaders/HookOutline.gdshader" id="1_s2f65"]
+[ext_resource type="Shader" uid="uid://b7l4abhefeu7" path="res://Assets/Shaders/HookOutline.gdshader" id="1_s2f65"]
 [ext_resource type="Script" uid="uid://cuyi8eyxqa6vp" path="res://Assets/RopeAnchor/Scripts/HookAnchor.gd" id="2_ogutp"]
 [ext_resource type="Texture2D" uid="uid://tkhwdrhc3cos" path="res://Assets/GlobalScripts/UI_FrogRopeControllerIcon.tres" id="4_dfxcm"]
 [ext_resource type="Texture2D" uid="uid://damv4getv4wmu" path="res://Assets/RopeAnchor/Sprites/anchor_particle.png" id="4_fgirl"]
